@@ -1,0 +1,391 @@
+<!-- ACCESSIBILITY FIXES FOR INDEX.HTML
+
+     Replace the navigation section with this improved version:
+-->
+
+<!-- BEFORE: Lines 55-65 -->
+<header class="top-bar">
+    <div class="logo" onclick="app.navigateTo('home')">
+        <span class="logo-empower">EMPOWER</span>-<span class="logo-ckm">CKM</span>
+    </div>
+
+    <nav class="main-nav">
+        <div class="nav-item active" onclick="app.navigateTo('home')" data-i18n="nav.home">Dashboard</div>
+        <div class="nav-item" onclick="app.navigateTo('education')" data-i18n="nav.education">Curriculum</div>
+        <div class="nav-item" onclick="app.navigateTo('clinic')" data-i18n="nav.clinic">Clinic</div>
+        <div class="nav-item" onclick="app.toggleChat(true)" data-i18n="nav.chat">AI Assistant</div>
+    </nav>
+</header>
+
+<!-- AFTER: ACCESSIBILITY-COMPLIANT VERSION -->
+<header class="top-bar" role="banner">
+    <button class="logo"
+            type="button"
+            onclick="app.navigateTo('home')"
+            aria-label="Navigate to home page - EMPOWER-CKM">
+        <span class="logo-empower">EMPOWER</span>-<span class="logo-ckm">CKM</span>
+    </button>
+
+    <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <button class="nav-item active"
+                type="button"
+                onclick="app.navigateTo('home')"
+                data-i18n="nav.home"
+                data-view="home"
+                aria-current="page">Dashboard</button>
+        <button class="nav-item"
+                type="button"
+                onclick="app.navigateTo('education')"
+                data-i18n="nav.education"
+                data-view="education">Curriculum</button>
+        <button class="nav-item"
+                type="button"
+                onclick="app.navigateTo('clinic')"
+                data-i18n="nav.clinic"
+                data-view="clinic">Clinic</button>
+        <button class="nav-item"
+                type="button"
+                onclick="app.toggleChat(true)"
+                data-i18n="nav.chat"
+                data-action="toggle-chat">AI Assistant</button>
+    </nav>
+</header>
+
+<!-- ================================================================ -->
+<!-- LANGUAGE SELECTOR - Lines 67-79 -->
+<!-- BEFORE -->
+<div class="user-actions">
+    <div class="lang-slider-container">
+        <div class="lang-slider-bg"></div>
+        <div class="lang-option active" onclick="app.setLanguage('en')" data-lang="en">
+            <span class="flag">🇺🇸</span> <span class="lang-code">EN</span>
+        </div>
+        <div class="lang-option" onclick="app.setLanguage('pt')" data-lang="pt">
+            <span class="flag">🇧🇷</span> <span class="lang-code">PT</span>
+        </div>
+        <div class="lang-option" onclick="app.setLanguage('es')" data-lang="es">
+            <span class="flag">🇪🇸</span> <span class="lang-code">ES</span>
+        </div>
+    </div>
+</div>
+
+<!-- AFTER: ACCESSIBLE VERSION -->
+<div class="user-actions" role="complementary" aria-label="User settings">
+    <div class="lang-slider-container"
+         role="group"
+         aria-label="Language selector">
+        <div class="lang-slider-bg" aria-hidden="true"></div>
+        <button class="lang-option active"
+                type="button"
+                onclick="app.setLanguage('en')"
+                data-lang="en"
+                aria-pressed="true"
+                aria-label="Switch to English">
+            <span class="flag" aria-hidden="true">🇺🇸</span>
+            <span class="lang-code">EN</span>
+        </button>
+        <button class="lang-option"
+                type="button"
+                onclick="app.setLanguage('pt')"
+                data-lang="pt"
+                aria-pressed="false"
+                aria-label="Mudar para Português">
+            <span class="flag" aria-hidden="true">🇧🇷</span>
+            <span class="lang-code">PT</span>
+        </button>
+        <button class="lang-option"
+                type="button"
+                onclick="app.setLanguage('es')"
+                data-lang="es"
+                aria-pressed="false"
+                aria-label="Cambiar a Español">
+            <span class="flag" aria-hidden="true">🇪🇸</span>
+            <span class="lang-code">ES</span>
+        </button>
+    </div>
+</div>
+
+<!-- ================================================================ -->
+<!-- MAIN CONTENT AREA - Line 84 -->
+<!-- BEFORE -->
+<div id="main-view" class="main-view">
+    <!-- Dynamic Content -->
+</div>
+
+<!-- AFTER -->
+<main id="main-view"
+      class="main-view"
+      role="main"
+      aria-live="polite"
+      aria-atomic="false">
+    <!-- Dynamic Content -->
+</main>
+
+<!-- ================================================================ -->
+<!-- CHAT SIDEBAR - Lines 76-116 -->
+<!-- BEFORE -->
+<div id="chat-sidebar" class="chat-sidebar">
+    <div class="chat-resizer"></div>
+    <div class="chat-sidebar-header">
+        <h3 data-i18n="chat.title">Ask a Question</h3>
+        <button class="chat-close-btn" onclick="app.toggleChat(false)">×</button>
+    </div>
+    <div class="chat-messages-sidebar"></div>
+    <div class="chat-sidebar-input">
+        <input type="text"
+               placeholder="Type your health question here..."
+               data-i18n-placeholder="chat.placeholder"
+               onkeypress="if(event.key==='Enter') app.sendSidebarChatMessage()">
+        <button onclick="app.sendSidebarChatMessage()" data-i18n="chat.send">Send</button>
+    </div>
+</div>
+
+<!-- AFTER: ACCESSIBLE VERSION -->
+<aside id="chat-sidebar"
+       class="chat-sidebar"
+       role="complementary"
+       aria-label="AI Health Assistant Chat"
+       aria-hidden="true">
+    <div class="chat-resizer"
+         role="separator"
+         aria-orientation="vertical"
+         aria-label="Resize chat panel"
+         tabindex="0"></div>
+    <div class="chat-sidebar-header">
+        <h3 id="chat-title" data-i18n="chat.title">Ask a Question</h3>
+        <button class="chat-close-btn"
+                type="button"
+                onclick="app.toggleChat(false)"
+                aria-label="Close chat panel">×</button>
+    </div>
+    <div class="chat-messages-sidebar"
+         role="log"
+         aria-live="polite"
+         aria-relevant="additions"
+         aria-atomic="false"
+         aria-labelledby="chat-title"></div>
+    <div class="chat-sidebar-input" role="form" aria-label="Send message form">
+        <label for="chat-input" class="sr-only">Chat message input</label>
+        <input id="chat-input"
+               type="text"
+               placeholder="Type your health question here..."
+               data-i18n-placeholder="chat.placeholder"
+               onkeypress="if(event.key==='Enter') app.sendSidebarChatMessage()"
+               aria-label="Type your health question"
+               aria-describedby="chat-disclaimer">
+        <button type="button"
+                onclick="app.sendSidebarChatMessage()"
+                data-i18n="chat.send"
+                aria-label="Send message">Send</button>
+    </div>
+    <div id="chat-disclaimer" class="sr-only" data-i18n="chat.disclaimer">
+        For educational purposes only. Not medical advice.
+    </div>
+</aside>
+
+<!-- ================================================================ -->
+<!-- MODAL - Lines 119-127 -->
+<!-- BEFORE -->
+<div id="modal-overlay" class="modal-overlay hidden" onclick="app.closeModal(event)">
+    <div class="modal-content glass">
+        <button class="close-btn" onclick="app.closeModal(event)">×</button>
+        <div id="modal-body">
+            <!-- Dynamic Content -->
+        </div>
+    </div>
+</div>
+
+<!-- AFTER: ACCESSIBLE VERSION -->
+<div id="modal-overlay"
+     class="modal-overlay hidden"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-title"
+     aria-describedby="modal-body"
+     onclick="app.closeModal(event)">
+    <div class="modal-content glass">
+        <button class="close-btn"
+                type="button"
+                onclick="app.closeModal(event)"
+                aria-label="Close modal">×</button>
+        <div id="modal-body">
+            <!-- Dynamic Content -->
+            <!-- NOTE: First heading in content should have id="modal-title" -->
+        </div>
+    </div>
+</div>
+
+<!-- ================================================================ -->
+<!-- ADD TO <style> OR main.css -->
+
+/* Screen reader only class */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Make buttons look like divs if needed for design */
+button.logo,
+button.nav-item,
+button.lang-option {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+/* Focus visible for keyboard navigation */
+button:focus-visible {
+    outline: 2px solid var(--accent-red, #FF3B30);
+    outline-offset: 2px;
+}
+
+/* Ensure resizer is keyboard accessible */
+.chat-resizer:focus {
+    background: var(--accent-red, #FF3B30);
+    outline: 2px solid var(--accent-red, #FF3B30);
+}
+
+<!-- ================================================================ -->
+<!-- JAVASCRIPT UPDATES NEEDED IN main.js -->
+
+// Update setLanguage to manage aria-pressed
+async setLanguage(lang) {
+    this.currentLanguage = lang;
+    await this.secureStorage.setItem('ckm_lang', lang);
+    await this.loadLanguage(lang);
+
+    // Update aria-pressed on language buttons
+    document.querySelectorAll('.lang-option').forEach(btn => {
+        const isActive = btn.dataset.lang === lang;
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+}
+
+// Update toggleChat to manage aria-hidden
+toggleChat(show) {
+    const sidebar = document.getElementById('chat-sidebar');
+    if (show) {
+        sidebar.classList.add('visible');
+        sidebar.setAttribute('aria-hidden', 'false');
+        // Focus first input
+        const input = sidebar.querySelector('input');
+        if (input) setTimeout(() => input.focus(), 100);
+    } else {
+        sidebar.classList.remove('visible');
+        sidebar.setAttribute('aria-hidden', 'true');
+    }
+}
+
+// Update modal to manage focus trap
+openModal(organName) {
+    const modal = document.getElementById('modal-overlay');
+    const content = this.organDetails[organName];
+
+    // Store previously focused element
+    this.previouslyFocused = document.activeElement;
+
+    // Set content
+    DOMUtils.safeSetHTML(document.getElementById('modal-body'), `
+        <h2 id="modal-title">${content.title}</h2>
+        <div class="modal-section">
+            <h3>${content.role}</h3>
+            <p>${content.roleDesc}</p>
+        </div>
+        <!-- ... rest of content ... -->
+    `);
+
+    modal.classList.remove('hidden');
+    modal.removeAttribute('aria-hidden');
+
+    // Focus modal
+    const modalContent = modal.querySelector('.modal-content');
+    modalContent.setAttribute('tabindex', '-1');
+    setTimeout(() => modalContent.focus(), 100);
+
+    // Trap focus
+    this.trapFocus(modalContent);
+}
+
+closeModal() {
+    const modal = document.getElementById('modal-overlay');
+    modal.classList.add('hidden');
+    modal.setAttribute('aria-hidden', 'true');
+
+    // Restore focus
+    if (this.previouslyFocused) {
+        this.previouslyFocused.focus();
+        this.previouslyFocused = null;
+    }
+}
+
+trapFocus(container) {
+    const focusableElements = container.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    const handleKeyDown = (e) => {
+        if (e.key === 'Escape') {
+            this.closeModal();
+            return;
+        }
+
+        if (e.key === 'Tab') {
+            if (e.shiftKey) {
+                if (document.activeElement === firstElement) {
+                    lastElement.focus();
+                    e.preventDefault();
+                }
+            } else {
+                if (document.activeElement === lastElement) {
+                    firstElement.focus();
+                    e.preventDefault();
+                }
+            }
+        }
+    };
+
+    container.addEventListener('keydown', handleKeyDown);
+
+    // Store handler for cleanup
+    this._focusTrapHandler = handleKeyDown;
+}
+
+<!-- ================================================================ -->
+<!-- TESTING CHECKLIST -->
+
+Accessibility Testing:
+□ Screen reader (NVDA/JAWS/VoiceOver)
+  □ Can navigate entire site with Tab key
+  □ All interactive elements announced correctly
+  □ Modal traps focus properly
+  □ Chat messages announced when added
+
+□ Keyboard only navigation
+  □ Can access all features without mouse
+  □ Focus visible on all interactive elements
+  □ Escape key closes modal
+  □ Enter/Space activate buttons
+
+□ WAVE or axe DevTools
+  □ No errors
+  □ All images have alt text
+  □ Proper heading hierarchy
+  □ Color contrast passes WCAG AA
+
+□ Mobile/Touch
+  □ Touch targets at least 44x44px
+  □ No hover-only interactions
+  □ Gestures work correctly

@@ -1,0 +1,1070 @@
+{
+            "nav": {
+                "home": "Home",
+                "education": "Learn More",
+                "chat": "Chat",
+                "clinic": "Clinic"
+            },
+            "ui": {
+                "backToCurriculum": "← Back to Curriculum",
+                "clinicalInsight": "Clinical Insight",
+                "finishLesson": "Finish Lesson",
+                "lessonCompleted": "✓ Lesson Completed",
+                "learningProgress": "Your Learning Progress",
+                "stepProgress": "Step {count} of {total} Complete",
+                "startLesson": "Start Lesson",
+                "continueLesson": "Continue Lesson",
+                "allCompleted": "All Modules Completed!",
+                "curriculumStatus": "Curriculum Status",
+                "welcomeBack": "Welcome to",
+                "nextStep": "Next Step",
+                "journeyDesc": "Track your journey to better heart, kidney, and metabolic health.",
+                "resetProgress": "Reset Progress",
+                "resetConfirm": "Are you sure you want to reset your progress? This will clear all completed lessons and your staging results.",
+                "confirmTitle": "Reset All Progress?",
+                "confirmAction": "Reset",
+                "cancelAction": "Cancel",
+                "pending": "Pending",
+                "modulesLabel": "Modules",
+                "allCompletedDesc": "You've mastered the essential CKM curriculum."
+            },
+            "clinic": {
+                "title": "Our Clinic",
+                "subtitle": "MetroWest Medical Center",
+                "storyTitle": "The Story of",
+                "storyDesc": "Designed and developed by the Internal Medicine resident physicians at MetroWest Medical Center.",
+                "missionTitle": "Our Mission",
+                "missionText": "EMPOWER-CKM is more than just a tool—it's a patient-centered initiative created by your doctors. We recognized that understanding the connection between the Heart, Kidneys, and Metabolism can be overwhelming. This project was developed to provide you with the same evidence-based insights we use in the clinic, translated into a guide you can use anywhere.<br><br>This application is the central component of a quality improvement project, titled EMPOWER-CKM: Educating and Motivating Patients On Wellness through Effective Resident-led CKM-guidance.<br><br>Our specific aims are to bridge the educational gap in cardiometabolic care by providing standardized, culturally competent, and multilingual resources. We aim to empower both patients and resident physicians to better manage the complex intersections of heart, kidney, and metabolic health.",
+                "teamTitle": "Meet Your Resident Physicians",
+                "teamText": "At MetroWest Medical Center, our Resident Physicians are at the heart of our ambulatory clinic. These dedicated doctors are specialized in Internal Medicine and are committed to delivering thorough, compassionate, and state-of-the-art care.",
+                "teamLink": "Learn more about our residency program",
+                "appointmentTitle": "Schedule an Appointment",
+                "appointmentDesc": "Speak with our team to discuss your cardiometabolic health."
+            },
+            "home": {
+                "title": "Welcome to EMPOWER-CKM",
+                "subtitle": "Track your journey to better heart, kidney, and metabolic health.",
+                "heroTitle": "Everything is Connected",
+                "heroText": "Think of your body like a house: your Kidneys are the plumbing, your Heart is the electrical system, and your Metabolism is the energy supply. When the plumbing backs up, it shorts out the electricity. If the energy supply is unstable, everything works harder. EMPOWER-CKM helps you keep your house in order.",
+                "heroBtn": "Start Exploring"
+            },
+            "anatomy": {
+                "title": "Interactive Anatomy",
+                "subtitle": "The CKM Connection",
+                "text": "Tap on an organ to see how CKM syndrome affects it.",
+                "organs": {
+                    "heart": "Heart",
+                    "kidneys": "Kidneys",
+                    "metabolism": "Metabolism"
+                },
+                "labels": {
+                    "role": "Natural Role",
+                    "problem": "The Problem in CKM",
+                    "connection": "The Connection"
+                },
+                "details": {
+                    "heart": {
+                        "title": "The Heart (Electrical)",
+                        "role": "The heart is the pump of the body, circulating oxygen-rich blood to every cell.",
+                        "problem": "In CKM syndrome, excess body fat and high blood sugar damage the blood vessels. This forces the heart to pump harder against high pressure (Hypertension).",
+                        "connection": "When the heart struggles, it can't pump enough blood to the kidneys, causing them to fail. This creates a vicious cycle where failing kidneys cause fluid retention, further stressing the heart (Heart Failure)."
+                    },
+                    "kidneys": {
+                        "title": "The Kidneys (Plumbing)",
+                        "role": "Your kidneys act as the body's filter, removing waste and balancing fluids.",
+                        "problem": "High blood pressure and high blood sugar damage the tiny filters (nephrons) inside the kidneys. This leads to Chronic Kidney Disease (CKD).",
+                        "connection": "Damaged kidneys cannot filter blood properly, leading to a buildup of toxins and fluids. This fluid overload increases blood pressure, which in turn causes more damage to both the heart and the kidneys."
+                    },
+                    "metabolism": {
+                        "title": "Metabolism (Energy)",
+                        "role": "Metabolism helps your body convert food into energy and regulate sugar levels.",
+                        "problem": "Excess adipose tissue (body fat) releases harmful inflammatory chemicals. This leads to insulin resistance and Type 2 Diabetes.",
+                        "connection": "This metabolic dysfuntion acts as the 'spark'. The inflammation damages blood vessels everywhere, directly causing the heart disease and kidney damage seen in CKM syndrome."
+                    }
+                }
+            },
+            "staging": {
+                "title": "Staging Quiz",
+                "subtitle": "Assess Your Risks",
+                "introTitle": "Where do you stand?",
+                "introText": "Answer a few questions to see which stage of CKM health you might be in.",
+                "startBtn": "Take the Quiz",
+                "step": "Step",
+                "of": "of",
+                "resultTitle": "Your CKM Assessment",
+                "stageLabel": "Stage",
+                "resultBtn": "Back to Curriculum",
+                "questions": [
+                    { "id": "heart", "q": "Do you have existing heart disease?", "options": ["No", "Yes"] },
+                    { "id": "kidney", "q": "Do you have kidney disease (Stage 2 or higher)?", "options": ["No", "Yes"] },
+                    { "id": "a1c", "q": "Is your HbA1c (blood sugar) controlled (typically <7%)?", "options": ["Yes", "No", "Don't know"] },
+                    { "id": "bp", "q": "Is your blood pressure typically below 130/80?", "options": ["Yes", "No", "Don't know"] },
+                    { "id": "activity", "q": "How many minutes of brisk physical activity (like walking) do you get per week?", "options": ["Less than 60 min", "60-150 min", "Over 150 min"] },
+                    { "id": "sodium", "q": "How often do you eat processed foods or add extra salt to meals?", "options": ["Daily", "Often", "Rarely"] },
+                    { "id": "smoker", "q": "Do you currently use tobacco or nicotine products?", "options": ["Yes", "No"] }
+                ],
+                "descriptions": {
+                    "1": "Stage 1: Excess Body Fat. You have risk factors like overweight or abdominal obesity. Focus on lifestyle changes now to prevent progression.",
+                    "2": "Stage 2: Metabolic Risk & Kidney Disease. You have high blood pressure, high triglycerides, or diabetes. Strict control of these factors is essential.",
+                    "3": "Stage 3: Early Cardiovascular Disease. You have subclinical heart issues or high-risk kidney disease. You need close monitoring and preventive medications.",
+                    "4": "Stage 4: Established CKM Syndrome. You have clinical heart disease (stroke, heart failure). Management is critical to prevent further events."
+                },
+                "plan": {
+                    "title": "Your CKM Roadmap",
+                    "clinicalTitle": "🏥 Clinical Priorities",
+                    "lifestyleTitle": "🥗 Lifestyle Changes",
+                    "clinicalActions": {
+                        "stage4": "Focus on cardiac rehabilitation and strict fluid management.",
+                        "stage2plus": "Discuss 'Organ-Protective' medications (like SGLT2i or GLP-1) with your doctor.",
+                        "kidney": "Request a UACR (urine protein) test to monitor kidney quality.",
+                        "bp": "Start twice-daily home blood pressure monitoring."
+                    },
+                    "lifestyleActions": {
+                        "activityLow": "<strong>Movement:</strong> Start with 10-minute daily walks. Aim for 'Zone 2' intensity where you're slightly breathless.",
+                        "activityMid": "<strong>Movement:</strong> You're on the right track! Try to add two days of light resistance training.",
+                        "diet": "<strong>Nutrition:</strong> Swap one processed meal a day for whole foods. Focus on reducing hidden sodium.",
+                        "tobacco": "<strong>Tobacco:</strong> Ask your doctor about nicotine replacement therapy. Quitting is the #1 protector of your heart pipes.",
+                        "excellent": "Maintain your excellent healthy habits!"
+                    }
+                }
+            },
+            "education": {
+                "title": "Education",
+                "subtitle": "Learning Curriculum"
+            },
+            "modules": {
+                "title": "Learning Modules",
+                "subtitle": "Your Journey to Better Health",
+                "labels": {
+                    "learnMore": "Clinical Perspective",
+                    "completed": "Completed"
+                },
+                "list": [
+                    { "id": 1, "title": "What is CKM Health?", "description": "Use EMPOWER-CKM to understand how your heart, kidneys, and metabolism work together" },
+                    { "id": 2, "title": "Your Plate & Your Health", "description": "Practical dietary changes for better health" },
+                    { "id": 3, "title": "Move More, Live Better", "description": "Physical activity guidelines that work for you" },
+                    { "id": 4, "title": "Understanding Your Numbers", "description": "What your health metrics actually mean" },
+                    { "id": 5, "title": "Your Treatment Options", "description": "Medications and lifestyle changes that can help" },
+                    { "id": 6, "title": "Personalized Assessment", "description": "Discover your CKM stage and receive a tailored plan" }
+                ],
+                "content": {
+                    "1": {
+                        "title": "What is CKM Health?",
+                        "intro": "Your heart, kidneys, and metabolism are deeply connected—like a team where every player affects the others. When one system is stressed, it puts pressure on the others. This connection is called Cardio-Kidney-Metabolic (CKM) health.",
+                        "sections": [
+                            {
+                                "heading": "The Connection Explained",
+                                "content": "<div id=\"analogy-mount\"></div>",
+                                "expanded": "The American Heart Association introduced CKM syndrome in 2023 to help doctors and patients better understand these connections. Research shows that treating these conditions together, rather than separately, leads to much better outcomes."
+                            },
+                            {
+                                "heading": "Why It Matters to You",
+                                "content": "Understanding CKM health helps you see the big picture. Small changes—like reducing salt, moving more, or taking medications correctly—can protect multiple systems at once.",
+                                "expanded": "Studies show that people who understand how their conditions connect are more likely to stay on track with treatment plans and achieve better health outcomes. You aren\\"t just treating diabetes OR heart disease OR kidney disease—you are protecting your entire system.'
+                            },
+                            {
+                                "heading": "The Five Stages of CKM (0-4)",
+                                "content": "<p>CKM syndrome is categorized into five stages. Click through each stage below to see how it affects your heart, kidneys, and metabolism.</p><div id=\"stage-explorer-mount\"></div>",
+                                "expanded": "The staging system helps your medical team determine the intensity of treatment. Stage 0 is the goal for everyone, while Stage 4 requires intensive management of clinical disease. Even if you are in Stage 2 or 3, evidence shows that aggressive management can prevent you from reaching Stage 4."
+                            }
+                        ]
+                    },
+                    "2": {
+                        "title": "Your Plate & Your Health",
+                        "intro": "What you eat is the strongest medicine for CKM health. You don\\"t need a complicated diet—just a balanced plate.',
+                        "sections": [
+                            {
+                                "heading": "The Healthy Eating Plate",
+                                "content": "<div id=\"eating-plate-mount\"></div><div id=\"cultural-food-mount\" style=\"margin-top: 40px; border-top: 1px solid var(--border-soft); padding-top: 40px;\"></div>",
+                                "expanded": "This simple visual guide helps control blood sugar and weight without counting calories. Traditional Brazilian and Latin American foods like rice, beans, and corn tortillas are incredibly healthy when balanced correctly. Use the explorer above to see how your favorite foods can act as medicine for your heart and kidneys."
+                            },
+                            {
+                                "heading": "Sodium: The Silent Stressor",
+                                "content": "Salt (sodium) acts like a water magnet. Too much salt makes your body hold onto fluid, raising blood pressure and forcing your heart and kidneys to work overtime.",
+                                "expanded": "70% of the sodium we eat comes from processed and restaurant foods, not the salt shaker. Reading labels is your best defense. Aim for less than 2,300mg per day—though your doctor may recommend <1,500mg if you have Stage 2+ CKM."
+                            },
+                            {
+                                "heading": "Interactive Food Label Decoder",
+                                "content": "<p>Learn to spot the hidden metrics that affect your Heart and Kidneys. Click on different parts of the label below.</p><div id=\"food-label-mount\"></div>",
+                                "expanded": "When reading a label for CKM health, look at three key things: Sodium (for blood pressure), Saturated Fat (for cholesterol), and Added Sugars (for metabolism). If a food is high in all three, it is a metabolic \"short circuit\"."
+                            }
+                        ]
+                    },
+                    "3": {
+                        "title": "Move More, Live Better",
+                        "intro": "Movement is medicine for CKM health. This isn\\"t about becoming an athlete or losing weight (though that may happen). This is about using your muscles as a repair crew for your heart, kidneys, and metabolism.',
+                        "sections": [
+                            {
+                                "heading": "Interactive movement roadmap",
+                                "content": "<div id=\"movement-explorer-mount\"></div>",
+                                "expanded": "The 2023 AHA guidelines emphasize that movement improves CKM health through multiple pathways: increasing glucose uptake via GLUT4, lowering blood pressure via vasodilation, and protecting kidneys by reducing systemic inflammation. Starting small—even 5 or 10 minutes—is the most important step for long-term health in Massachusetts, where seasonal variety requires indoor and outdoor strategies."
+                            }
+                        ]
+                    },
+                    "4": {
+                        "title": "Understanding Your Numbers",
+                        "intro": "To manage CKM health, you need to know your \"dashboard\" metrics. These numbers tell you how your systems are operating. Click each category below to explore the ranges.",
+                        "sections": [
+                            {
+                                "heading": "Interactive Metrics Dashboard",
+                                "content": "<div id=\"metrics-dashboard-mount\"></div>",
+                                "expanded": "Keeping these numbers within target ranges is the key to preventing the progression of CKM syndrome. Modern medicine is shifting its focus from LDL-C to <strong>ApoB</strong> (<80 mg/dL) to better understand your true plaque burden. Additionally, while blood tests check filtration (<strong>eGFR</strong>), we also test urine (<strong>UACR</strong>) to find early \"leaks\" that simple tests miss."
+                            }
+                        ]
+                    },
+                    "5": {
+                        "title": "Your Treatment Options",
+                        "intro": "Lifestyle is the foundation, but modern medications are powerful tools that can protect your heart, kidneys, and metabolism simultaneously.",
+                        "sections": [
+                            {
+                                "heading": "The CKM Medication Landscape",
+                                "content": "<p>CKM health management often requires multiple medications working together. Click the categories below to explore common treatments.</p><div id=\"med-map-mount\"></div>",
+                                "expanded": "The beauty of modern CKM treatment is \"pleiotropy\"—the ability of one medicine to help multiple organs. For example, SGLT2 inhibitors were invented for diabetes (metabolism) but are now standard treatments for heart failure and kidney disease. Your doctor selects a unique combination of these \"pillars\" based on your specific CKM stage."
+                            },
+                            {
+                                "heading": "Partnering with Your Team",
+                                "content": "Managing CKM requires a team approach. You are the captain, but your doctors, pharmacists, and dietitians are your crew.",
+                                "expanded": "Don\\"t be afraid to ask basic questions: "What does this pill do?" "Why am I taking this?" Understanding your treatment is the key to staying with it. Always report side effects early; there is almost always an alternative option.'
+                            }
+                        ]
+                    },
+                    "6": {
+                        "title": "Personalized Assessment",
+                        "intro": "Now that you understand how your heart, kidneys, and metabolism work together, discover where you are on the CKM health spectrum.",
+                        "sections": [
+                            {
+                                "heading": "CKM Staging Quiz",
+                                "content": "<p>Answer 4 quick health questions to determine your current CKM stage. This will help tailor your education and medical discussions.</p><div id=\"quiz-mount\" style=\"text-align: center; margin-top: 24px;\"><button class=\"btn btn-primary\" onclick=\"app.startQuiz()\">Start Assessment</button></div>",
+                                "expanded": "This self-assessment is for educational purposes. Your official stage should be confirmed by your healthcare provider at MetroWest Medical Center."
+                            }
+                        ]
+                    }
+                },
+                "analogy": {
+                    "slides": [
+                        {
+                            "title": "Your Body as Your Home",
+                            "text": "Think of your body like a well-built home. To stay strong and comfortable, your home needs three critical systems working together: electricity that powers everything, plumbing that cleans your water, and a solid foundation that supports it all.",
+                            "myth": "Many people think diabetes, high blood pressure, and kidney problems are separate diseases. They're actually connected like your home's systems.",
+                            "lesson": "Understanding these connections helps you see why your doctor checks multiple things at each visit-we're inspecting all three systems to keep your whole 'home' healthy."
+                        },
+                        {
+                            "title": "The Foundation-Your Metabolic Health",
+                            "text": "Your foundation is your metabolic health-how your body processes sugar and stores fat. Like a house foundation, when it's stressed (from too much sugar, extra weight, or insulin resistance), small cracks start forming that affect everything above.",
+                            "myth": "'I feel fine, so my sugar must be fine'-MYTH. Foundation damage happens silently. High blood sugar often has no symptoms until serious damage occurs.",
+                            "lesson": "When we talk about blood sugar, weight, or activity-we're not criticizing you. We're helping you strengthen your foundation before it starts cracking. Small repairs now prevent major reconstruction later."
+                        },
+                        {
+                            "title": "The Electrical System-Your Heart & Blood Vessels",
+                            "text": "Your heart and blood vessels are like your electrical system-they deliver oxygen and nutrients to every room in your house. High blood pressure is like too much voltage running through old wiring. It works for a while, but the constant strain damages the wires and overworks the circuit breaker (your heart).",
+                            "myth": "'Blood pressure medicine is for life, so I won't start'-RECONSIDER. Yes, most people stay on it, but untreated high blood pressure leads to heart attack, stroke, and kidney failure. The medicine protects all three systems.",
+                            "lesson": "Blood pressure medicine isn't admitting defeat-it's protecting your wiring. Combined with less salt, more movement, and stress management, you're upgrading your whole electrical system, not just replacing a fuse."
+                        },
+                        {
+                            "title": "The Filtration System-Your Kidneys",
+                            "text": "Your kidneys are your home's water filtration system-they clean waste from your blood 24/7. High pressure from your electrical system (blood pressure) and sticky deposits from your foundation (high sugar) clog these filters. Unlike a house filter you can replace, kidney filters damaged by pressure and sugar cannot be repaired.",
+                            "myth": "'I'll worry about my kidneys when I have symptoms'-TOO LATE. By the time you feel kidney disease (swelling, fatigue, nausea), you've lost 75% of kidney function. We protect them NOW while they're still healthy.",
+                            "lesson": "Every blood pressure pill, every point your sugar drops, every pound you lose-these protect your filters from damage. We're not treating three separate problems; we're protecting your kidneys from two directions at once."
+                        },
+                        {
+                            "title": "The Cascade Effect",
+                            "text": "Here's where it gets serious: when one system fails, it damages the others. A cracked foundation (high sugar) makes your electrical system work harder (raises blood pressure). High pressure damages your filtration system (kidneys). When filters fail, they can't remove excess fluid, which raises pressure even MORE. It's a vicious cycle where each problem makes the others worse.",
+                            "myth": "'Why do I need 3-4 different medicines?'-BECAUSE we're attacking the cycle from multiple angles. One medicine alone can't stop a three-system cascade. This is strategic, not excessive.",
+                            "lesson": "This is why we're 'aggressive' with treatment early-not to scare you, but because catching it when only one system is struggling is SO much easier than trying to rescue all three after they've been pulling each other down for years."
+                        },
+                        {
+                            "title": "Breaking the Cycle-Multi-Pronged Treatment",
+                            "text": "The GOOD news: we can break this cycle by fixing multiple systems at the same time. It's like calling a contractor who repairs your foundation, upgrades your electrical, AND replaces your filters in one project. Each repair makes the others work better. This is why treatment involves BOTH lifestyle changes AND medications-we need to address all three systems together.",
+                            "myth": "'If I exercise and eat better, I won't need medicine'-MAYBE, but don't stop medicine to find out. For many people, lifestyle + medicine together is what works. We can always reduce medicine later if your numbers improve.",
+                            "lesson": "When we recommend medication AND lifestyle changes together, we're not saying one isn't enough-we're saying attacking from both angles gives you the best chance of success. You don't have to choose between pills and lifestyle. You get to use every tool available."
+                        },
+                        {
+                            "title": "Small Repairs, Big Impact",
+                            "text": "Small leaks sink ships. A tiny foundation crack caught early takes $500 and a weekend to fix. Ignored for 10 years? It can cost $50,000 and risk your whole house collapsing. Your body works the same way. Bringing blood sugar from 200 to 160 or blood pressure from 160/100 to 140/90 might not feel different to you, but to your systems, it's the difference between slow damage and rapid failure.",
+                            "myth": "'My numbers are only a little high, not worth treating'-WRONG. 'A1C' maintained over years causes the same damage as 'very high' over months. Time multiplies damage.",
+                            "lesson": "Every appointment where we adjust your medicine, every week you walk 30 minutes, every meal with more vegetables-these aren't annoying chores. They're you making $500 repairs instead of waiting for the $50,000 disaster. You are actively saving your future self."
+                        },
+                        {
+                            "title": "Your Personal Repair Plan",
+                            "text": "You have more power than you think. While you can't change your genetics or your age, you CAN make repairs every single day. Some repairs are free (walking, drinking water instead of soda). Some require medicine (which we'll help you afford). Together, these repairs add up to protect all three systems.",
+                            "myth": "'I can't afford medications'-ASK US FOR HELP. Many medications we prescribe are free or nearly free. We have resources specifically for patients without insurance. Don't stop medicine without talking to us first.",
+                            "lesson": "You don't need to do everything perfectly. Even 2-3 of these actions together protect your systems significantly. Think of yourself as the general contractor on your body's repair project-we're here to advise and supply the tools, but YOU are in charge of the work. And you're capable of this."
+                        },
+                        {
+                            "title": "Moving Forward Together",
+                            "text": "CKM health isn't about being perfect-it's about making your house a little stronger every day. We'll check all three systems regularly, adjust your repair plan as needed, and celebrate every improvement together. You're not just treating diabetes or high blood pressure-you're protecting your whole house so you can live in it comfortably for decades to come.",
+                            "myth": "'Everyone in my family has this, I'm doomed'-NO. Genetics loads the gun, but lifestyle pulls the trigger. Even with strong family history, you can delay or prevent these conditions for decades with the right actions.",
+                            "lesson": "Every visit, we're your home inspection team. We'll measure the foundation strength (A1C, weight), check the electrical load (blood pressure), and test the filtration quality (kidney function). Small problems get small fixes. Together, we keep your house standing strong. You're ready for this."
+                        }
+                    ],
+                    "ui": {
+                        "next": "Next Page",
+                        "prev": "Previous Page",
+                        "mythLabel": "Common Myth",
+                        "lessonLabel": "What This Means for You"
+                    }
+                },
+                "eatingPlate": {
+                    "slides": [
+                        {
+                            "title": "Your Plate is Your Daily Medicine",
+                            "text": "Every time you eat, you're either feeding disease or fighting it. The good news? You don't need expensive foods or complicated recipes. You just need to know what belongs on your plate-and how much space it should take up. Let's build your healthiest plate together.",
+                            "myth": "❓ 'Healthy eating means giving up my culture\'s food'-MYTH. Traditional foods from Brazil, Mexico, Central/South America can be incredibly healthy. We're optimizing what you already know, not replacing it.",
+                            "lesson": "This plate method works for breakfast, lunch, and dinner. Works for Brazilian food, Mexican food, American food-ANY food. Once you see this pattern, you can make healthier choices anywhere-even at a friend's barbecue or a birthday party."
+                        },
+                        {
+                            "title": "Half Your Plate-Vegetables (The Foundation Builders)",
+                            "text": "Half your plate should be vegetables-that's about 2 cups, or roughly the size of TWO of your fists side-by-side. Vegetables are your foundation repair crew-they fight inflammation, stabilize blood sugar, and protect your kidneys and heart. The more COLOR variety, the better.",
+                            "myth": "❓ 'Vegetables are expensive'-TRY THIS: Frozen vegetables are just as nutritious as fresh and often much cheaper. Canned vegetables are OK if you rinse them well.",
+                            "lesson": "If you only change ONE thing about your meals, make it this: fill half your plate with vegetables before you add anything else. This one change protects all three of your body's systems.",
+                            "details": {
+                                "excellent": "Dark Leafy Greens (Couve, Spinach, Chard), Cruciferous (Broccoli, Cauliflower, Cabbage), Colorful Peppers, Tomatoes.",
+                                "veryGood": "Carrots, Beets, Jicama, Green beans, Squash (Zucchini, Chuchu).",
+                                "good": "Corn (limit to 1/2 cup), Peas, Green Plantains.",
+                                "cultural": "🇧🇷 Couve, Chuchu, Jiló, Maxixe. 🌮 Nopales, Chiles, Tomatillos, Calabacitas."
+                            }
+                        },
+                        {
+                            "title": "Quarter of Your Plate-Protein (The Repair Workers)",
+                            "text": "One quarter of your plate is protein-about the size of a deck of cards, or the palm of your hand. Protein builds and repairs your muscles, keeps you full, and doesn't spike your blood sugar like carbs can. The TYPE of protein matters for your heart and kidneys.",
+                            "myth": "❓ 'I need red meat every day for strength'-MYTH. Fish, chicken, beans, and eggs provide all the protein you need with much less strain on your heart and kidneys.",
+                            "lesson": "Every time you choose fish or beans over red meat, you're protecting your heart and kidneys. Small swaps add up to big protection over time.",
+                            "details": {
+                                "excellent": "Fatty Fish (Salmon, Sardines), Beans (Black, Pinto, Kidney), Lentils, Chickpeas, Eggs.",
+                                "veryGood": "Chicken/Turkey (skinless), Pork Loin (lean), Tofu/Tempeh.",
+                                "limit": "Red Meat (Beef, Lamb), Processed Meats (Sausage, Bacon, Deli meats).",
+                                "cultural": "🇧🇷 Feijão, Bacalhau, Frango Grelhado. 🌮 Frijoles, Ceviche, Grilled Tacos."
+                            }
+                        },
+                        {
+                            "title": "Quarter of Your Plate-Whole Grains & Healthy Carbs",
+                            "text": "The last quarter of your plate is your energy source-whole grains and healthy carbs. This is about the size of your cupped hand or a tennis ball. The TYPE of carb makes a huge difference for your blood sugar.",
+                            "myth": "❓ 'Carbs are the enemy'-NO. White, refined carbs spike sugar. Whole grains digest slowly and give steady energy. Don't quit carbs, just swap for brown rice, sweet potatoes, or whole wheat.",
+                            "lesson": "You don't have to give up rice or tortillas-just adjust portions. Mix white rice with brown rice or cauliflower rice to start the transition.",
+                            "details": {
+                                "excellent": "Brown Rice, Quinoa, Oats, Sweet Potato, Winter Squash.",
+                                "veryGood": "Yuca (Mandioca), Green Plantain, Corn Tortillas, Whole Wheat Pasta.",
+                                "limit": "White Rice, White Bread, Sugary drinks, Fried starches (French fries).",
+                                "cultural": "🇧🇷 Mandioca, Farofa (small amounts), Pão de Queijo (treat). 🌮 Frijoles, Corn Tortillas, Yuca."
+                            }
+                        },
+                        {
+                            "title": "What About Drinks? (The Hidden Sugar Problem)",
+                            "text": "What you DRINK can wreck an otherwise healthy meal. One can of soda has 10 teaspoons of sugar-more than your body should have in an entire day. Even 100% fruit juice is liquid sugar without the fiber.",
+                            "myth": "❓ 'Fruit juice is healthy because it\'s natural'-INCORRECT. Without the fiber of the whole fruit, juice spikes your blood sugar as fast as soda. Eat the fruit, drink the water.",
+                            "lesson": "Switching from one daily soda to water cuts 140,000 calories per year. Your blood sugar, kidneys, and heart will feel the difference almost immediately."
+                        },
+                        {
+                            "title": "Putting It All Together-Sample Healthy Plates",
+                            "text": "The plate method works for ANY cuisine. Same proportions, different foods. Whether it's a Brazilian lunch, Mexican dinner, or American breakfast, the 50/25/25 rule keeps you protected.",
+                            "myth": "❓ 'My family will think I'm on a diet'-REDEFINE IT. You're eating like your ancestors did-many vegetables, beans every day, sustainable protein. This is wisdom, not a fad.",
+                            "lesson": "Don't cook separate meals. Make the same food for the family, just adjust YOUR plate proportions. You lead by example."
+                        },
+                        {
+                            "title": "Fruits-Nature's Candy (The Sweet Truth)",
+                            "text": "Fruit is healthy-but it's nature's dessert. Whole fruits have fiber that slows sugar absorption, while juice and dried fruit hit your blood sugar like candy. Aim for 2-3 servings of whole fruit daily.",
+                            "myth": "❓ 'I can eat unlimited fruit'-NO. Fruit contains fructose (natural sugar). If you have diabetes, focus on berries and citrus which have less sugar and more fiber.",
+                            "lesson": "Swap juice for a whole orange. You'll feel fuller, get the fiber, and protect your metabolism from the sugar rush."
+                        },
+                        {
+                            "title": "Healthy Fats-A Little Goes a Long Way",
+                            "text": "Your body NEEDS fat-but the type matters. Healthy fats (olive oil, avocado, nuts) protect your heart. Unhealthy fats (fried foods, lard, butter) damage it. Even healthy fats are high in calories, so keep portions small.",
+                            "myth": "❓ 'Avoid all fat for heart health'-WRONG. Saturated fats are the problem. Unsaturated fats from plants and fish are actually medicine for your blood vessels.",
+                            "lesson": "One tablespoon of oil is 120 calories. Measure your oil instead of pouring freely. You'll cut hundreds of calories without losing flavor."
+                        },
+                        {
+                            "title": "Your Weekly Meal Framework",
+                            "text": "You don't need to be perfect every meal. Consistency beats perfection. Aim for 15-18 'Healthy Plate' meals per week. Plan for the other 3-6 meals to be flexible for social events or treats.",
+                            "myth": "❓ 'Healthy meals take too long to cook'-REPLAN. Sunday prep (2 hours) can save 10 hours during the week. Frozen veggies take 4 minutes. Healthy can be fast.",
+                            "lesson": "One unhealthy meal doesn't erase a week of healthy choices. If you slip up, return to the plate method at your very next meal. No shame, just progress."
+                        },
+                        {
+                            "title": "Your Action Plan-Start Today",
+                            "text": "Don't try to change everything tomorrow. Pick ONE change this week-like swapping soda for water or adding one veggie serving. Small changes stick; big overhauls often fail.",
+                            "myth": "❓ 'I've failed at diets before'-BECAUSE diets are temporary. This is a new normal that fits YOUR life and YOUR culture. Marathons are won one step at a time.",
+                            "lesson": "You have the power to repair your foundation and protect your heart and kidneys. We're here to support you in every small win. You've got this."
+                        }
+                    ]
+                },
+                "traditionalFoods": {
+                    "title": "Traditional Food Spotlight",
+                    "subtitle": "Optimizing Your Heritage for Your Health",
+                    "labels": {
+                        "truth": "The Nutritional Truth",
+                        "metabolic": "Foundation (Metabolic)",
+                        "cardio": "Electrical (Heart)",
+                        "kidney": "Filtration (Kidneys)",
+                        "optimization": "Optimization Strategies",
+                        "message": "Cultural Message",
+                        "budget": "Budget & Accessibility",
+                        "status": "CKM Scorecard"
+                    },
+                    "foods": [
+                        {
+                            "id": "rice-beans",
+                            "name": "Rice & Beans (Arroz con Frijoles / Feijão)",
+                            "status": "Excellent (Optimized)",
+                            "summary": "This is the MVP of traditional cuisine-when balanced correctly, it's one of the healthiest combinations on earth.",
+                            "scorecard": { "metabolic": "Gentle", "cardio": "Protective", "kidney": "Supportive" },
+                            "science": {
+                                "metabolic": "Rice + Beans = Complete Protein. Cooling rice increases 'resistant starch' which blunts sugar spikes.",
+                                "cardio": "Soluble fiber binds cholesterol; potassium in beans lowers blood pressure.",
+                                "kidney": "Plant protein is much easier on kidneys than animal protein."
+                            },
+                            "optimizations": [
+                                "Best: 3/4 cup beans to 1/2 cup brown rice",
+                                "Reheat rice to increase resistant starch by 10-15%",
+                                "Add lime juice to slow carbohydrate absorption"
+                            ],
+                            "message": "Your traditional rice and beans is medicine. The problem isn't the food—it's the portions. Flip your plate: make beans the star!",
+                            "budget": "One complete meal = $0.35-$0.50. High fiber, low cost, shelf-stable."
+                        },
+                        {
+                            "id": "picanha",
+                            "name": "Picanha (Sirloin Cap / Churrasco)",
+                            "status": "Limit (Special Occasion)",
+                            "summary": "Delicious and a cultural centerpiece, but the high saturated fat content makes it a 'monthly treat' rather than a daily food.",
+                            "scorecard": { "metabolic": "Warning", "cardio": "Damaging", "kidney": "High Stress" },
+                            "science": {
+                                "metabolic": "High saturated fat activator of inflammatory pathways, driving insulin resistance over time.",
+                                "cardio": "Raises LDL cholesterol and creates TMAO, which promotes arterial plaque.",
+                                "kidney": "High animal protein load increases pressure inside the kidney filters (hyperfiltration)."
+                            },
+                            "optimizations": [
+                                "Portion control: 3-4 oz (size of a deck of cards)",
+                                "Trim visible fat to reduce saturated fat by 30%",
+                                "Marinate with lime and herbs to reduce toxins created by grilling"
+                            ],
+                            "message": "Make picanha special again. Enjoy it at family celebrations, but treat your heart and kidneys to fish or beans during the week.",
+                            "budget": "$12-$15/lb vs $3/lb for chicken. Save money and health by swapping for leaner options."
+                        },
+                        {
+                            "id": "tacos",
+                            "name": "Tacos (Mexican Traditional)",
+                            "status": "Varies by Filling",
+                            "summary": "Tacos are a 'delivery system.' The filling determines if they are medicine or a health stressor.",
+                            "scorecard": { "metabolic": "Varies", "cardio": "Varies", "kidney": "Varies" },
+                            "science": {
+                                "metabolic": "Corn tortillas + grilled protein + veggies = Stable blood sugar. Flour + fried meat = Spike.",
+                                "cardio": "Grilled fish/chicken protects; carnitas/lard-fried meat clogs arteries.",
+                                "kidney": "Nopales (cactus) is a superfood for kidney and metabolic health."
+                            },
+                            "optimizations": [
+                                "Base: 2 small corn tortillas (avoid flour or fried shells)",
+                                "Filling: Choose grilled fish, chicken, or black beans",
+                                "Always add extra pico de gallo, salsa, and lime"
+                            ],
+                            "message": "Tacos don't have to be 'cheat meals.' Following the plate method makes them a daily healthy staple.",
+                            "budget": "Homemade healthy tacos = ~$1.50 per person."
+                        },
+                        {
+                            "id": "pupusas",
+                            "name": "Pupusas (Salvadoran Masa Cakes)",
+                            "status": "Acceptable (Portion Control)",
+                            "summary": "Traditional comfort food that is healthier than bread, but requires awareness of portion sizes and fillings.",
+                            "scorecard": { "metabolic": "Moderate", "cardio": "Caution", "kidney": "Sodium Watch" },
+                            "science": {
+                                "metabolic": "Nixtamalized corn is better for sugar than white bread, but 1 pupusa = 1 cup of rice in carbs.",
+                                "cardio": "Cheese and pork fillings add saturated fat. Curtido (slaw) is protective and probiotic.",
+                                "kidney": "Sodium in cheese is the main concern for blood pressure control."
+                            },
+                            "optimizations": [
+                                "Limit to 1-2 pupusas maximum per meal",
+                                "ALWAYS eat with a giant serving of Curtido (cabbage slaw)",
+                                "Choose bean or vegetable fillings over pure cheese or pork"
+                            ],
+                            "message": "Keep the Sunday pupusa tradition alive! Just rebalance: 2 pupusas and fill half your plate with curtido.",
+                            "budget": "Very affordable (~$0.25 each if made at home). Bulk prep saves time."
+                        },
+                        {
+                            "id": "tortilla-flour",
+                            "name": "Flour Tortillas (Wheat)",
+                            "status": "Limit / Avoid",
+                            "summary": "Refined carbs with minimal fiber. One of the weaker nutritional choices in traditional cuisine.",
+                            "scorecard": { "metabolic": "Rapid Spike", "cardio": "Triglycerides", "kidney": "Sodium High" },
+                            "science": {
+                                "metabolic": "Refined flour spikes blood sugar as fast as table sugar and triggers high insulin.",
+                                "cardio": "High carbohydrates raise triglycerides and lower 'good' HDL cholesterol.",
+                                "kidney": "High sodium content (250mg+ each) stresses blood pressure and kidneys."
+                            },
+                            "optimizations": [
+                                "Best: Switch to corn tortillas whenever possible",
+                                "If using, choose 100% whole wheat versions",
+                                "Limit to 1 small tortilla and pair with high fiber beans"
+                            ],
+                            "message": "Transitioning from flour to corn is one of the easiest ways to protect your foundation. Your body will thank you in weeks!",
+                            "budget": "Corn tortillas are 3x cheaper and much healthier than flour ones."
+                        },
+                        {
+                            "id": "tortilla-corn",
+                            "name": "Corn Tortillas (Nixtamalized)",
+                            "status": "Excellent (Daily Food)",
+                            "summary": "One of the healthiest starches on earth-genuine whole grain with ancient nutritional wisdom.",
+                            "scorecard": { "metabolic": "Stable", "cardio": "Protective", "kidney": "Excellent" },
+                            "science": {
+                                "metabolic": "The nixtamalization process (lime treatment) makes nutrients like Niacin and Calcium bioavailable.",
+                                "cardio": "Whole grain fiber lowers cholesterol; magnesium supports arterial health.",
+                                "kidney": "Very low sodium and kidney-friendly plant phosphorus."
+                            },
+                            "optimizations": [
+                                "Standard portion: 2-3 tortillas per meal",
+                                "Warm on a dry griddle (avoid frying in oil)",
+                                "Pair with grilled protein and unlimited vegetables"
+                            ],
+                            "message": "Your ancestors were right! Corn tortillas are a superfood. This isn't just culture—it's high-performance fuel.",
+                            "budget": "The cheapest healthy starch available ($0.10 each or less)."
+                        }
+                    ]
+                },
+                "medicationMap": {
+                    "title": "Medication Map",
+                    "categories": [
+                        {
+                            "id": "heart",
+                            "name": "Heart & Pressure",
+                            "desc": "Protects the 'Electrical System' and controls pressure.",
+                            "classes": [
+                                {
+                                    "name": "Beta-Blockers",
+                                    "drugs": ["Bisoprolol", "Carvedilol", "Metoprolol"],
+                                    "mechanism": "Beta-blockers slow down your heart rate and reduce the force of each heartbeat, which lowers blood pressure and makes your heart work more efficiently. They also block stress hormones (like adrenaline) that can strain your heart.",
+                                    "sideEffects": {
+                                        "common": ["Tiredness", "Cold hands/feet", "Dizziness when standing up"],
+                                        "uncommon": ["Vivid dreams", "Slower heart rate (usually not problematic)"],
+                                        "rare": ["Shortness of breath or wheezing (if you have asthma, tell your doctor)"]
+                                    },
+                                    "actionGuidance": "Tiredness often improves after 2-3 weeks. If persistent → call doctor",
+                                    "interactions": {
+                                        "drugDrug": ["Combining with other heart medications (calcium channel blockers like diltiazem/verapamil) can slow heart too much"],
+                                        "drugCondition": ["Asthma, severe COPD - may worsen breathing"],
+                                        "drugTiming": ["Take at same time daily; don't skip doses suddenly (can cause rebound high blood pressure)"]
+                                    },
+                                    "cost": {
+                                        "generic": true,
+                                        "walmart4": true,
+                                        "priorAuth": false,
+                                        "goodRx": "$4-10/month"
+                                    },
+                                    "lifestyle": "Exercise program - Beta-blockers may limit how high your heart rate goes during exercise, which is normal and protective"
+                                },
+                                {
+                                    "name": "ACE Inhibitors",
+                                    "drugs": ["Lisinopril", "Ramipril", "Enalapril"],
+                                    "mechanism": "ACE inhibitors help your blood vessels relax and widen, making it easier for your heart to pump blood throughout your body. Think of it like opening a tight faucet—when pipes are less constricted, water (blood) flows more easily.",
+                                    "sideEffects": {
+                                        "common": ["Dry cough (10-15% of people - see special note below)", "Dizziness when standing"],
+                                        "uncommon": ["Changes in taste", "Elevated potassium levels"],
+                                        "rare": ["Swelling of face/lips/tongue (1 in 1,000 people) - CALL 911 if this happens"]
+                                    },
+                                    "specialNote": {
+                                        "title": "About that cough...",
+                                        "text": "Between 1 in 10 and 1 in 5 people develop a dry, tickly cough with ACE inhibitors. This is NOT dangerous, but it can be annoying. Important: Don't just stop taking your medication. Call your doctor—there's an excellent alternative (ARBs) that works the same way without the cough."
+                                    },
+                                    "interactions": {
+                                        "drugDrug": ["NSAIDs (ibuprofen, naproxen) can reduce effectiveness and harm kidneys. Use acetaminophen (Tylenol) for pain instead.", "Potassium supplements or salt substitutes can cause dangerous potassium levels"],
+                                        "drugFood": ["Avoid salt substitutes (like Nu-Salt, NoSalt) - they're high in potassium"],
+                                        "drugCondition": ["Tell your doctor if you have kidney disease - you'll need monitoring"]
+                                    },
+                                    "cost": {
+                                        "generic": true,
+                                        "walmart4": true,
+                                        "priorAuth": false,
+                                        "goodRx": "$4-10/month"
+                                    },
+                                    "lifestyle": "Nutrition module - Reducing salt helps ACE inhibitors work better"
+                                },
+                                {
+                                    "name": "ARBs",
+                                    "drugs": ["Losartan", "Valsartan", "Candesartan"],
+                                    "mechanism": "ARBs work very similarly to ACE inhibitors—they relax blood vessels and lower blood pressure. They block a different step in the same pathway, which is why they work just as well but without causing the cough.",
+                                    "sideEffects": {
+                                        "common": ["Dizziness when standing up", "Fatigue"],
+                                        "uncommon": ["Elevated potassium levels"],
+                                        "rare": ["Swelling of face/lips/tongue (less common than with ACE inhibitors, but still call 911)"]
+                                    },
+                                    "interactions": {
+                                        "drugDrug": ["NSAIDs (ibuprofen, naproxen) can reduce effectiveness and harm kidneys", "Potassium supplements can be dangerous"],
+                                        "drugFood": ["Avoid salt substitutes (high potassium)"],
+                                        "drugCondition": ["Kidney disease requires monitoring"]
+                                    },
+                                    "cost": {
+                                        "generic": true,
+                                        "walmart4": true,
+                                        "priorAuth": false,
+                                        "goodRx": "$10-15/month"
+                                    },
+                                    "lifestyle": "Same as ACE inhibitors - salt reduction, hydration"
+                                },
+                                {
+                                    "name": "ARNI",
+                                    "drugs": ["Sacubitril-Valsartan (Entresto)"],
+                                    "mechanism": "Entresto combines two medications in one pill: an ARB (valsartan) that relaxes blood vessels, plus sacubitril which helps your body keep helpful natural substances that protect your heart. Especially powerful for weakened hearts.",
+                                    "sideEffects": {
+                                        "common": ["Dizziness", "Low blood pressure", "Cough (less than ACE inhibitors)", "Elevated potassium"],
+                                        "uncommon": ["Kidney function changes"],
+                                        "rare": ["Swelling of face/lips/tongue - CALL 911"]
+                                    },
+                                    "interactions": {
+                                        "drugDrug": ["CANNOT be taken with ACE inhibitors - must wait 36 hours after stopping ACE inhibitor before starting Entresto", "NSAIDs and potassium warnings apply"],
+                                        "monitoring": ["More frequent kidney and potassium checks needed"]
+                                    },
+                                    "cost": {
+                                        "generic": false,
+                                        "priorAuth": true,
+                                        "costInfo": "Brand only. ~$600-700/month without insurance. Novartis copay card available."
+                                    },
+                                    "lifestyle": "Heart failure management requires close partnership with your care team"
+                                },
+                                {
+                                    "name": "Calcium Channel Blockers",
+                                    "drugs": ["Amlodipine", "Diltiazem", "Verapamil"],
+                                    "mechanism": "Prevents calcium from entering the muscle cells of your heart and blood vessels. This helps blood vessels relax and widen (like amlodipine) or slows your heart rate (like diltiazem/verapamil).",
+                                    "sideEffects": {
+                                        "common": ["Ankle swelling (Amlodipine)", "Flushing/warmth", "constipation (Diltiazem/Verapamil)"],
+                                        "note": "Ankle swelling from amlodipine is NOT dangerous, but tell your doctor if bothersome"
+                                    },
+                                    "interactions": {
+                                        "drugDrug": ["Combining diltiazem or verapamil with beta-blockers can slow heart rate too much"],
+                                        "drugFood": ["Grapefruit juice significantly increases blood levels - avoid grapefruit products"]
+                                    },
+                                    "cost": {
+                                        "generic": true,
+                                        "walmart4": true,
+                                        "priorAuth": false,
+                                        "goodRx": "$4-15/month"
+                                    },
+                                    "lifestyle": "For ankle swelling: elevate legs. For constipation: high-fiber nutrition."
+                                }
+                            ]
+                        },
+                        {
+                            "id": "kidney",
+                            "name": "Kidney Protection",
+                            "desc": "Maintains the 'Plumbing' and filters toxins.",
+                            "classes": [
+                                {
+                                    "name": "SGLT-2 Inhibitors",
+                                    "drugs": ["Empagliflozin", "Dapagliflozin", "Canagliflozin"],
+                                    "mechanism": "SGLT-2 inhibitors work in your kidneys to remove extra sugar from your blood through your urine. By doing this, they lower blood sugar and pressure without forcing your pancreas to work harder.",
+                                    "sideEffects": {
+                                        "common": ["Increased urination", "Mild dehydration", "Genital yeast infections"],
+                                        "uncommon": ["Urinary tract infections", "Dizziness"],
+                                        "rare": ["Diabetic ketoacidosis (symptoms: nausea, vomiting, confusion) - CALL 911"]
+                                    },
+                                    "interactions": {
+                                        "drugDrug": ["Can increase risk of low blood pressure when combined with BP meds"],
+                                        "drugTiming": ["Take in the morning to avoid nighttime bathroom trips"]
+                                    },
+                                    "cost": {
+                                        "generic": false,
+                                        "costInfo": "Brand only. Copay cards available (Jardiance, Farxiga). GoodRx ~$500/mo."
+                                    },
+                                    "lifestyle": "Hydration is especially important"
+                                },
+                                {
+                                    "name": "MRAs",
+                                    "drugs": ["Spironolactone", "Eplerenone", "Finerenone"],
+                                    "mechanism": "MRAs block a hormone (aldosterone) that causes salt/water retention and scarring in heart/kidneys.",
+                                    "sideEffects": {
+                                        "common": ["Elevated potassium", "Increased urination"],
+                                        "note": "Spironolactone can cause breast tenderness (gynecomastia) in men"
+                                    },
+                                    "interactions": {
+                                        "drugDrug": ["CANNOT combine safely with potassium supplements"],
+                                        "drugFood": ["Avoid salt substitutes (NoSalt, Nu-Salt)"]
+                                    },
+                                    "cost": {
+                                        "generic": true,
+                                        "walmart4": true,
+                                        "goodRx": "Spironolactone $10-15/mo"
+                                    },
+                                    "lifestyle": "Monitor potassium intake"
+                                },
+                                {
+                                    "name": "RAAS Blockers",
+                                    "drugs": ["ACEi", "ARB"],
+                                    "mechanism": "Crucial for kidney protection. See 'Heart & Pressure' section for full details.",
+                                    "link": "heart"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "metabolism",
+                            "name": "Metabolism & Sugar",
+                            "desc": "Regulates the 'Energy Supply' and inflammation.",
+                            "classes": [
+                                {
+                                    "name": "GLP-1 Agonists",
+                                    "drugs": ["Semaglutide (Ozempic/Wegovy)", "Tirzepatide (Mounjaro)", "Liraglutide"],
+                                    "mechanism": "Mimics natural hormones to help release insulin, slow digestion, and reduce appetite. Protects heart and kidneys.",
+                                    "sideEffects": {
+                                        "common": ["Nausea", "Reduced appetite", "Constipation/Diarrhea"],
+                                        "important": "Nausea usually improves after 2-4 weeks"
+                                    },
+                                    "interactions": {
+                                        "drugDrug": ["Slows stomach emptying - take other oral meds 1 hour before"],
+                                        "drugCondition": ["History of pancreatitis or thyroid cancer"]
+                                    },
+                                    "cost": {
+                                        "generic": false,
+                                        "costInfo": "Brand only. $900+/mo without insurance. Manufacturer savings cards available."
+                                    },
+                                    "lifestyle": "Works best with high-protein diet and exercise to preserve muscle"
+                                },
+                                {
+                                    "name": "Metformin",
+                                    "drugs": ["Metformin", "Metformin ER"],
+                                    "mechanism": "Reduces sugar production by the liver and helps muscles use insulin. The first-line foundation.",
+                                    "sideEffects": {
+                                        "common": ["Stomach upset", "Diarrhea", "Nausea (improves with time)"],
+                                        "tip": "Take with food to reduce upset"
+                                    },
+                                    "interactions": {
+                                        "drugCondition": ["Kidney disease (requires monitoring)", "Contrast dye for CT scans"]
+                                    },
+                                    "cost": {
+                                        "generic": true,
+                                        "walmart4": true,
+                                        "goodRx": "$4-10/mo"
+                                    },
+                                    "lifestyle": "Reduces liver sugar, but you control dietary sugar"
+                                },
+                                {
+                                    "name": "PPAR Gamma Agonists",
+                                    "drugs": ["Pioglitazone"],
+                                    "mechanism": "Increases insulin sensitivity in muscle and fat cells. Protects blood vessels.",
+                                    "sideEffects": {
+                                        "common": ["Weight gain (fluid)", "Ankle swelling"],
+                                        "rare": ["Heart failure exacerbation"]
+                                    },
+                                    "interactions": {
+                                        "drugCondition": ["Do NOT use if you have heart failure"]
+                                    },
+                                    "cost": {
+                                        "generic": true,
+                                        "goodRx": "$15-30/mo"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "lipids",
+                            "name": "Lipids & Arteries",
+                            "desc": "Clears the 'Pipes' by lowering LDL and ApoB particles to prevent plaque buildup.",
+                            "classes": [
+                                {
+                                    "name": "Statins",
+                                    "drugs": ["Atorvastatin", "Rosuvastatin", "Simvastatin", "Pravastatin"],
+                                    "mechanism": "Blocks liver cholesterol production. Stabilizes plaque and reduces inflammation.",
+                                    "sideEffects": {
+                                        "common": ["Muscle aches (1 in 10)", " mild liver enzyme elevation"],
+                                        "important": "Muscle pain often resolves or improves with dose adjustment"
+                                    },
+                                    "interactions": {
+                                        "drugFood": ["Grapefruit juice (with Atorvastatin/Simvastatin)"]
+                                    },
+                                    "cost": {
+                                        "generic": true,
+                                        "walmart4": true,
+                                        "goodRx": "$10-20/mo"
+                                    },
+                                    "lifestyle": "Works best combined with low saturated fat diet"
+                                },
+                                {
+                                    "name": "PCSK-9 Inhibitors",
+                                    "drugs": ["Evolocumab (Repatha)"],
+                                    "mechanism": "Injectable that lowers LDL by 50-60% typically when statins aren't enough.",
+                                    "cost": {
+                                        "generic": false,
+                                        "costInfo": "High cost. Prior Auth required."
+                                    }
+                                },
+                                {
+                                    "name": "Ezetimibe",
+                                    "drugs": ["Ezetimibe"],
+                                    "mechanism": "Blocks cholesterol absorption from food in the intestines.",
+                                    "cost": {
+                                        "generic": true,
+                                        "goodRx": "$12-25/mo"
+                                    }
+                                },
+                                {
+                                    "name": "Bempedoic Acid",
+                                    "drugs": ["Nexletol"],
+                                    "mechanism": "Non-statin liver cholesterol blocker. Less muscle pain risk.",
+                                    "cost": {
+                                        "generic": false
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "id": "team",
+                            "name": "Partnering with Your Team",
+                            "desc": "Communication strategies, questions to ask, and local resources.",
+                            "contentHTML": "\n        <div style=\"padding: 0 8px;\">\n            <div class=\"soft-card\" style=\"margin-bottom: 32px; background: #e3f2fd; padding: 24px; border-radius: 12px;\">\n                <h3 style=\"margin-top: 0; color: #1565c0;\">🗣️ Questions You Should Ask</h3>\n                <ul style=\"padding-left: 20px; font-size: 16px; line-height: 1.6; margin-bottom: 0;\">\n                    <li style=\"margin-bottom: 12px;\">\"What does this medication do for me specifically?\"</li>\n                    <li style=\"margin-bottom: 12px;\">\"Why am I taking this instead of another option?\"</li>\n                    <li style=\"margin-bottom: 12px;\">\"What side effects should I watch for?\"</li>\n                    <li style=\"margin-bottom: 0;\">\"Can I afford this? Are there cheaper alternatives?\"</li>\n                </ul>\n            </div>\n\n            <div class=\"soft-card\" style=\"margin-bottom: 32px; border-left: 6px solid var(--accent-red); padding: 24px; background: #ffebee;\">\n                <h3 style=\"margin-top: 0; color: var(--accent-red);\">🚨 When to Call 911</h3>\n                <p style=\"margin-bottom: 16px;\">Go to the ER or call 911 if you experience:</p>\n                <ul style=\"padding-left: 20px; font-size: 16px; font-weight: 700; color: #c62828;\">\n                    <li style=\"margin-bottom: 12px;\">Severe allergic reaction (swelling of face/lips/tongue)</li>\n                    <li style=\"margin-bottom: 12px;\">Severe chest pain or pressure</li>\n                    <li style=\"margin-bottom: 0;\">Dark urine combined with severe muscle pain</li>\n                </ul>\n            </div>\n\n            <div class=\"soft-card\" style=\"padding: 24px; border: 1px solid var(--border-soft);\">\n                <h3 style=\"margin-top: 0; margin-bottom: 16px;\">Local Help: MetroWest Meds</h3>\n                <p style=\"font-size: 16px; margin-bottom: 24px;\">Free assistance navigating medication access programs and finding lower costs.</p>\n                <a href=\"https://www.kennedychc.org/metrowestmeds/\" target=\"_blank\" class=\"btn btn-primary\" style=\"display: inline-flex; align-items: center; justify-content: center; text-decoration: none;\">\n                    Visit MetroWest Meds <span style=\"margin-left: 8px;\">↗</span>\n                </a>\n            </div>\n        </div>\n    "
+                        }
+                    ]
+                },
+                "labels": {
+                    "learnMore": "Learn More",
+                    "showLess": "Show Less"
+                },
+                "stageExplorer": {
+                    "stages": [
+                        {
+                            "id": 0,
+                            "title": "Stage 0: Peak Health",
+                            "desc": "No known risk factors. Your goal is to maintain this state.",
+                            "factors": {
+                                "weight": "Normal range; no excess abdominal fat.",
+                                "sugar": "Normal HbA1c (below 5.7%).",
+                                "kidneys": "Normal filtration; no leakage of protein.",
+                                "heart": "Normal blood pressure; efficient pumping."
+                            }
+                        },
+                        {
+                            "id": 1,
+                            "title": "Stage 1: Excess Body Fat",
+                            "desc": "The body begins to store excess fat in harmful areas.",
+                            "factors": {
+                                "weight": "Overweight (BMI 25+) or high waist circumference.",
+                                "sugar": "Early markers of inflammation may appear.",
+                                "kidneys": "Beginning to filter slightly harder to manage load.",
+                                "heart": "Normal pressure, but vessels begin to show early stress."
+                            }
+                        },
+                        {
+                            "id": 2,
+                            "title": "Stage 2: Metabolic Risk",
+                            "desc": "High blood pressure, diabetes, or early kidney disease appear.",
+                            "factors": {
+                                "weight": "Continued excess weight or abdominal obesity.",
+                                "sugar": "HbA1c entering Prediabetes or Diabetes range.",
+                                "kidneys": "Trace protein in urine or drop in filtration rate.",
+                                "heart": "Pressure climbs; heart walls may start to thicken."
+                            }
+                        },
+                        {
+                            "id": 3,
+                            "title": "Stage 3: Early Organ Damage",
+                            "desc": "Risk is very high; organ changes are visible on tests.",
+                            "factors": {
+                                "weight": "Management is critical to reduce systemic stress.",
+                                "sugar": "Difficult to control; metabolic stress is high.",
+                                "kidneys": "Advanced kidney disease (Stage 3 or 4 CKD).",
+                                "heart": "Subclinical heart disease (signs on echocardiogram)."
+                            }
+                        },
+                        {
+                            "id": 4,
+                            "title": "Stage 4: Established Disease",
+                            "desc": "Clinical heart disease is present (Heart Failure, Stroke).",
+                            "factors": {
+                                "weight": "Careful monitoring of weight (fluid retention).",
+                                "sugar": "High risk of vascular complications.",
+                                "kidneys": "Severely reduced function; requires close nephrology care.",
+                                "heart": "Clinical disease; history of stroke or heart failure."
+                            }
+                        }
+                    ]
+                },
+                "movementExplorer": {
+                    "title": "Move More, Live Better",
+                    "next": "Next Slide",
+                    "prev": "Previous",
+                    "slides": [
+                        {
+                            "title": "Why Your Body Needs Movement-The CKM Connection",
+                            "text": "When you move your muscles, something incredible happens: your muscle cells open up tiny doors that let glucose (blood sugar) rush in WITHOUT needing insulin. Your muscles literally drink the sugar from your blood. This happens whether you have diabetes or not, whether you're taking medication or not. Movement is the ONLY thing that works this way-it's your secret weapon for CKM health that costs nothing and works every single time.",
+                            "lesson": "Your muscles are like sponges for blood sugar. Even a 10-minute walk after dinner can drop your blood sugar by 20-40 points-that's better than some medications!"
+                        },
+                        {
+                            "title": "The Two Types of Movement You Need",
+                            "text": "Your body needs two types of maintenance. CARDIO (walking, dancing) is like changing the oil in your car-it keeps your heart and blood vessels running smoothly. STRENGTH (lifting, carrying) is like maintaining your house's structure-it builds the muscles that soak up blood sugar. You need both for complete CKM health.",
+                            "lesson": "You don't need a gym. Carrying groceries, playing with grandkids, or walking to the store all count toward your CKM goals."
+                        },
+                        {
+                            "title": "Starting from ZERO-Your First Month",
+                            "text": "If you're currently doing NO exercise, you start with FIVE MINUTES. Yes, seriously. Five minutes of movement is infinitely better than zero. We'll build up to the goal of 150 minutes per week over 3 months.",
+                            "lesson": "Goal Week 1-2: 5 min, 3-4 days. Goal Week 3-4: 10 min, 4-5 days. Progress, not perfection."
+                        },
+                        {
+                            "title": "Cardio Mastery-Finding Your 'Zone 2' Sweet Spot",
+                            "text": "The 'sweet spot' is Zone 2-where you're breathing harder and can feel yourself working, but you could keep going for an hour. This is where your body burns fat most efficiently and builds the cellular machinery (mitochondria) that reverses insulin resistance.",
+                            "lesson": "Use the 'Talk Test': You're in Zone 2 if you can speak full sentences but have to take a breath mid-sentence occasionally. If you can sing, speed up. If you can't talk, slow down."
+                        },
+                        {
+                            "title": "Strength Training Without a Gym-Bodyweight Basics",
+                            "text": "Muscle is your body's best blood sugar storage unit. Every pound of muscle you build creates more 'sponge' to soak up glucose. Your own body weight provides perfect resistance. These exercises work every major muscle group and can be done in your living room in 15-20 minutes.",
+                            "lesson": "Start with 1 set of 8-10 reps: Wall Push-Ups, Bodyweight Squats, Glute Bridges, Plank, and Lunges. Do this 2-3 times per week."
+                        },
+                        {
+                            "title": "Fitting Movement into Real Life (MA Seasons)",
+                            "text": "You don't need an hour at the gym. 3 x 10-minute sessions = same benefit as 1 x 30-minute session. In Massachusetts, weather is a barrier. Use indoor 'mall walking' at Natick Mall or Shoppers World during winter, or free YouTube walking videos at home.",
+                            "lesson": "November-March: Go INDOORS. Malls are free, warm, and safe. Walking at home to a video works just as well. Don't risk falling on ice!"
+                        },
+                        {
+                            "title": "Overcoming Real Barriers",
+                            "text": "Money, time, pain, and safety are REAL obstacles. If you have joint pain, try low-impact water walking or chair exercises. If time is tight, use 'movement snacks' (stairs, parking farther away). If safety is a concern, walk with a friend or use indoor options.",
+                            "lesson": "For every barrier, there's a solution. No gym? Bodyweight is free. No time? Do 5-minute bursts. Exercise shouldn't create stress; it should relieve it."
+                        },
+                        {
+                            "title": "Your Personalized Movement Plan",
+                            "text": "No one-size-fits-all plan works for everyone. Your plan depends on your starting point and your specific goals. Follow our 12-week roadmap from zero to 150 minutes.",
+                            "lesson": "Action for today: Walk for 5 minutes after dinner. That's your start. Track your progress, count your wins, and watch your numbers improve."
+                        }
+                    ]
+                },
+                "foodLabel": {
+                    "title": "Label Detective",
+                    "next": "Next",
+                    "prev": "Back",
+                    "slides": [
+                        {
+                            "title": "Introduction-Your Superpower at the Grocery Store",
+                            "text": "Food companies want you confused. Packaging says 'natural,","healthy,","100% real'-but what does that actually mean? The REAL information is in the small print: the Nutrition Facts label and ingredient list. Once you know how to read these, you have the power to choose foods that protect your CKM health instead of damaging it. It takes 30 seconds to check a label. Those 30 seconds can add years to your life.",
+                            "lesson": "By the end of this module, you'll be able to walk into any grocery store and identify the healthiest options in 30 seconds or less. This is a skill you'll use for the rest of your life."
+                        },
+                        {
+                            "title": "Anatomy of a Food Label-The #1 Mistake",
+                            "text": "Here's the #1 mistake people make: they look at calories, sugar, or sodium-but they IGNORE the serving size. Everything on this label is PER SERVING, not per package. If you eat the whole package thinking 'only 100 calories!' but the package has 3 servings, you just ate 300 calories. Serving size is THE FIRST thing you check. Always.",
+                            "lesson": "You don't need to memorize every number. Focus on serving size, sodium, added sugars, and fiber. Those four pieces of information tell you 90% of what you need to know.",
+                            "hotspots": [
+                                { "id": "servings-per", "title": "Servings Per Container", "text": "This package has 8 servings. If you eat half the package, multiply everything on the label by 4." },
+                                { "id": "serving-size", "title": "Serving Size", "text": "Everything below is for THIS AMOUNT ONLY. Companies choose small sizes to make products look healthier." },
+                                { "id": "calories", "title": "Calories", "text": "Energy per serving. 230 from beans = repair. 230 from soda = damage." },
+                                { "id": "fats", "title": "Fats", "text": "Saturated fat clogs wiring. Trans fat (aim for 0g) corrodes it." },
+                                { "id": "sodium", "title": "Sodium", "text": "The Water Magnet. Goal: <2000mg per day total. High sodium damages heart and kidneys." },
+                                { "id": "carbs", "title": "Total Carbohydrate", "text": "Includes fiber and sugars. This number affects your blood sugar most directly." },
+                                { "id": "fiber", "title": "Dietary Fiber", "text": "Your Metabolic Shield. Goal: 25-35g per day. Look for 3g+ per serving." },
+                                { "id": "added-sugar", "title": "Added Sugars", "text": "CRITICAL. Limit to <25g/day. One soda can often exceeds your entire day's allowance." },
+                                { "id": "protein", "title": "Protein", "text": "Helps metabolism but too much stresses kidneys. Balance is key." }
+                            ]
+                        },
+                        {
+                            "title": "The % Daily Value-Your Cheat Sheet",
+                            "text": "See those percentages on the right? They tell you if one serving has a little or a lot. FDA Rule: 5% or less is LOW. 20% or more is HIGH. Trick: You WANT 'HIGH' for fiber, protein, vitamins. You WANT 'LOW' for saturated fat, sodium, added sugars.",
+                            "lesson": "Small percentages for the 'bad stuff' (sodium/sugar), big percentages for the 'good stuff' (fiber). No calculator needed.",
+                            "table": [
+                                { "n": "Dietary Fiber", "v": "20% ✅", "m": "HIGH-Excellent! Protects all 3 systems." },
+                                { "n": "Sodium", "v": "25% 🔴", "m": "HIGH-Caution! Damages heart and kidneys." },
+                                { "n": "Saturated Fat", "v": "10% 🟡", "m": "Moderate-Be careful." },
+                                { "n": "Added Sugars", "v": "40% 🔴", "m": "HIGH-Way too much. Cracks foundation." }
+                            ]
+                        },
+                        {
+                            "title": "Ingredient List-The Hidden Truth",
+                            "text": "The ingredient list is in order by weight. If sugar is first, it's mostly sugar. Companies hide sugar under 60+ names (HFCS, dextrose, maltose). This is where you catch them lying.",
+                            "lesson": "Front of package = marketing. Ingredient list = TRUTH. If you see ingredients you can't pronounce or multiple sugars, put it back.",
+                            "rules": [
+                                "First 3 ingredients: Should be whole foods, not sugar or refined flour.",
+                                "Sugar Aliases: Watch for syrup, cane juice, maltodextrin, nectar.",
+                                "Trans Fats: Avoid 'partially hydrogenated oil' entirely.",
+                                "Whole Grains: Look for 'WHOLE wheat/oats' as the first ingredient."
+                            ]
+                        },
+                        {
+                            "title": "Label Detective-Real Comparisons",
+                            "text": "Let's practice. Looking at real products shows how marketing can be deceptive. Sometimes 'healthy' versions are worse than regular ones.",
+                            "lesson": "Low sodium beans, plain yogurt, corn tortillas-these save you money AND protect your health.",
+                            "comparisons": [
+                                { "name": "Black Beans", "a": "Regular: 460mg Sodium (20% DV) 🔴", "b": "Low Sodium: 5mg Sodium ✅", "win": "Goya Low Sodium" },
+                                { "name": "Bread", "a": "Generic Wheat: Refined flour, 1g fiber ❌", "b": "100% Whole Wheat: 5g fiber, whole seeds ✅", "win": "100% Whole Wheat" },
+                                { "name": "Yogurt", "a": "Strawberry: 13g Added Sugar (26% DV) 🔴", "b": "Plain Greek + Berries: 0g Added Sugar, 3x Protein ✅", "win": "Plain Greek + Fruit" }
+                            ]
+                        },
+                        {
+                            "title": "Marketing Tricks-Decoding the Front",
+                            "text": "FDA regulates the back, but barely regulates the front. Companies spend millions to trick you. 'Natural' means literally nothing legally.",
+                            "lesson": "Never trust the front of the package. It's an advertisement. The facts are on the back.",
+                            "claims": [
+                                { "c": "'All Natural'", "t": "Meaningless. Arsenic is natural. Check the ingredients instead." },
+                                { "c": "'Heart Healthy'", "t": "Often ignores high sugar/sodium. Verify the Big 4 yourself." },
+                                { "c": "'Multigrain'", "t": "Could be multiple REFINED grains. Look for '100% Whole Grain'." },
+                                { "c": "'Sugar-Free'", "t": "Often adds extra fat or artificial sweeteners to compensate." }
+                            ]
+                        },
+                        {
+                            "title": "Your 30-Second Reference Guide",
+                            "text": "You can't memorize everything. Use the 'Big 4' method: (1) Added Sugars <5g, (2) Sodium <200mg, (3) Fiber>3g, (4) Saturated Fat <2g.",
+                            "lesson": "Simple foods are cheaper and healthier. Beans, rice, oats, eggs, and frozen veggies are CKM champions.",
+                            "flowchart": "Check Serving Size → Check Big 4 (Sugars, Sodium, Fiber, Fat) → Check Ingredients (First 3) → BUY or PUT BACK."
+                        }
+                    ],
+                    "labels": {
+                        "anatomy": "Anatomy",
+                        "percentDV": "% Daily Value",
+                        "ingredients": "Ingredients",
+                        "marketing": "Marketing",
+                        "shoppingGuide": "Guide",
+                        "big3": "START WITH THE BIG 3: (1) Serving size, (2) Sodium, (3) Added sugars. Master these to be in the top 10% of shoppers."
+                    }
+                },
+                "metricsDashboard": {
+                    "categories": {
+                        "bp": {
+                            "title": "Blood Pressure",
+                            "desc": "The pressure of blood against artery walls.",
+                            "levels": [
+                                { "label": "Normal", "value": "Less than 120 / <80 mmHg" },
+                                { "label": "Elevated", "value": "120-129 / <80 mmHg" },
+                                { "label": "Stage 1 Hypertension", "value": "130-139 / 80-89 mmHg" },
+                                { "label": "Stage 2 Hypertension", "value": "140+ / 90+ mmHg" }
+                            ]
+                        },
+                        "a1c": {
+                            "title": "HbA1c (Sugar)",
+                            "desc": "Your average blood sugar over the last 3 months.",
+                            "levels": [
+                                { "label": "Normal", "value": "Below 5.7%" },
+                                { "label": "Prediabetes", "value": "5.7% to 6.4%" },
+                                { "label": "Diabetes", "value": "6.5% or higher" }
+                            ]
+                        },
+                        "ldl": {
+                            "title": "Lipids",
+                            "desc": "LDL ('Bad' Cholesterol) even more importantly, your ApoB level.",
+                            "levels": [
+                                { "label": "Standard LDL Target", "value": "Below 100 mg/dL" },
+                                { "label": "High Risk LDL Target", "value": "Below 55-70 mg/dL" },
+                                { "label": "ApoB (CKM Target)", "value": "Below 65-80 mg/dL" },
+                                { "label": "Lp(a) (Genetic Risk)", "value": "Check once in lifetime" }
+                            ],
+                            "physicianNote": "ApoB is the total count of 'bad' particles—a better marker of plaque burden than LDL. Lp(a) is a genetic factor you only need to check once in your life to understand your baseline risk."
+                        },
+                        "bmi": {
+                            "title": "Weight & BMI",
+                            "desc": "Body Mass Index based on height and weight.",
+                            "levels": [
+                                { "label": "Normal", "value": "18.5 – 24.9" },
+                                { "label": "Overweight", "value": "25.0 – 29.9" },
+                                { "label": "Obesity Class I", "value": "30.0 – 34.9" },
+                                { "label": "Obesity II / III", "value": "35.0+" }
+                            ],
+                            "physicianNote": "While BMI matters, your <strong>Waist Circumference</strong> (aim for <35in for women, <40in for men) is often a better predictor of metabolic health and foundation risk."
+                        },
+                        "kidney": {
+                            "title": "Kidney Function",
+                            "desc": "We check filters in two ways: blood flow (eGFR) and filter quality (UACR leak).",
+                            "levels": [
+                                { "label": "Flow (eGFR)-Normal", "value": "Above 60-90" },
+                                { "label": "Flow (eGFR)-CKD", "value": "Below 60" },
+                                { "label": "Leak (UACR)-Normal", "value": "Below 30 mg/g" },
+                                { "label": "Leak (UACR)-High Risk", "value": "Above 30 mg/g" }
+                            ],
+                            "physicianNote": "UACR is the 'quality check' for your filters. It can catch kidney stress years before a blood test shows any damage."
+                        }}
+                }
+            },
+            "chat": {
+                "welcome": "Hello! I am your AI Health Assistant. How can I help you understand your Heart, Kidney, or Metabolic health today?",
+                "title": "Ask a Question",
+                "subtitle": "AI Health Assistant (Beta)",
+                "placeholder": "Type your health question here...",
+                "send": "Send",
+                "disclaimer": "For educational purposes only. Not medical advice. Not all features may be currently available.",
+                "thinking": "Thinking...",
+                "response": "Thank you for your question. As your assistant, I recommend starting with 'What is CKM Health?' to understand the basics. Professional medical advice should always be sought from your doctor at the clinic."
+            }
+        }

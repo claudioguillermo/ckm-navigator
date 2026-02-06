@@ -1,0 +1,22 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Responsive, AHA Themed Meal Plate -->
+  <circle cx="200" cy="200" r="160" fill="white" stroke="#636466" stroke-width="2" />
+  
+  <!-- Vegetables (50%) - Keeping a clean green but within a muted palette -->
+  <path d="M200 200 L40 200 A160 160 0 0 1 360 200 Z" fill="#E8F5E9" stroke="#636466" stroke-width="1" />
+  <text x="200" y="120" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2E7D32" text-anchor="middle">Vegetables &amp; Fruit</text>
+  <text x="200" y="140" font-family="sans-serif" font-size="12" fill="#636466" text-anchor="middle">(50% of Plate)</text>
+
+  <!-- Protein (25%) - AHA Red -->
+  <path d="M200 200 L360 200 A160 160 0 0 1 200 360 Z" fill="#CF222B" stroke="white" stroke-width="2" />
+  <text x="280" y="270" font-family="sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Protein</text>
+  <text x="280" y="290" font-family="sans-serif" font-size="10" fill="white" text-anchor="middle">(25%)</text>
+
+  <!-- Whole Grains (25%) - AHA Gray -->
+  <path d="M200 200 L200 360 A160 160 0 0 1 40 200 Z" fill="#636466" stroke="white" stroke-width="2" />
+  <text x="120" y="270" font-family="sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">Grains</text>
+  <text x="120" y="290" font-family="sans-serif" font-size="10" fill="white" text-anchor="middle">(25%)</text>
+
+  <!-- Title -->
+  <text x="200" y="30" font-family="sans-serif" font-size="18" font-weight="800" fill="#000000" text-anchor="middle">THE HEALTHY PLATE</text>
+</svg>

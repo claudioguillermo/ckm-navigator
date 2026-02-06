@@ -1,0 +1,73 @@
+name: Collaborator Feedback
+about: Report usability bugs or confusing behavior from a collaborator testing session.
+title: "[Feedback]: "
+labels:
+  - collaborator-feedback
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for testing EMPOWER-CKM Navigator. Please include enough detail so we can reproduce quickly.
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome
+        - Safari
+        - Firefox
+        - Edge
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: Device / OS
+      placeholder: e.g., iPhone 15 iOS 18, MacBook Pro macOS 15
+    validations:
+      required: true
+
+  - type: input
+    id: page_feature
+    attributes:
+      label: Page or feature
+      placeholder: e.g., Curriculum > Module 2 quiz, AI Assistant sidebar
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro_steps
+    attributes:
+      label: Reproduction steps
+      description: Provide exact steps in order.
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. Enter ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot or screen recording
+      description: Drag/drop media here if available.
+    validations:
+      required: false

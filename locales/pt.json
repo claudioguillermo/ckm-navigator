@@ -1,0 +1,1233 @@
+{
+    "nav": {
+        "home": "Início",
+        "education": "Saiba Mais",
+        "chat": "Chat",
+        "clinic": "Clínica"
+    },
+    "ui": {
+        "backToCurriculum": "← Voltar ao Currículo",
+        "clinicalInsight": "Perspectiva Clínica",
+        "finishLesson": "Finalizar Lição",
+        "lessonCompleted": "✓ Lição Concluída",
+        "learningProgress": "Seu Progresso de Aprendizado",
+        "stepProgress": "Passo {count} de {total} Concluído",
+        "startLesson": "Iniciar Lição",
+        "continueLesson": "Continuar Lição",
+        "allCompleted": "Todos os Módulos Concluídos!",
+        "curriculumStatus": "Status do Currículo",
+        "welcomeBack": "Bem-vindo ao",
+        "nextStep": "Próximo Passo",
+        "journeyDesc": "Acompanhe sua jornada para uma melhor saúde cardíaca, renal e metabólica.",
+        "resetProgress": "Redefinir Progresso",
+        "resetConfirm": "Tem certeza de que deseja redefinir seu progresso? Isso limpará todas as lições concluídas e seus resultados de etapa.",
+        "confirmTitle": "Redefinir todo o progresso?",
+        "confirmAction": "Redefinir",
+        "cancelAction": "Cancelar",
+        "pending": "Pendente",
+        "modulesLabel": "Módulos",
+        "allCompletedDesc": "Você dominou o currículo essencial de CKM."
+    },
+    "clinic": {
+        "title": "Nossa Clínica",
+        "subtitle": "MetroWest Medical Center",
+        "storyTitle": "A História de",
+        "storyDesc": "Projetado e desenvolvido pelos médicos residentes de Medicina Interna do MetroWest Medical Center.",
+        "missionTitle": "Nossa Missão",
+        "missionText": "O EMPOWER-CKM é mais do que apenas uma ferramenta—é uma iniciativa centrada no paciente criada pelos seus médicos. Percebemos que compreender a conexão entre o Coração, os Rins e o Metabolismo pode ser opressor. Este projeto foi desenvolvido para fornecer a você os mesmos insights baseados em evidências que usamos na clínica, traduzidos em um guia que você pode usar em qualquer lugar.<br><br>Esta aplicação é o componente central de um projeto de melhoria da qualidade, intitulado EMPOWER-CKM: Educating and Motivating Patients On Wellness through Effective Resident-led CKM-guidance.<br><br>Nossos objetivos específicos são preencher a lacuna educacional nos cuidados cardiometabólicos, fornecendo recursos padronizados, culturalmente competentes e multilíngues. Nosso objetivo é capacitar tanto pacientes quanto médicos residentes para gerenciar melhor as complexas interseções da saúde cardíaca, renal e metabólica.",
+        "teamTitle": "Conheça Seus Médicos Residentes",
+        "teamText": "No MetroWest Medical Center, nossos Médicos Residentes estão no coração de nossa clínica ambulatorial. Esses médicos dedicados são especializados em Medicina Interna e estão comprometidos em oferecer um atendimento minucioso, compassivo e de última geração.",
+        "teamLink": "Saiba mais sobre nosso programa de residência",
+        "appointmentTitle": "Agendar uma Consulta",
+        "appointmentDesc": "Fale com nossa equipe para discutir sua saúde cardiometabólica."
+    },
+    "home": {
+        "title": "Bem-vindo ao EMPOWER-CKM",
+        "subtitle": "Acompanhe sua jornada para uma melhor saúde cardíaca, renal e metabólica.",
+        "heroTitle": "Tudo Está Conectado",
+        "heroText": "Pense no seu corpo como uma casa: seus Rins são o encanamento, seu Coração é o sistema elétrico e seu Metabolismo é o suprimento de energia. Quando o encanamento entope, ocorre um curto-circuito na eletricidade. Se o suprimento de energia for instável, tudo funciona com mais dificuldade. O EMPOWER-CKM ajuda você a manter sua casa em ordem.",
+        "heroBtn": "Comece a Explorar"
+    },
+    "anatomy": {
+        "title": "Anatomia Interativa",
+        "subtitle": "A Conexão CKM",
+        "text": "Toque em um órgão para ver como a síndrome CKM o afeta.",
+        "organs": {
+            "heart": "Coração",
+            "kidneys": "Rins",
+            "metabolism": "Metabolismo"
+        },
+        "labels": {
+            "role": "Papel Natural",
+            "problem": "O Problema na CKM",
+            "connection": "A Conexão"
+        },
+        "details": {
+            "heart": {
+                "title": "O Coração (Elétrico)",
+                "role": "O coração é a bomba do corpo, circulando sangue rico em oxigênio para cada célula.",
+                "problem": "Na síndrome CKM, o excesso de gordura corporal e o alto nível de açúcar no sangue danificam os vasos sanguíneos. Isso força o coração a bombear com mais força contra a pressão alta (Hipertensão).",
+                "connection": "Quando o coração tem dificuldades, não consegue bombear sangue suficiente para os rins, fazendo com que falhem. Isso cria um ciclo vicioso onde os rins falhando causam retenção de líquidos, estressando ainda mais o coração (Insuficiência Cardíaca)."
+            },
+            "kidneys": {
+                "title": "Os Rins (Encanamento)",
+                "role": "Seus rins atuam como o filtro do corpo, removendo resíduos e equilibrando fluidos.",
+                "problem": "A pressão alta e o açúcar elevado no sangue danificam os minúsculos filtros (néfrons) dentro dos rins. Isso leva à Doença Renal Crônica (DRC).",
+                "connection": "Rins danificados não conseguem filtrar o sangue adequadamente, levando ao acúmulo de toxinas e fluidos. Esse excesso de fluido aumenta a pressão arterial, o que, por sua vez, causa ainda mais danos ao coração e aos rins."
+            },
+            "metabolism": {
+                "title": "Metabolismo (Energia)",
+                "role": "O metabolismo ajuda o corpo a converter alimentos em energia e a regular os níveis de açúcar.",
+                "problem": "O excesso de tecido adiposo (gordura corporal) libera substâncias químicas inflamatórias prejudiciais. Isso leva à resistência à insulina e ao Diabetes Tipo 2.",
+                "connection": "Essa disfunção metabólica atua como a 'faísca'. A inflamação danifica os vasos sanguíneos em todos os lugares, causando diretamente a doença cardíaca e o dano renal vistos na síndrome CKM."
+            }
+        }
+    },
+    "staging": {
+        "title": "Avaliação de Risco",
+        "subtitle": "Avalie Seus Riscos",
+        "introTitle": "Qual é a sua situação?",
+        "introText": "Responda a algumas perguntas para estimar seus riscos CKM. <strong>IMPORTANTE:</strong> Esta é uma ESTIMATIVA EDUCACIONAL. Seu estágio real de CKM só pode ser determinado pelo seu médico com exames de sangue e urina apropriados.",
+        "startBtn": "Iniciar Avaliação",
+        "step": "Passo",
+        "of": "de",
+        "resultTitle": "Sua Avaliação CKM",
+        "stageLabel": "Etapa",
+        "resultBtn": "Voltar ao Currículo",
+        "questions": [
+            {
+                "id": "heart",
+                "q": "Você tem alguma doença cardíaca existente?",
+                "options": [
+                    "Não",
+                    "Sim"
+                ]
+            },
+            {
+                "id": "kidney",
+                "q": "Você tem doença renal (Etapa 2 ou superior)?",
+                "options": [
+                    "Não",
+                    "Sim"
+                ]
+            },
+            {
+                "id": "a1c",
+                "q": "Seu HbA1c (açúcar no sangue) está controlado (geralmente <7%)?",
+                "options": [
+                    "Sim",
+                    "Não",
+                    "Não sei"
+                ]
+            },
+            {
+                "id": "bp",
+                "q": "Sua pressão arterial é geralmente inferior a 130/80?",
+                "options": [
+                    "Sim",
+                    "Não",
+                    "Não sei"
+                ]
+            },
+            {
+                "id": "activity",
+                "q": "Quantos minutos de atividade física intensa (como caminhar) você faz por semana?",
+                "options": [
+                    "Menos de 60 min",
+                    "60-150 min",
+                    "Mais de 150 min"
+                ]
+            },
+            {
+                "id": "sodium",
+                "q": "Com que frequência você come alimentos processados ou adiciona sal extra às refeições?",
+                "options": [
+                    "Diariamente",
+                    "Frequentemente",
+                    "Raramente"
+                ]
+            },
+            {
+                "id": "smoker",
+                "q": "Você usa atualmente produtos de tabaco ou nicotina?",
+                "options": [
+                    "Sim",
+                    "Não"
+                ]
+            },
+            {
+                "id": "sleep",
+                "q": "Você ronca alto ou se sente cansado mesmo depois de dormir?",
+                "options": [
+                    "Sim",
+                    "Não",
+                    "Não sei"
+                ]
+            }
+        ],
+        "descriptions": {
+            "0": "🌟 PARABÉNS! Você está no Estágio 0. Você não tem grandes fatores de risco CKM. Seu objetivo é a preservação.",
+            "1": "Etapa 1: Excesso de Gordura Corporal. Você tem fatores de risco como excesso de peso ou obesidade abdominal. Concentre-se em mudanças no estilo de vida agora para evitar a progressão.",
+            "2": "Etapa 2: Risco Metabólico e Doença Renal. Você tem pressão alta, triglicerídeos altos ou diabetes. O controle rigoroso desses fatores é essencial.",
+            "3": "Etapa 3: Doença Cardiovascular Precoce. Você tem problemas cardíacos subclínicos ou doença renal de alto risco. Você precisa de monitoramento próximo e medicamentos preventivos.",
+            "4": "Etapa 4: Síndrome CKM estabelecida. Você tem doença cardíaca clínica (AVC, insuficiência cardíaca). O manejo é fundamental para evitar novos eventos."
+        },
+        "plan": {
+            "title": "Seu Roteiro CKM",
+            "clinicalTitle": "🏥 Prioridades Clínicas",
+            "lifestyleTitle": "🥗 Mudanças no Estilo de Vida",
+            "clinicalActions": {
+                "stage4": "Foco na reabilitação cardíaca e controle rigoroso de líquidos.",
+                "stage2plus": "Discuta medicamentos 'protetores de órgãos' (como SGLT2i ou GLP-1) com seu médico.",
+                "stage0": "Pergunte ao seu médico: 'Com que frequência devo refazer o exame para garantir que permaneço no Estágio 0?'",
+                "kidney": "Solicite um teste de UACR (proteína na urina) para monitorar a qualidade renal.",
+                "bp": "Inicie o monitoramento da pressão arterial em casa duas vezes ao dia.",
+                "sleep": "Pergunte ao seu médico: 'A apneia do sono pode estar afetando meu coração?'"
+            },
+            "lifestyleActions": {
+                "activityLow": "<strong>Movimento:</strong> Comece com caminhadas diárias de 10 minutos. Busque a intensidade de 'Zona 2'.",
+                "activityMid": "<strong>Movimento:</strong> Você está no caminho certo! Tente adicionar dois dias de treinamento de resistência leve.",
+                "diet": "<strong>Nutrição:</strong> Substitua uma refeição processada por dia por alimentos integrais. Reduza o sódio oculto.",
+                "tobacco": "<strong>Tabaco:</strong> Pergunte ao seu médico sobre a terapia de reposição de nicotina. Parar de fumar é o protetor #1 do seu coração.",
+                "excellent": "Mantenha seus excelentes hábitos de saúde!"
+            }
+        }
+    },
+    "education": {
+        "title": "Educação",
+        "subtitle": "Currículo de Aprendizagem"
+    },
+    "modules": {
+        "title": "Módulos de Aprendizagem",
+        "subtitle": "Sua Jornada para uma Saúde Melhor",
+        "labels": {
+            "learnMore": "Saiba Mais",
+            "showLess": "Mostrar Menos"
+        },
+        "list": [
+            {
+                "id": 1,
+                "title": "O Que é a Saúde CKM?",
+                "description": "Use o EMPOWER-CKM para entender como seu coração, rins e metabolismo trabalham juntos"
+            },
+            {
+                "id": 2,
+                "title": "Seu Prato e Sua Saúde",
+                "description": "Mudanças dietéticas práticas para uma saúde melhor"
+            },
+            {
+                "id": 3,
+                "title": "Mova-se Mais, Viva Melhor",
+                "description": "Diretrizes de atividade física que funcionam para você"
+            },
+            {
+                "id": 4,
+                "title": "Entenda Seus Números",
+                "description": "O que suas métricas de saúde realmente significam"
+            },
+            {
+                "id": 5,
+                "title": "Suas Opções de Tratamento",
+                "description": "Medicamentos e mudanças no estilo de vida que podem ajudar"
+            },
+            {
+                "id": 6,
+                "title": "Avaliação Personalizada",
+                "description": "Descubra sua etapa CKM e receba um plano sob medida"
+            }
+        ],
+        "content": {
+            "1": {
+                "title": "O Que é a Saúde CKM?",
+                "intro": "Seu coração, rins e metabolismo estão profundamente conectados—como uma equipe onde cada jogador afeta os outros. Quando um sistema está estressado, ele pressiona os outros. Essa conexão é chamada de saúde Cardio-Renal-Metabólica (CKM).",
+                "sections": [
+                    {
+                        "heading": "A Conexão Explicada",
+                        "content": "<div id=\"analogy-mount\"></div>",
+                        "expanded": "A American Heart Association introduziu a síndrome CKM em 2023 para ajudar médicos e pacientes a entender melhor essas conexões. Pesquisas mostram que tratar essas condições juntas, em vez de separadamente, leva a resultados muito melhores."
+                    },
+                    {
+                        "heading": "Por Que Isso Importa Para Você",
+                        "content": "Entender a saúde CKM ajuda você a ver o quadro geral. Pequenas mudanças—como reduzir o sal, mover-se mais ou tomar os medicamentos corretamente—podem proteger vários sistemas ao mesmo tempo.",
+                        "expanded": "Estudos mostram que as pessoas que entendem como suas condições se conectam têm maior probabilidade de seguir os planos de tratamento e alcançar melhores resultados de saúde. Você não está apenas tratando diabetes OU doença cardíaca OU doença renal—você está protegendo todo o seu sistema."
+                    },
+                    {
+                        "heading": "As Cinco Etapas do CKM (0-4)",
+                        "content": "<p>A síndrome CKM é categorizada em cinco etapas. Clique em cada etapa abaixo para ver como ela afeta seu coração, rins e metabolismo.</p><div id=\"stage-explorer-mount\"></div>",
+                        "expanded": "O sistema de etapas ajuda sua equipe médica a determinar a intensidade do tratamento. A Etapa 0 é a meta para todos, enquanto a Etapa 4 requer um manejo intensivo da doença clínica. Mesmo que você esteja na Etapa 2 ou 3, as evidências mostram que um manejo agressivo pode evitar que você chegue à Etapa 4."
+                    }
+                ],
+                "quiz": {
+                    "question": "Which analogy best describes how the Heart, Kidneys, and Metabolism work together?",
+                    "options": [
+                        "Three separate, unrelated systems",
+                        "A house with plumbing, electrical, and foundation systems",
+                        "A car that needs new tires"
+                    ],
+                    "correctIndex": 1,
+                    "explanation": "Correct! The systems are interconnected. Problems in the foundation (metabolism) can damage the wiring (heart) and plumbing (kidneys)."
+                }
+            },
+            "2": {
+                "title": "Seu Prato e Sua Saúde",
+                "intro": "O que você come é o remédio mais potente para a saúde CKM. Você não precisa de uma dieta complicada—apenas um prato equilibrado.",
+                "sections": [
+                    {
+                        "heading": "O Prato para uma Alimentação Saudável",
+                        "content": "<div id=\"eating-plate-mount\"></div><div id=\"cultural-food-mount\" style=\"margin-top: 40px; border-top: 1px solid var(--border-soft); padding-top: 40px;\"></div>",
+                        "expanded": "Este guia visual simples ajuda a controlar o açúcar no sangue e o peso sem contar calorias. Alimentos tradicionais brasileiros e latino-americanos como arroz, feijão e tortilhas de milho são incrivelmente saudáveis quando equilibrados corretamente. Use o explorador acima para ver como seus alimentos favoritos podem agir como medicina para seu coração e rins."
+                    },
+                    {
+                        "heading": "Sódio: O Estressor Silencioso",
+                        "content": "O sal (sódio) age como um ímã de água. Muito sal faz seu corpo reter líquidos, aumentando a pressão arterial e forçando seu coração e rins a trabalharem horas extras.",
+                        "expanded": "70% do sódio que comemos vem de alimentos processados e de restaurantes, não do saleiro. Ler os rótulos é sua melhor defesa. Tente consumir menos de 2.300 mg por dia, cerca de uma colher de chá."
+                    },
+                    {
+                        "heading": "Decodificador Interativo de Rótulos",
+                        "content": "<p>Aprenda a identificar as métricas ocultas que afetam seu Coração e Rins. Clique em diferentes partes do rótulo abaixo.</p><div id=\"food-label-mount\"></div>",
+                        "expanded": "Ao ler um rótulo para a saúde CKM, observe três coisas principais: Sódio (para pressão arterial), Gordura Saturada (para colesterol) e Açúcares Adicionados (para metabolismo). Se um alimento é rico nos três, ele é um \"curto-circuito\" metabólico."
+                    }
+                ],
+                "quiz": {
+                    "question": "According to the 'Healthy Plate' method, half of your plate should be filled with:",
+                    "options": [
+                        "Protein (Chicken/Meat)",
+                        "Carbohydrates (Rice/Pasta)",
+                        "Vegetables"
+                    ],
+                    "correctIndex": 2,
+                    "explanation": "Correct! Vegetables are the foundation. They provide fiber and nutrients that protect all three systems."
+                }
+            },
+            "3": {
+                "title": "Mova-se Mais, Viva Melhor",
+                "intro": "O exercício não é apenas para perder peso. É sobre usar seus músculos para absorver o açúcar no sangue e reduzir o colesterol \"ruim\".",
+                "sections": [
+                    {
+                        "heading": "A Dupla Dinâmica: Cardio + Força",
+                        "content": "<img src=\"assets/images/movement.svg\" alt=\"Diretrizes de Movimento\" style=\"width:100%; height:auto; border-radius:12px; margin-bottom:16px;\">A melhor rotina combina atividade aeróbica (caminhada, natação) para fortalecer o coração com treinamento de resistência para construir músculos.",
+                        "expanded": "O músculo é um tecido metabolicamente ativo—ele queima açúcar mesmo quando você está em repouso. Fortalecer o músculo é uma das formas mais eficazes de melhorar a sensibilidade à insulina e proteger o metabolismo."
+                    },
+                    {
+                        "heading": "Comece Pequeno, Aumente",
+                        "content": "Não é necessário ir à academia. Uma caminhada rápida de 30 minutos, 5 dias por semana, é suficiente para notar grandes benefícios.",
+                        "expanded": "Se 30 minutos parecerem muito, divida-os em três caminhadas de 10 minutos. Os benefícios se acumulam. O exercício mais importante é aquele que você realmente faz com consistência."
+                    },
+                    {
+                        "heading": "Encontrando Seu \"Ponto Ideal\": Treino em Zona 2",
+                        "content": "<p>A Zona 2 é a intensidade em que seu corpo é mais eficiente na queima de gordura e no fortalecimento das suas \"mitocôndrias\" (as centrais de energia das suas células).</p><div id=\"zone2-guide-mount\"></div>",
+                        "expanded": "No eixo CKM, a Zona 2 é fundamental. Ela melhora a \"flexibilidade metabólica\"—a capacidade dos músculos de alternar entre a queima de gordura e de açúcar. Isso protege o coração e ajuda a evitar a progressão da síndrome CKM."
+                    }
+                ],
+                "quiz": {
+                    "question": "What is the 'Talk Test' for Zone 2 exercise?",
+                    "options": [
+                        "You can't talk at all (too breathless)",
+                        "You can speak in full sentences but can't sing",
+                        "You can sing a whole song easily"
+                    ],
+                    "correctIndex": 1,
+                    "explanation": "Correct! Zone 2 is the 'sweet spot' where you are working hard enough to breathe faster, but not so hard you have to stop talking."
+                }
+            },
+            "4": {
+                "title": "Entenda Seus Números",
+                "intro": "Para gerenciar a saúde CKM, você precisa conhecer as métricas do seu \"painel\". Esses números dizem como seus sistemas estão funcionando. Toque em cada categoria para explorar as faixas.",
+                "sections": [
+                    {
+                        "heading": "Painel Interativo de Métricas",
+                        "content": "<div id=\"metrics-dashboard-mount\"></div>",
+                        "expanded": "Manter esses números dentro das faixas meta é a chave para evitar a progressão da síndrome CKM. Suas metas podem ser personalizadas com base na idade, condições existentes e perfil de risco geral."
+                    }
+                ],
+                "quiz": {
+                    "question": "Why is 'ApoB' considered a better metric than just LDL cholesterol?",
+                    "options": [
+                        "It is cheaper to test",
+                        "It measures the total number of plaque-causing particles",
+                        "It is only for kidney disease"
+                    ],
+                    "correctIndex": 1,
+                    "explanation": "Correct! ApoB counts the actual number of particles that can get stuck in your artery walls, giving a truer picture of your risk."
+                }
+            },
+            "5": {
+                "title": "Suas Opções de Tratamento",
+                "intro": "O estilo de vida é a base, mas os medicamentos modernos são ferramentas potentes que podem proteger o coração, os rins e o metabolismo simultaneamente.",
+                "sections": [
+                    {
+                        "heading": "O Cenário dos Medicamentos CKM",
+                        "content": "<p>O manejo da saúde CKM muitas vezes requer vários medicamentos trabalhando juntos. Clique nas categorias abaixo para explorar os tratamentos comuns.</p><div id=\"med-map-mount\"></div>",
+                        "expanded": "A beleza do tratamento CKM moderno é a \"pleiotropia\"—a capacidade de um medicamento ajudar vários órgãos. Por exemplo, os inibidores de SGLT2 foram inventados para o diabetes (metabolismo), mas agora são tratamentos padrão para insuficiência cardíaca e doença renal. Seu médico seleciona uma combinação única desses \"pilares\" com base na sua etapa CKM específica."
+                    },
+                    {
+                        "heading": "Parceria Com Sua Equipe",
+                        "content": "O manejo do CKM requer uma abordagem de equipe. Você é o capitão, mas seus médicos, farmacêuticos e nutricionistas são sua tripulação.",
+                        "expanded": "Não tenha medo de fazer perguntas básicas: \"O que esta pílula faz?\" \"Por que estou tomando isso?\" Entender seu tratamento é a chave para mantê-lo. Relate sempre os efeitos colaterais cedo; quase sempre existe outra opção."
+                    }
+                ],
+                "quiz": {
+                    "question": "What is 'Pleiotropy' in CKM medication?",
+                    "options": [
+                        "A side effect causing dizziness",
+                        "Taking multiple pills for one condition",
+                        "One medication that benefits multiple organ systems at once"
+                    ],
+                    "correctIndex": 2,
+                    "explanation": "Correct! Modern CKM medications are powerful because they can protect your heart, kidneys, and metabolism simultaneously."
+                }
+            },
+            "6": {
+                "title": "Avaliação Personalizada",
+                "intro": "Agora que você entende como seu coração, rins e metabolismo trabalham juntos, descubra onde você está no espectro da saúde CKM.",
+                "sections": [
+                    {
+                        "heading": "Teste de Etapa CKM",
+                        "content": "<p>Responda a 4 perguntas rápidas sobre sua saúde para determinar sua etapa CKM atual. Isso ajudará a adaptar sua educação e conversas médicas.</p><div id=\"quiz-mount\" style=\"text-align: center; margin-top: 24px;\"><button class=\"btn btn-primary\" data-action=\"renderQuizStep\" data-args=\"true\">Iniciar Avaliação</button></div>",
+                        "expanded": "Esta autoavaliação é para fins educacionais. Sua etapa oficial deve ser confirmada pelo seu profissional de saúde no MetroWest Medical Center."
+                    }
+                ]
+            }
+        },
+        "analogy": {
+            "slides": [
+                {
+                    "title": "Seu Corpo como Sua Casa",
+                    "text": "Pense no seu corpo como uma casa bem construída. Para se manter forte e confortável, sua casa precisa de três sistemas críticos trabalhando juntos: eletricidade que alimenta tudo, encanamento que limpa sua água e uma base sólida que sustenta tudo.",
+                    "myth": "Muitas pessoas pensam que diabetes, pressão alta e problemas renais são doenças separadas. Na verdade, elas estão conectadas como os sistemas da sua casa.",
+                    "lesson": "Entender essas conexões ajuda você a ver por que seu médico verifica várias coisas em cada visita—estamos inspecionando todos os três sistemas para manter toda a sua 'casa' saudável."
+                },
+                {
+                    "title": "A Base-Sua Saúde Metabólica",
+                    "text": "Sua base é sua saúde metabólica—como seu corpo processa o açúcar e armazena gordura. Como a base de uma casa, quando está estressada (por excesso de açúcar, peso extra ou resistência à insulina), pequenas rachaduras começam a se formar e afetam tudo o que está acima.",
+                    "myth": "'Diabetes é de susto ou raiva'—MITO. O açúcar alto vem de como seu corpo processa a comida, não do estresse emocional sozinho. Emoções podem afetar, mas não são a causa principal.",
+                    "lesson": "Quando falamos sobre açúcar no sangue, peso ou atividade—não estamos criticando você. Estamos ajudando você a fortalecer sua base antes que ela comece a rachar. Pequenos consertos agora evitam reconstruções maiores depois."
+                },
+                {
+                    "title": "O Sistema Elétrico-Seu Coração e Vasos Sanguíneos",
+                    "text": "Seu coração e vasos sanguíneos são como seu sistema elétrico—eles entregam oxigênio e nutrientes a cada cômodo da sua casa. A pressão alta é como uma voltagem excessiva correndo por fios velhos. Funciona por um tempo, mas a tensão constante danifica os fios e sobrecarrega o disjuntor (seu coração).",
+                    "myth": "'Só os velhos têm problemas cardíacos'—MITO. A pressão alta e o dano cardíaco começam anos antes dos sintomas. Muitas pessoas de 30-40 anos já têm danos que não sentem.",
+                    "lesson": "O remédio para a pressão arterial não é admitir derrota: é proteger sua fiação. Combinado com menos sal, mais movimento e controle do estresse, você está atualizando todo o seu sistema elétrico, não apenas substituindo um fusível."
+                },
+                {
+                    "title": "O Sistema de Filtragem-Seus Rins",
+                    "text": "Seus rins são o sistema de filtragem de água da sua casa—eles limpam os resíduos do sangue 24 horas por dia. A alta pressão do seu sistema elétrico (pressão arterial) e os depósitos pegajosos da sua base (açúcar alto) entopem esses filtros. Ao contrário de um filtro doméstico que você pode substituir, os filtros renais danificados pela pressão e pelo açúcar não podem ser consertados.",
+                    "myth": "'Os rins só falham se eu não tomar água suficiente'—MITO PERIGOSO. Embora a hidratação ajude, a pressão alta e o açúcar elevado são as causas principais da falha renal.",
+                    "lesson": "Cada pílula para pressão, cada ponto que seu açúcar cai, cada quilo que você perde—protege seus filtros de danos. Não estamos tratando três problemas separados; estamos protegendo seus rins de duas direções ao mesmo tempo."
+                },
+                {
+                    "title": "O Efeito Cascata",
+                    "text": "Aqui é onde a coisa fica séria: quando um sistema falha, ele danifica os outros. Uma base rachada (açúcar alto) faz seu sistema elétrico trabalhar mais (aumenta a pressão arterial). A pressão alta danifica seu sistema de filtragem (rins). Quando os filtros falham, eles não conseguem remover o excesso de líquido, o que aumenta a pressão ainda MAIS. É um ciclo vicioso onde cada problema piora os outros.",
+                    "myth": "'Por que preciso de 3 ou 4 remédios diferentes?'—PORQUE estamos atacando o ciclo de vários ângulos. Um único remédio não pode parar uma cascata de três sistemas. Isso é estratégico, não excessivo.",
+                    "lesson": "Por isso somos 'agressivos' com o tratamento precoce, não para assustar você, mas porque conter o problema quando apenas um sistema está falhando é MUITO mais fácil do que tentar resgatar os três depois que eles passaram anos arrastando uns aos outros para baixo."
+                },
+                {
+                    "title": "Quebrando o Ciclo-Tratamento Multilateral",
+                    "text": "A BOA notícia: podemos quebrar esse ciclo consertando vários sistemas ao mesmo tempo. É como chamar um empreiteiro que arruma sua base, moderniza sua instalação elétrica E troca seus filtros em um único projeto. Cada reparo faz os outros funcionarem melhor. É por isso que o tratamento inclui TANTO mudanças no estilo de vida QUANTO medicamentos: precisamos abordar os três sistemas juntos.",
+                    "myth": "'Remédios naturais são mais seguros que os de farmácia'—NEM SEMPRE. Algumas ervas podem danificar os rins ou interagir com seus remédios. Os remédios aprovados foram testados para sua segurança.",
+                    "lesson": "Quando recomendamos medicação E mudanças no estilo de vida juntos, não estamos dizendo que um sozinho não basta, mas que atacar de ambos os ângulos dá a você as melhores chances de sucesso. Você não precisa escolher entre pílulas e estilo de vida. Use todas as ferramentas disponíveis."
+                },
+                {
+                    "title": "Pequenos Consertos, Grande Impacto",
+                    "text": "Pequenos vazamentos afundam navios. Uma pequena rachadura na base detectada cedo custa $500 e um fim de semana para consertar. Ignorada por 10 anos? Pode custar $50.000 e colocar em perigo toda a sua casa. Seu corpo funciona da mesma forma. Baixar o açúcar de 200 para 160 ou a pressão de 160/100 para 140/90 pode não parecer diferente para você, mas para seus sistemas, é a diferença entre um dano lento e uma falha rápida.",
+                    "myth": "'Sinto-me bem, por que tomar remédio?'—PORQUE o dano está acontecendo mesmo que você se sinta bem. É como cupins comendo sua base—quando você vê o problema, já é grave.",
+                    "lesson": "Cada consulta onde ajustamos seu remédio, cada semana que você caminha 30 minutos, cada refeição com mais vegetais—não são tarefas chatas. É você fazendo consertos de $500 em vez de esperar pelo desastre de $50.000. Você está salvando ativamente seu eu do futuro."
+                },
+                {
+                    "title": "Seu Plano de Reparo Pessoal",
+                    "text": "Você tem mais poder do que imagina. Embora não possa mudar sua genética ou sua idade, você PODE fazer reparos todos os dias. Alguns consertos são gratuitos (caminhar, beber água em vez de refrigerante). Outros exigem medicação (que ajudaremos você a pagar). Juntos, esses reparos se somam para proteger os três sistemas.",
+                    "myth": "'Não consigo pagar os remédios'—PODEMOS AJUDAR. O MassHealth eliminou os copagamentos em 2024. Se você não tem seguro, temos programas de assistência do fabricante que fornecem remédios gratuitamente.",
+                    "lesson": "Você não precisa fazer tudo com perfeição. Mesmo 2 ou 3 dessas ações juntas protegem seus sistemas significativamente. Pense em si mesmo como o empreiteiro geral do projeto de reparo do seu corpo: nós estamos aqui para aconselhar, mas VOCÊ é quem manda no trabalho."
+                },
+                {
+                    "title": "Seguindo em Frente Juntos",
+                    "text": "A saúde CKM não consiste em ser perfeito, mas em fortalecer a casa um pouco a cada dia. Verificaremos os três sistemas regularmente, ajustaremos seu plano de reparos conforme necessário e celebraremos juntos cada melhora. Você não está apenas tratando diabetes ou pressão alta: está protegendo toda a sua casa para poder viver nela confortavelmente por décadas.",
+                    "myth": "'Minha família tem histórico ruim, estou destinado a ter isso'—NÃO. A genética carrega as armas, mas o estilo de vida puxa o gatilho. Mesmo com histórico familiar forte, você pode atrasar ou prevenir essas condições por décadas.",
+                    "lesson": "A cada visita, somos sua equipe de inspeção residencial. Mediremos a resistência da base (A1C, peso), verificaremos a carga elétrica (pressão arterial) e testaremos a qualidade da filtragem (função renal). Problemas pequenos têm soluções pequenas. Juntos, mantemos sua casa forte."
+                }
+            ],
+            "ui": {
+                "next": "Próxima Página",
+                "prev": "Página Anterior",
+                "mythLabel": "Mito Comum",
+                "lessonLabel": "O que isso significa para você"
+            }
+        },
+        "eatingPlate": {
+            "slides": [
+                {
+                    "title": "Seu Prato é seu Remédio Diário",
+                    "text": "Cada vez que come, você está alimentando a doença ou lutando contra ela. A boa notícia? Não precisa de comida cara nem receitas complicadas. Só precisa saber o que pertence ao seu prato e quanto espaço deve ocupar.",
+                    "myth": "❓ 'Comer saudável significa abandonar minha cultura'—MITO. A comida tradicional latina pode ser incrivelmente saudável. Estamos otimizando o que você já conhece, não substituindo-o.",
+                    "lesson": "Este método funciona para comida brasileira, mexicana, americana—QUALQUER comida. Ao aprender este padrão, poderá escolher saudavelmente em qualquer lugar."
+                },
+                {
+                    "title": "Metade do Prato-Vegetais (A Base)",
+                    "text": "Metade do seu prato deve ser vegetais (aprox. 2 xícaras). Eles combatem a inflamação, estabilizam o açúcar e protegem seu coração e rins.",
+                    "myth": "❓ 'Vegetais são caros'—DICA: Vegetais congelados são igualmente nutritivos e mais baratos. Enlatados estão bem se você os enxaguar para remover o sódio.",
+                    "lesson": "Se você vai mudar apenas UMA coisa, que seja esta: encha metade do seu prato com vegetais antes de servir o resto. Esta mudança protege seus três sistemas vitais.",
+                    "details": {
+                        "excellent": "Folhas Verdes (Couve, Espinafre, Acelga), Crucíferos (Brócolis, Couve-flor), Pimentões, Tomates.",
+                        "veryGood": "Cenouras, Beterraba, Jaca, Vagem, Abobrinha.",
+                        "good": "Milho (limite 1/2 xícara), Ervilhas, Mandioca.",
+                        "cultural": "🇧🇷 Couve, Chuchu, Jiló, Maxixe. 🌮 Nopales, Chiles, Tomatillos, Calabacitas."
+                    }
+                },
+                {
+                    "title": "Um Quarto do Prato-Proteínas (Os Reparadores)",
+                    "text": "Um quarto é proteína (tamanho de um baralho ou da sua palma). Elas reparam seus músculos e não elevam o açúcar como os carboidratos. O TIPO importa muito.",
+                    "myth": "❓ 'Preciso de carne vermelha diariamente para ter força'—MITO. Peixe, frango, feijão e ovos fornecem toda a proteína necessária com menos esforço para seu coração.",
+                    "lesson": "Seu feijão tradicional É proteína saudável! Ao escolher peixe ou feijão em vez de carnes gordurosas, você protege ativamente seu coração e rins.",
+                    "details": {
+                        "excellent": "Peixe Gordo (Salmão, Sardinha), Feijão (Preto, Carioca), Lentilhas, Grão-de-bico, Ovos.",
+                        "veryGood": "Frango/Peru (sem pele), Lombo de porco, Tofu.",
+                        "limit": "Carne Vermelha, Carnes Processadas (Chouriço, Bacon, Salsicha).",
+                        "cultural": "🇧🇷 Feijão, Bacalhau, Frango Grelhado. 🌮 Frijoles, Ceviche, Tacos al carbón."
+                    }
+                },
+                {
+                    "title": "Um Quarto do Prato-Grãos e Carboidratos",
+                    "text": "O último quarto é sua energia. O TIPO faz uma grande diferença. Os grãos integrais são digeridos lentamente e fornecem energia constante sem picos de açúcar.",
+                    "myth": "❓ 'Carboidratos são o inimigo'—NÃO. Os brancos refinados disparam o açúcar. Os integrais (arroz integral, batata-doce) são energia de boa qualidade.",
+                    "lesson": "Não deixe de comer arroz, apenas ajuste a porção (tamanho de uma bola de tênis). Misture arroz branco com integral para começar a transição.",
+                    "details": {
+                        "excellent": "Arroz Integral, Quinoa, Aveia, Batata Doce, Abóbora.",
+                        "veryGood": "Mandioca, Batata, Arroz, Macarrão Integral.",
+                        "limit": "Arroz Branco, Pão Branco, Bebidas açucaradas, Batatas fritas.",
+                        "cultural": "🇧🇷 Mandioca, Farofa (pouca), Pão de Queijo (desejo). 🌮 Frijoles, Tortilha de Milho, Yuca."
+                    }
+                },
+                {
+                    "title": "E as Bebidas? (O Açúcar Oculto)",
+                    "text": "O que você BEBE pode arruinar uma refeição saudável. Um refrigerante tem 10 colheres de chá de açúcar. Até os sucos naturais são açúcar líquido sem a fibra da fruta.",
+                    "myth": "❓ 'Suco natural é saudável por ser natural'—INCORRETO. Sem a fibra, o suco dispara o açúcar tão rápido quanto um refrigerante. Coma a fruta, beba água.",
+                    "lesson": "Trocar um refrigerante diário por água economiza 140.000 calorias por ano. Seus rins e coração sentirão o alívio quase de imediato."
+                },
+                {
+                    "title": "Juntando Tudo-Exemplos de Pratos Saudáveis",
+                    "text": "Qualquer cozinha se adapta à regra 50/25/25. É uma questão de proporção. Você pode aproveitar seus sabores latinos protegendo sua saúde ao mesmo tempo.",
+                    "myth": "❓ 'Minha família pensará que estou de dieta'—REDEFINA. Você está comendo como seus antepassados: muitos vegetais, feijão diariamente e porções moderadas de carne.",
+                    "lesson": "Não cozinhe o dobro. Prepare o mesmo para a família, mas ajuste a proporção no SEU prato. Seu exemplo inspirará os que você ama a se cuidarem também."
+                },
+                {
+                    "title": "Frutas-O Doce da Natureza",
+                    "text": "Fruta é saudável, mas é a 'sobremesa' da natureza. Frutas inteiras têm fibras; sucos e frutas secas concentram demais o açúcar.",
+                    "myth": "❓ 'Fruta é natural, posso comer quanto quiser'—NÃO. Limite a 2-3 porções por dia. Prefira morangos e cítricos, que têm menos açúcar e mais fibras.",
+                    "lesson": "Troque o suco por uma laranja inteira. Sentirá mais saciedade, obterá as fibras e evitará o pico de insulina que estressa seu metabolismo."
+                },
+                {
+                    "title": "Gorduras Saudáveis-Menos é Mais",
+                    "text": "Seu corpo precisa de gordura da boa. Azeite de oliva, abacate e nozes protegem o coração. As frituras e a banha danificam suas artérias.",
+                    "myth": "❓ 'Cozinhar com banha é mais natural'—PERIGO. A gordura saturada da banha eleva o colesterol ruim (LDL) que entope as artérias. Use óleos vegetais.",
+                    "lesson": "Uma colher de sopa de óleo tem 120 calorias. Meça com a colher em vez de despejar direto. É um ajuste pequeno que ajuda muito no peso."
+                },
+                {
+                    "title": "Sua Estrutura de Refeições Semanal",
+                    "text": "A consistência vence a perfeição. Tente seguir o método do prato em 15-18 das 21 refeições da semana. Deixe o resto para eventos sociais ou vontades.",
+                    "myth": "❓ 'Comida saudável é cara'—TEM CERTEZA? Arroz, feijão, ovos e vegetais da estação são os mais baratos. Caro é a comida processada e rápida.",
+                    "lesson": "Um erro não apaga uma semana de acertos. Se exagerou em uma festa, volte ao método do prato na sua PRÓXIMA refeição. Sem culpa, apenas progresso."
+                },
+                {
+                    "title": "Seu Plano de Ação-Comece Hoje",
+                    "text": "Não tente mudar tudo amanhã. Escolha UMA mudança nesta semana. Mudanças pequenas ficam; as radicais costumam falhar.",
+                    "myth": "❓ 'Já falhei em dietas antes'—PORQUE dietas têm fim. Isto é um novo normal. Maratonas são ganhas passo a passo, não correndo.",
+                    "lesson": "Você tem o poder de reparar sua base e proteger seu coração e rins a cada mordida. Apoiamos cada pequeno avanço. Você consegue."
+                }
+            ]
+        },
+        "traditionalFoods": {
+            "title": "Destaque Alimentos Tradicionais",
+            "subtitle": "Otimizando sua Herança para sua Saúde",
+            "labels": {
+                "truth": "A Verdade Nutricional",
+                "metabolic": "Base (Metabólica)",
+                "cardio": "Elétrica (Coração)",
+                "kidney": "Filtragem (Rins)",
+                "optimization": "Estratégias de Otimização",
+                "message": "Mensagem Cultural",
+                "budget": "Orçamento e Acesso",
+                "status": "Marcador CKM"
+            },
+            "foods": [
+                {
+                    "id": "rice-beans",
+                    "name": "Arroz e Feijão",
+                    "status": "Excelente (Otimizado)",
+                    "summary": "É o MVP da cozinha tradicional: balanceado corretamente é uma das combinações mais saudáveis.",
+                    "scorecard": {
+                        "metabolic": "Suave",
+                        "cardio": "Protetor",
+                        "kidney": "Apoio"
+                    },
+                    "science": {
+                        "metabolic": "Arroz + Feijão = Proteína Completa. Esfriar o arroz cria 'amido resistente' que evita picos.",
+                        "cardio": "A fibra solúvel baixa o LDL; o potássio no feijão baixa a pressão arterial.",
+                        "kidney": "A proteína vegetal é muito mais fácil para os rins do que a carne."
+                    },
+                    "optimizations": [
+                        "Melhor: 3/4 xícara de feijão para 1/2 de arroz integral",
+                        "Reaqueça o arroz para aumentar o amido resistente",
+                        "Adicione limão para frear a absorção de carboidratos"
+                    ],
+                    "message": "Seu feijão tradicional é medicina. O problema não é a comida, são as porções. Que o feijão seja a estrela!",
+                    "budget": "Refeição completa por menos de $0.50. Alta fibra e baixo custo."
+                },
+                {
+                    "id": "picanha",
+                    "name": "Picanha / Churrasco",
+                    "status": "Limite (Ocasional)",
+                    "summary": "Deliciosa peça cultural, mas sua gordura saturada a torna um 'agradinho mensal' e não diário.",
+                    "scorecard": {
+                        "metabolic": "Alerta",
+                        "cardio": "Prejudicial",
+                        "kidney": "Estresse Alto"
+                    },
+                    "science": {
+                        "metabolic": "A gordura saturada ativa a inflamação, causando resistência à insulina.",
+                        "cardio": "Eleva o LDL e cria TMAO, que promove a placa nas artérias.",
+                        "kidney": "A carga de proteína animal aumenta a pressão nos filtros renais."
+                    },
+                    "optimizations": [
+                        "Porção: 100g (tamanho de um baralho)",
+                        "Retire a gordura visível para reduzir a saturada em 30%",
+                        "Marine com limão e ervas para reduzir toxinas do fogo"
+                    ],
+                    "message": "Torne a carne especial novamente. Aproveite-a em festas, mas cuide do seu coração com peixe ou feijão durante a semana.",
+                    "budget": "Economize dinheiro e saúde trocando a carne vermelha por opções magras."
+                },
+                {
+                    "id": "tacos",
+                    "name": "Tacos (Tradicionais)",
+                    "status": "Varia conforme Recheio",
+                    "summary": "Tacos são um 'sistema de entrega'. O recheio decide se são medicina ou estresse.",
+                    "scorecard": {
+                        "metabolic": "Varia",
+                        "cardio": "Varia",
+                        "kidney": "Varia"
+                    },
+                    "science": {
+                        "metabolic": "Tortilha de milho + proteína assada + vegetais = Açúcar estável. Farinha + fritura = Pico.",
+                        "cardio": "Peixe/Frango assado protege; carnes gordurosas entopem artérias.",
+                        "kidney": "Os nopais são um superalimento para os rins e o metabolismo."
+                    },
+                    "optimizations": [
+                        "Base: 2 tortilhas pequenas de milho (evite farinha)",
+                        "Recheio: Peixe, frango ou feijão preto",
+                        "Abuse do pico de gallo, salsa e limão"
+                    ],
+                    "message": "Comida latina não precisa ser 'trapaça'. Com o método do prato, é um pilar de saúde diária.",
+                    "budget": "Tacos saudáveis caseiros são muito econômicos."
+                },
+                {
+                    "id": "pupusas",
+                    "name": "Pupusas",
+                    "status": "Aceitável (Controle)",
+                    "summary": "Comida de conforto melhor que o pão, mas requer controle de porção e recheios.",
+                    "scorecard": {
+                        "metabolic": "Moderado",
+                        "cardio": "Cuidado",
+                        "kidney": "Atenção ao Sódio"
+                    },
+                    "science": {
+                        "metabolic": "O milho nixtamalizado é melhor que o pão, mas 1 tem o carboidrato de 1 xícara de arroz.",
+                        "cardio": "Queijo e torresmo adicionam gordura saturada. O curtido é protetor e probiótico.",
+                        "kidney": "O sódio do queijo é o principal problema para a pressão."
+                    },
+                    "optimizations": [
+                        "Limite 1-2 pupusas no máximo por refeição",
+                        "SEMPRE coma com muito curtido (salada de repolho)",
+                        "Prefira recheios de feijão ou vegetais"
+                    ],
+                    "message": "Siga a tradição de domingo! Apenas reequilibre: 2 pupusas e meio prato de curtido.",
+                    "budget": "Muito acessível se for preparado em casa."
+                },
+                {
+                    "id": "tortilla-flour",
+                    "name": "Tortilha de Farinha (Trigo)",
+                    "status": "Limite / Evite",
+                    "summary": "Carboidrato refinado com mínima fibra. Das opções mais fracas nutricionalmente.",
+                    "scorecard": {
+                        "metabolic": "Pico Rápido",
+                        "cardio": "Triglicerídeos",
+                        "kidney": "Sódio Alto"
+                    },
+                    "science": {
+                        "metabolic": "A farinha branca sobe o açúcar tão rápido quanto o açúcar de mesa.",
+                        "cardio": "Os carboidratos refinados sobem triglicerídeos e baixam o colesterol bom.",
+                        "kidney": "O alto sódio estressa a pressão e os rins."
+                    },
+                    "optimizations": [
+                        "Melhor: Troque para tortilhas de milho sempre que puder",
+                        "Se usar farinha, que seja 100% integral",
+                        "Limite a 1 pequena e acompanhe com feijão"
+                    ],
+                    "message": "Trocar farinha por milho é o passo mais fácil para proteger sua base. Seu corpo agradecerá!",
+                    "budget": "As tortilhas de milho são 3 vezes mais baratas."
+                },
+                {
+                    "id": "tortilla-corn",
+                    "name": "Tortilhas de Milho",
+                    "status": "Excelente (Uso Diário)",
+                    "summary": "Um dos amidos mais saudáveis: grão integral com sabedoria ancestral.",
+                    "scorecard": {
+                        "metabolic": "Estável",
+                        "cardio": "Protetor",
+                        "kidney": "Excelente"
+                    },
+                    "science": {
+                        "metabolic": "A nixtamalização libera nutrientes como Niacina e Cálcio.",
+                        "cardio": "A fibra baixa o colesterol; o magnésio ajuda as artérias.",
+                        "kidney": "Muito baixo sódio e fósforo vegetal amigável com o rim."
+                    },
+                    "optimizations": [
+                        "Porção: 2-3 tortilhas por refeição",
+                        "Aqueça na chapa sem óleo",
+                        "Combine com proteína assada e muitos vegetais"
+                    ],
+                    "message": "Seus ancestrais tinham razão! É um superalimento, não apenas cultura.",
+                    "budget": "O carboidrato saudável mais barato do mercado."
+                }
+            ]
+        },
+        "medicationMap": {
+            "title": "Mapa de Medicamentos",
+            "categories": [
+                {
+                    "id": "heart",
+                    "name": "Coração e Pressão",
+                    "desc": "Protege o 'Sistema Elétrico' e controla a pressão.",
+                    "classes": [
+                        {
+                            "name": "Beta-Bloqueadores",
+                            "drugs": [
+                                "Bisoprolol",
+                                "Carvedilol",
+                                "Metoprolol"
+                            ]
+                        },
+                        {
+                            "name": "Inibidores da ECA",
+                            "drugs": [
+                                "Lisinopril",
+                                "Ramipril",
+                                "Enalapril"
+                            ]
+                        },
+                        {
+                            "name": "BRAs",
+                            "drugs": [
+                                "Losartana",
+                                "Valsartana",
+                                "Candesartana"
+                            ]
+                        },
+                        {
+                            "name": "ISNI",
+                            "drugs": [
+                                "Sacubitril-Valsartana (Entresto)"
+                            ]
+                        },
+                        {
+                            "name": "Bloqueadores de Canais de Cálcio",
+                            "drugs": [
+                                "Anlodipino",
+                                "Diltiazem",
+                                "Verapamil"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "kidney",
+                    "name": "Proteção Renal",
+                    "desc": "Mantém o 'Encanamento' e filtra as toxinas.",
+                    "classes": [
+                        {
+                            "name": "Inibidores de SGLT-2",
+                            "drugs": [
+                                "Empagliflozina",
+                                "Dapagliflozina",
+                                "Canagliflozina"
+                            ]
+                        },
+                        {
+                            "name": "ARMs Esteroidais",
+                            "drugs": [
+                                "Espironolactona",
+                                "Eplerenona"
+                            ]
+                        },
+                        {
+                            "name": "ns-ARM (Kerendia)",
+                            "drugs": [
+                                "Finerenona"
+                            ],
+                            "mechanism": "Bloqueia a inflamação e a cicatrização nos rins e no coração com menos efeitos colaterais hormonais.",
+                            "cost": {
+                                "generic": false,
+                                "costInfo": "Apenas marca."
+                            }
+                        },
+                        {
+                            "name": "Bloqueadores do SRAA",
+                            "drugs": [
+                                "IECA",
+                                "BRA (Ver seção Coração)"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "metabolism",
+                    "name": "Metabolismo e Açúcar",
+                    "desc": "Regula o 'Suprimento de Energia' e a inflamação.",
+                    "classes": [
+                        {
+                            "name": "Agonistas de GLP-1",
+                            "drugs": [
+                                "Semaglutida (Ozempic/Wegovy)",
+                                "Tirzepatida (Mounjaro)",
+                                "Liraglutida"
+                            ]
+                        },
+                        {
+                            "name": "Primeira Linha",
+                            "drugs": [
+                                "Metformina"
+                            ]
+                        },
+                        {
+                            "name": "Agonistas de PPAR Gama",
+                            "drugs": [
+                                "Pioglitazona"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "lipids",
+                    "name": "Lípides e Artérias",
+                    "desc": "Limpa os 'Tubos' e previne o acúmulo de placas.",
+                    "classes": [
+                        {
+                            "name": "Estatinas",
+                            "drugs": [
+                                "Atorvastatina",
+                                "Rosuvastatina",
+                                "Sinvastatina",
+                                "Pravastatina"
+                            ]
+                        },
+                        {
+                            "name": "Redução Avançada",
+                            "drugs": [
+                                "Inibidores de PCSK-9 (Evolocumabe)",
+                                "Ácido Bempedoico",
+                                "Ezetimiba"
+                            ]
+                        },
+                        {
+                            "name": "Fibratos e EPA",
+                            "drugs": [
+                                "Fenofibrato",
+                                "Icosapento de Etila (Vascepa)"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        "stageExplorer": {
+            "stages": [
+                {
+                    "id": 0,
+                    "title": "Etapa 0: Saúde Ideal",
+                    "desc": "Sem fatores de risco conhecidos. Seu objetivo é manter este estado.",
+                    "factors": {
+                        "weight": "Faixa normal; sem excesso de gordura abdominal.",
+                        "sugar": "HbA1c normal (abaixo de 5,7%).",
+                        "kidneys": "Filtragem normal; sem perda de proteínas.",
+                        "heart": "Pressão arterial normal; bombeamento eficiente."
+                    }
+                },
+                {
+                    "id": 1,
+                    "title": "Etapa 1: Excesso de Gordura Corporal",
+                    "desc": "O corpo começa a armazenar o excesso de gordura em áreas prejudiciais.",
+                    "factors": {
+                        "weight": "Excesso de peso (IMC 25+) ou circunferência da cintura elevada.",
+                        "sugar": "Podem aparecer marcadores precoces de inflamação.",
+                        "kidneys": "Começa a filtrar um pouco mais forte para gerenciar a carga.",
+                        "heart": "Pressão normal, mas os vasos começam a mostrar estresse precoce."
+                    }
+                },
+                {
+                    "id": 2,
+                    "title": "Etapa 2: Risco Metabólico",
+                    "desc": "Aparecem pressão alta, diabetes ou doença renal precoce.",
+                    "factors": {
+                        "weight": "Excesso de peso contínuo ou obesidade abdominal.",
+                        "sugar": "HbA1c entrando na faixa de Pré-diabetes ou Diabetes.",
+                        "kidneys": "Traços de proteína na urina ou queda na taxa de filtragem.",
+                        "heart": "A pressão sobe; as paredes do coração podem começar a engrossar."
+                    }
+                },
+                {
+                    "id": 3,
+                    "title": "Etapa 3: Dano Orgânico Precoce",
+                    "desc": "O risco é muito alto; as alterações orgânicas são visíveis nos exames.",
+                    "factors": {
+                        "weight": "O manejo é fundamental para reduzir o estresse sistêmico.",
+                        "sugar": "Difícil de controlar; o estresse metabólico é alto.",
+                        "kidneys": "Doença renal avançada (Etapa 3 ou 4 de DRC).",
+                        "heart": "Doença cardíaca subclínica (sinais no ecocardiograma)."
+                    }
+                },
+                {
+                    "id": 4,
+                    "title": "Etapa 4: Doença Estabelecida",
+                    "desc": "Existe doença cardíaca clínica (AVC, insuficiência cardíaca).",
+                    "factors": {
+                        "weight": "Vigilância cuidadosa do peso (retenção de líquidos).",
+                        "sugar": "Risco elevado de complicações vasculares.",
+                        "kidneys": "Função gravemente reduzida; requer atenção nefrológica próxima.",
+                        "heart": "Doença clínica; histórico de AVC ou insuficiência cardíaca."
+                    }
+                }
+            ]
+        },
+        "movementExplorer": {
+            "title": "Mova-se Mais, Viva Melhor",
+            "next": "Próximo Slide",
+            "prev": "Anterior",
+            "slides": [
+                {
+                    "title": "Por que seu corpo precisa de movimento-A Conexão CKM",
+                    "text": "Quando você move seus músculos, algo incrível acontece: suas células musculares abrem pequenas portas que deixam entrar a glicose (açúcar no sangue) SEM necessidade de insulina. Seus músculos literalmente bebem o açúcar do seu sangue. Isso acontece tendo diabetes ou não. O movimento é a ÚNICA coisa que funciona assim: é sua arma secreta para a saúde CKM.",
+                    "lesson": "Seus músculos são como esponjas para o açúcar no sangue. Mesmo uma caminhada de 10 minutos após o jantar pode baixar significativamente o açúcar no sangue (frequentemente entre 10-30%)."
+                },
+                {
+                    "title": "Os Dois Tipos de Movimento que Você Precisa",
+                    "text": "CARDIO (caminhar, dançar) é como trocar o óleo do seu carro: mantém o coração e os vasos sanguíneos funcionando sem problemas. FORÇA (levantar pesos, carregar malas) é como manter a estrutura da sua casa: constrói os músculos que absorvem o açúcar. Você precisa de ambos.",
+                    "lesson": "Não precisa de uma academia. Carregar as sacolas de compras ou brincar com os netos conta para seus objetivos de CKM."
+                },
+                {
+                    "title": "Começando do ZERO-Seu Primeiro Mês",
+                    "text": "Se você atualmente não faz exercício, comece com CINCO MINUTOS. Sim, sério. Cinco minutos de movimento é infinitamente melhor do que zero. Chegaremos ao objetivo de 150 minutos por semana em 3 meses.",
+                    "lesson": "Meta Semanas 1-2: 5 min, 3-4 dias. Meta Semanas 3-4: 10 min, 4-5 dias. Progresso, não perfeição."
+                },
+                {
+                    "title": "Domínio do Cardio-Encontrando seu 'Ponto Ideal'",
+                    "text": "O 'ponto ideal' é a Zona 2: onde você respira com mais dificuldade e sente que está trabalhando, mas poderia continuar por uma hora. Aqui é onde seu corpo queima gordura de maneira mais eficiente."
+                },
+                {
+                    "title": "Treino de Força Sem Academia",
+                    "text": "O músculo é a melhor unidade de armazenamento de açúcar do seu corpo. Cada quilo de músculo que você constrói cria mais 'esponja' para absorver a glicose. Os exercícios com o peso corporal trabalham todos os grupos musculares importantes.",
+                    "lesson": "Comece com 1 série de 8-10 repetições: flexões na parede, agachamentos, pontes de glúteos e prancha. Faça 2-3 vezes por semana."
+                },
+                {
+                    "title": "Adaptando o Movimento à Vida Real (MA Seasons)",
+                    "text": "3 sessões de 10 minutos = mesmo benefício que 1 de 30 minutos. Em Massachusetts, o clima é uma barreira. Use caminhadas no shopping (Natick Mall ou Shoppers World) no inverno ou vídeos de caminhada gratuitos em casa.",
+                    "lesson": "Novembro-Março: Vá para INTERIORES. Os shoppings são gratuitos, quentes e seguros. Não se arrisque a cair no gelo!"
+                },
+                {
+                    "title": "Superando Barreiras Reais",
+                    "text": "Dinheiro, tempo, dor e segurança são obstáculos REAIS. Se você tem dor articular, tente caminhar na água ou fazer exercícios em uma cadeira. Se o tempo for curto, use 'lanches de movimento' (escadas, estacionar mais longe).",
+                    "lesson": "Para cada barreira, há uma solução. O exercício não deve criar estresse; deve aliviá-lo."
+                },
+                {
+                    "title": "Seu Plano de Movimento Personalizado",
+                    "text": "Não há um plano único para todos. Siga nosso roteiro de 12 semanas de zero a 150 minutos.",
+                    "lesson": "Ação para hoje: Caminhe por 5 minutos após o jantar. Esse é o seu começo. Veja como seus números melhoram."
+                }
+            ]
+        },
+        "foodLabel": {
+            "title": "Detetive de Rótulos",
+            "next": "Próximo",
+            "prev": "Voltar",
+            "slides": [
+                {
+                    "title": "Introdução-Seu Superpoder no Mercado",
+                    "text": "As empresas querem que você esteja confuso. A embalagem diz 'natural,' 'saudável,' '100% real'—mas o que significa? A informação REAL está na letra miúda: o rótulo de Informações Nutricionais e a lista de ingredientes. Saber ler isso lhe dá o poder de escolher alimentos que protegem sua saúde CKM. Leva 30 segundos verificar um rótulo. Esses 30 segundos podem adicionar anos à sua vida.",
+                    "lesson": "Ao final deste módulo, poderá identificar as opções mais saudáveis em 30 segundos ou menos. É uma habilidade para toda a vida."
+                },
+                {
+                    "title": "Anatomia do Rótulo-O Erro #1",
+                    "text": "Aqui está o erro #1: olhar calorias ou sódio—mas IGNORAR o tamanho da porção. Tudo neste rótulo é POR PORÇÃO. Se comer todo o pacote pensando 'apenas 100 calorias!' mas tem 3 porções, acabou de comer 300 calorias. O tamanho da porção é a PRIMEIRA coisa que verifica. Sempre.",
+                    "lesson": "Não precisa memorizar cada número. Foque em: tamanho da porção, sódio, açúcares adicionados e fibras.",
+                    "hotspots": [
+                        {
+                            "id": "servings-per",
+                            "title": "Porções por Embalagem",
+                            "text": "Este pacote tem 8 porções. Se comer a metade, multiplique tudo por 4."
+                        },
+                        {
+                            "id": "serving-size",
+                            "title": "Tamanho da Porção",
+                            "text": "Tudo abaixo é para ESTA QUANTIDADE. As empresas usam porções pequenas para parecer saudáveis."
+                        },
+                        {
+                            "id": "calories",
+                            "title": "Calorias",
+                            "text": "Energia por porção. 230 de feijão = reparação. 230 de refrigerante = dano."
+                        },
+                        {
+                            "id": "fats",
+                            "title": "Gorduras",
+                            "text": "A gordura saturada entope as artérias. A trans (busque 0g) as corrói."
+                        },
+                        {
+                            "id": "sodium",
+                            "title": "Sódio",
+                            "text": "O Ímã de Água. Meta: <2000mg por dia total. O sódio alto danifica coração e rins."
+                        },
+                        {
+                            "id": "carbs",
+                            "title": "Carboidratos Totais",
+                            "text": "Inclui fibras e açúcares. Este número afeta seu açúcar no sangue mais diretamente."
+                        },
+                        {
+                            "id": "fiber",
+                            "title": "Fibra",
+                            "text": "Seu Escudo Metabólico. Meta: 25-35g por dia. Busque 3g+ por porção."
+                        },
+                        {
+                            "id": "added-sugar",
+                            "title": "Açúcares Adicionados",
+                            "text": "CRÍTICO. Limite a <25g/dia. Um refrigerante pode exceder sua meta de todo o dia."
+                        },
+                        {
+                            "id": "protein",
+                            "title": "Proteína",
+                            "text": "Ajuda o metabolismo, mas o excesso estressa os rins. O equilíbrio é a chave."
+                        }
+                    ]
+                },
+                {
+                    "title": "O % Valor Diário-Seu Guia Rápido",
+                    "text": "Vê as porcentagens à direita? Elas dizem se uma porção tem muito ou pouco. Regra: 5% ou menos é BAIXO. 20% ou mais é ALTO. Truque: VOCÊ QUER 'ALTO' para fibras, proteínas, vitaminas. VOCÊ QUER 'BAIXO' para gordura saturada, sódio, açúcares adicionados.",
+                    "lesson": "Porcentagens baixas para o 'ruim' (sódio/açúcar), altas para o 'bom' (fibra). Sem calculadora.",
+                    "table": [
+                        {
+                            "n": "Fibra Alimentar",
+                            "v": "20% ✅",
+                            "m": "ALTO-Excelente! Protege os 3 sistemas."
+                        },
+                        {
+                            "n": "Sódio",
+                            "v": "25% 🔴",
+                            "m": "ALTO-Cuidado! Danifica coração e rins."
+                        },
+                        {
+                            "n": "Gordura Saturada",
+                            "v": "10% 🟡",
+                            "m": "Moderado-Tenha cautela."
+                        },
+                        {
+                            "n": "Açúcares Adicionados",
+                            "v": "40% 🔴",
+                            "m": "ALTO-Demasiado. Danifica sua base."
+                        }
+                    ]
+                },
+                {
+                    "title": "Lista de Ingredientes-A Verdade Oculta",
+                    "text": "A lista está em ordem de peso. Se o açúcar é o primeiro, é quase puro açúcar. As empresas escondem o açúcar com 60+ nomes. Aqui é onde você as pega mentindo.",
+                    "lesson": "Frente da embalagem = marketing. Lista de ingredientes = VERDADE. Se não sabe pronunciar ou vê muitos açúcares, não compre.",
+                    "rules": [
+                        "Primeiros 3 ingredientes: Devem ser alimentos reais, não açúcar ou farinha refinada.",
+                        "Nomes do Açúcar: Cuidado com xarope, suco de cana, maltodextrina, néctar.",
+                        "Gorduras Trans: Evite 'óleo parcialmente hidrogenado' totalmente.",
+                        "Grãos Integrais: Busque 'trigo INTEGRAL' ou 'aveia' como primeiro ingrediente."
+                    ]
+                },
+                {
+                    "title": "Detetive de Rótulos-Comparações",
+                    "text": "Pratiquemos. Os produtos reais mostram como o marketing engana. Às vezes a versão 'saudável' é pior do que a normal.",
+                    "lesson": "Feijão baixo sódio, iogurte natural, tortilha de milho—economizam dinheiro E protegem sua saúde.",
+                    "comparisons": [
+                        {
+                            "name": "Feijão Preto",
+                            "a": "Normal: 460mg Sódio (20% VD) 🔴",
+                            "b": "Baixo Sódio: 5mg Sódio ✅",
+                            "win": "Baixo Sódio"
+                        },
+                        {
+                            "name": "Pão",
+                            "a": "Farinha de Trigo: Refinado, 1g fibra ❌",
+                            "b": "100% Integral: 5g fibra, grãos inteiros ✅",
+                            "win": "100% Integral"
+                        },
+                        {
+                            "name": "Iogurte",
+                            "a": "Morango: 13g Açúcar Adicionado (26% VD) 🔴",
+                            "b": "Natural + Fruta: 0g Açúcar Adicionado, 3x Proteína ✅",
+                            "win": "Natural + Fruta"
+                        }
+                    ]
+                },
+                {
+                    "title": "Truques de Marketing-Decodificando a Frente",
+                    "text": "A lei regula o verso, mas quase não regula a frente. Gastam milhões para enganá-lo. 'Natural' não significa nada legalmente.",
+                    "lesson": "Nunca confie na frente da embalagem. É publicidade. Os fatos estão atrás.",
+                    "claims": [
+                        {
+                            "c": "'Natural'",
+                            "t": "Sem valor legal. Arsênico é natural. Olhe os ingredientes."
+                        },
+                        {
+                            "c": "'Saudável para o Coração'",
+                            "t": "Ignora açúcar/sódio alto. Verifique os Big 4 você mesmo."
+                        },
+                        {
+                            "c": "'Multigãos'",
+                            "t": "Podem ser grãos REFINADOS. Busque '100% Integral'."
+                        },
+                        {
+                            "c": "'Sem Açúcar'",
+                            "t": "Muitas vezes adicionam gordura extra ou adoçantes para compensar."
+                        }
+                    ]
+                },
+                {
+                    "title": "Guia de Compras de 30 Segundos",
+                    "text": "Não precisa memorizar tudo. Use o método 'Big 4': (1) Açúcar Adicionado <5g, (2) Sódio <200mg, (3) Fibra>3g, (4) Gordura Sat <2g.",
+                    "lesson": "Os alimentos simples são mais baratos e saudáveis. Feijão, arroz, aveia e ovos são campeões CKM.",
+                    "flowchart": "Verifique a porção → Verifique os Big 4 (Açúcar, Sódio, Fibra, Gordura) → Verifique Ingredientes → COMPRE ou DEVOLVA."
+                }
+            ],
+            "labels": {
+                "anatomy": "Anatomia",
+                "percentDV": "% Valor Diário",
+                "ingredients": "Ingredientes",
+                "marketing": "Marketing",
+                "shoppingGuide": "Guia",
+                "big3": "COMECE COM OS 3 GRANDES: (1) Tamanho de porção, (2) Sódio, (3) Açúcares adicionados. Domine estes para comprar melhor."
+            }
+        },
+        "metricsDashboard": {
+            "categories": {
+                "bp": {
+                    "title": "Pressão Arterial",
+                    "desc": "A pressão do sangue contra as paredes das artérias.",
+                    "levels": [
+                        {
+                            "label": "Normal",
+                            "value": "Menos de 120 / <80 mmHg"
+                        },
+                        {
+                            "label": "Elevada",
+                            "value": "120-129 / <80 mmHg"
+                        },
+                        {
+                            "label": "Hipertensão Estágio 1",
+                            "value": "130-139 / 80-89 mmHg"
+                        },
+                        {
+                            "label": "Hipertensão Estágio 2",
+                            "value": "140+ / 90+ mmHg"
+                        }
+                    ]
+                },
+                "a1c": {
+                    "title": "HbA1c (Açúcar)",
+                    "desc": "Sua média de açúcar no sangue durante os últimos 3 meses.",
+                    "levels": [
+                        {
+                            "label": "Normal",
+                            "value": "Abaixo de 5.7%"
+                        },
+                        {
+                            "label": "Pré-diabetes",
+                            "value": "5.7% a 6.4%"
+                        },
+                        {
+                            "label": "Diabetes",
+                            "value": "6.5% ou mais"
+                        }
+                    ]
+                },
+                "ldl": {
+                    "title": "Lípides",
+                    "desc": "LDL (Colesterol 'Ruim') e ainda mais importante, seu nível de ApoB.",
+                    "levels": [
+                        {
+                            "label": "Meta Padrão LDL",
+                            "value": "Abaixo de 100 mg/dL"
+                        },
+                        {
+                            "label": "Meta LDL Alto Risco",
+                            "value": "Abaixo de 55-70 mg/dL"
+                        },
+                        {
+                            "label": "ApoB (Meta CKM)",
+                            "value": "Abaixo de 65-80 mg/dL"
+                        },
+                        {
+                            "label": "Lp(a) (Risco Genético)",
+                            "value": "Checar uma vez na vida"
+                        }
+                    ],
+                    "physicianNote": "ApoB é a contagem total de partículas 'ruins', um marcador melhor da carga de placa do que o LDL. Lp(a) é um fator genético que você só precisa verificar uma vez na vida para entender seu risco base."
+                },
+                "bmi": {
+                    "title": "Peso e IMC",
+                    "desc": "Índice de Massa Corporal baseado em altura e peso.",
+                    "levels": [
+                        {
+                            "label": "Normal",
+                            "value": "18.5 – 24.9"
+                        },
+                        {
+                            "label": "Sobrepeso",
+                            "value": "25.0 – 29.9"
+                        },
+                        {
+                            "label": "Obesidade Classe I",
+                            "value": "30.0 – 34.9"
+                        },
+                        {
+                            "label": "Obesidade II / III",
+                            "value": "35.0+"
+                        }
+                    ],
+                    "physicianNote": "Embora o IMC seja importante, sua <strong>Circunferência da Cintura</strong> (meta <88cm em mulheres, <102cm em homens) costuma ser melhor preditor do risco metabólico."
+                },
+                "kidney": {
+                    "title": "Função Renal",
+                    "desc": "Verificamos os filtros de duas maneiras: fluxo sanguíneo (eGFR) e qualidade do filtro (vazamento de UACR).",
+                    "levels": [
+                        {
+                            "label": "Fluxo (eGFR)-Normal",
+                            "value": "Acima de 60-90"
+                        },
+                        {
+                            "label": "Fluxo (eGFR)-DRC",
+                            "value": "Abaixo de 60"
+                        },
+                        {
+                            "label": "Vazamento (UACR)-Normal",
+                            "value": "Abaixo de 30 mg/g"
+                        },
+                        {
+                            "label": "Vazamento (UACR)-Risco",
+                            "value": "Acima de 30 mg/g"
+                        }
+                    ],
+                    "physicianNote": "O UACR é o 'controle de qualidade' de seus filtros. Pode detectar o estresse renal anos antes de um exame de sangue mostrar algum dano."
+                }
+            }
+        }
+    },
+    "chat": {
+        "welcome": "Olá! Sou seu Assistente de Saúde IA. Como posso ajudá-lo a entender sua saúde cardíaca, renal ou metabólica hoje?",
+        "title": "Fazer uma Pergunta",
+        "subtitle": "Assistente de Saúde IA (Beta)",
+        "placeholder": "Digite sua pergunta de saúde aqui...",
+        "send": "Enviar",
+        "disclaimer": "Apenas para fins educacionais. Não é aconselhamento médico. Nem todas as funções podem estar disponíveis no momento.",
+        "thinking": "Pensando...",
+        "response": "Obrigado por sua pergunta. Como seu assistente, recomendo começar com 'O que é a saúde CKM?' para entender os conceitos básicos. Você deve sempre buscar aconselhamento médico profissional do seu médico na clínica."
+    }
+}
