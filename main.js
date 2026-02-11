@@ -882,18 +882,88 @@ const app = {
         return this.foodController.getEatingPlateSVGForSlide(idx);
     },
 
+    // ========================================
+    // MEDICATION METHODS (Delegated to MedicationController)
+    // ========================================
+    renderMedicationMap(mountId = 'med-map-mount') {
+        return this.medicationController.renderMedicationMap(mountId);
+    },
 
-toggleClinicalNote(idx) {
-    return this.analogyController.toggleClinicalNote(idx);
-},
+    renderMedicationCategory(catId) {
+        return this.medicationController.renderMedicationCategory(catId);
+    },
 
-updateAnalogyControl(system, value, mountId) {
-    return this.analogyController.updateAnalogyControl(system, value, mountId);
-},
+    toggleMedicationCard(cardId) {
+        return this.medicationController.toggleMedicationCard(cardId);
+    },
 
-toggleAnalogyControl(system, mountId) {
-    return this.analogyController.toggleAnalogyControl(system, mountId);
-},
+    toggleMyMedication(name) {
+        return this.medicationController.toggleMyMedication(name);
+    },
+
+    removeMyMedication(name) {
+        return this.medicationController.removeMyMedication(name);
+    },
+
+    showMyMedications() {
+        return this.medicationController.showMyMedications();
+    },
+
+    closeMyMedications() {
+        return this.medicationController.closeMyMedications();
+    },
+
+    renderMetricsDashboard(activeCatId = 'bp') {
+        return this.medicationController.renderMetricsDashboard(activeCatId);
+    },
+
+    renderStageExplorer(activeStageId = 1) {
+        return this.medicationController.renderStageExplorer(activeStageId);
+    },
+
+    // ========================================
+    // ANALOGY METHODS (Delegated to AnalogyController)
+    // ========================================
+    renderAnalogyAnimation(mountId, slideIdx = 0) {
+        return this.analogyController.renderAnalogyAnimation(mountId, slideIdx);
+    },
+
+    showMyth(idx, moduleKey = 'analogy') {
+        return this.analogyController.showMyth(idx, moduleKey);
+    },
+
+    toggleClinicalNote(idx) {
+        return this.analogyController.toggleClinicalNote(idx);
+    },
+
+    updateAnalogyControl(system, value, mountId) {
+        return this.analogyController.updateAnalogyControl(system, value, mountId);
+    },
+
+    toggleAnalogyControl(system, mountId) {
+        return this.analogyController.toggleAnalogyControl(system, mountId);
+    },
+
+    // ========================================
+    // SHARED UTILITY ACTIONS
+    // ========================================
+    clearMount(mountId) {
+        const mount = document.getElementById(mountId);
+        if (!mount) return;
+        DOMUtils.clearChildren(mount);
+    },
+
+    scrollToElement(elementId) {
+        const target = document.getElementById(elementId);
+        if (!target || typeof target.scrollIntoView !== 'function') return;
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    },
+
+    scrollToStaging() {
+        const target = document.getElementById('stage-explorer-intro') || document.getElementById('stage-explorer-mount');
+        if (!target || typeof target.scrollIntoView !== 'function') return;
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    },
 
     // Sidebar Chat Logic
     async resetProgress() {
@@ -921,14 +991,14 @@ toggleAnalogyControl(system, mountId) {
 
 showConfirm(title, message, actionText, onConfirm) {
     DOMUtils.safeSetHTML(this.modalBody, `
-    < div style = "text-align: center; padding: 24px;" >
+            <div style="text-align: center; padding: 24px;">
                 <h3 style="font-size: 24px; font-weight: 800; margin-bottom: 16px;">${title}</h3>
                 <p style="font-size: 17px; opacity: 0.7; margin-bottom: 32px; line-height: 1.5;">${message}</p>
                 <div style="display: flex; gap: 16px; justify-content: center;">
                     <button class="btn btn-primary" id="confirm-yes" style="flex: 1; max-width: 160px; background: var(--accent-red); color: white; border: none;">${actionText}</button>
                     <button class="btn btn-text" id="confirm-no" style="flex: 1; max-width: 160px;">${this.translations[this.currentLanguage].ui.cancelAction}</button>
                 </div>
-            </div >
+            </div>
     `);
     this.modalOverlay.classList.remove('hidden');
 
@@ -1006,7 +1076,7 @@ showOrganDetail(organ) {
 
     const related = targets[organ] || [];
     related.forEach(t => {
-        const el = document.querySelector(`[data - args="'${t}'"]`);
+        const el = document.querySelector(`[data-args="'${t}'"]`);
         if (el) el.classList.add('active-pulse');
     });
 
@@ -1016,7 +1086,7 @@ showOrganDetail(organ) {
     this.previouslyFocused = document.activeElement;
 
     const modalContent = `
-    < h2 id = "modal-title" > ${ d.title }</h2 >
+            <h2 id="modal-title">${d.title}</h2>
             
             <div class="modal-section">
                 <h4>${t.labels.role}</h4>
@@ -1208,7 +1278,7 @@ showTooltip(e, type) {
     if (!tooltip) return;
 
     const t = this.translations[this.currentLanguage].anatomy.details[type];
-    DOMUtils.safeSetHTML(tooltip, `< strong > ${ t.title }</strong > <br>${t.role}`);
+    DOMUtils.safeSetHTML(tooltip, `<strong>${t.title}</strong><br>${t.role}`);
     tooltip.classList.remove('hidden');
 
     const target = e?.target?.closest?.('.anatomy-zone') || e?.target;
@@ -1228,10 +1298,11 @@ showTooltip(e, type) {
 
     initChatInteraction() {
     const sidebar = document.getElementById('chat-sidebar');
+    if (!sidebar) return;
+
     const header = sidebar.querySelector('.chat-sidebar-header');
     const resizer = sidebar.querySelector('.chat-resizer');
-
-    if (!sidebar || !header || !resizer) return;
+    if (!header || !resizer) return;
 
     // Clean up previous listeners
     if (this._chatCleanup) {
