@@ -1,18 +1,27 @@
-const CACHE_NAME = 'ckm-navigator-v6';
+const CACHE_NAME = 'ckm-navigator-v12';
 const ASSETS = [
     './',
     './index.html',
     './manifest.json',
-    './main.js?v=5',
-    './styles/main.css?v=5',
-    './js/dom-utils.js',
-    './js/task-manager.js',
-    './js/secure-storage.js',
-    './js/chatbot.js',
-    './js/search-engine.js',
-    './locales/en.json',
-    './locales/pt.json',
-    './locales/es.json'
+    './main.js?v=8',
+    './styles/main.css?v=8',
+    './js/config/inline-fallback-en.js?v=8',
+    './js/dom-utils.js?v=8',
+    './js/core/i18n-service.js?v=8',
+    './js/core/action-dispatcher.js?v=8',
+    './js/features/curriculum-renderers.js?v=8',
+    './js/features/curriculum-controller.js?v=8',
+    './js/task-manager.js?v=8',
+    './js/secure-storage.js?v=8',
+    './js/chatbot.js?v=8',
+    './js/search-engine.js?v=8',
+    './js/features/chat-controller.js?v=8',
+    './js/features/quiz-controller.js?v=8',
+    './js/features/medication-controller.js?v=8',
+    './js/features/analogy-controller.js?v=8',
+    './locales/en.json?v=8',
+    './locales/pt.json?v=8',
+    './locales/es.json?v=8'
 ];
 
 async function updateCache(request, response) {

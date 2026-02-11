@@ -11,6 +11,7 @@
             this.fetchImpl = opts.fetchImpl || (typeof fetch === 'function' ? fetch.bind(globalThis) : null);
             this.basePath = opts.basePath || './locales';
             this.inlineFallbackEn = opts.inlineFallbackEn || {};
+            this.version = opts.version || '';
             this.loadedLocales = new Set();
         }
 
@@ -19,7 +20,8 @@
                 throw new Error('Fetch is not available for locale loading');
             }
 
-            const response = await this.fetchImpl(`${this.basePath}/${lang}.json`);
+            const url = `${this.basePath}/${lang}.json${this.version ? '?v=' + this.version : ''}`;
+            const response = await this.fetchImpl(url);
             if (!response.ok) {
                 throw new Error(`Could not load locale: ${lang}`);
             }

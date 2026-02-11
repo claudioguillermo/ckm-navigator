@@ -94,8 +94,8 @@
                     <h4 style="font-size: 20px; font-weight: 800; margin-bottom: 24px;">${ui.curriculumStatus || 'Curriculum Status'}</h4>
                     <div style="display: flex; flex-direction: column; gap: 4px;">
                         ${modules.map(function (mod) {
-                            const isDone = completedModules.includes(mod.id);
-                            return `
+            const isDone = completedModules.includes(mod.id);
+            return `
                                 <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px; border-radius: 12px; transition: all 0.2s; border: 1px solid transparent;" class="${isDone ? '' : 'pending-item'}">
                                     <div style="display: flex; align-items: center; gap: 16px;">
                                         <div style="width: 10px; height: 10px; border-radius: 50%; background: ${isDone ? 'var(--system-green)' : 'var(--text-tertiary)'}; box-shadow: ${isDone ? '0 0 8px var(--system-green)' : 'none'};"></div>
@@ -106,7 +106,7 @@
                                     </div>
                                 </div>
                             `;
-                        }).join('')}
+        }).join('')}
                     </div>
                 </div>
             </div>
@@ -160,8 +160,8 @@
 
             <div class="module-grid animate-stagger" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 32px; margin-top: 48px; padding: 10px;">
                 ${modules.map(function (mod) {
-                    const isCompleted = completedModules.includes(mod.id);
-                    return `
+            const isCompleted = completedModules.includes(mod.id);
+            return `
                          <div class="soft-card ${isCompleted ? 'completed' : ''}" data-action="renderModuleDetail" data-args="${mod.id}">
                              <div style="color: var(--accent-red); font-weight: 800; font-size: 14px; margin-bottom: 16px;">MOD 0${mod.id}</div>
                              <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 12px;">${mod.title}</h3>
@@ -169,7 +169,7 @@
                              ${isCompleted ? `<div style="margin-top: 24px; color: var(--system-green); font-weight: 700; display: flex; align-items: center; gap: 8px;"><span style="display: inline-flex; width: 24px; height: 24px; background: var(--bg-success-subtle); border-radius: 50%; align-items: center; justify-content: center; font-size: 12px;">✓</span>${(t.modules && t.modules.labels && t.modules.labels.completed) || 'Completed'}</div>` : ''}
                          </div>
                      `;
-                }).join('')}
+        }).join('')}
             </div>
         `;
     }
@@ -213,16 +213,10 @@
                 hasVisual = true;
             }
 
-            const mountMatches = Array.from(contentHtml.matchAll(/<div id="([^"]+-mount)"[^>]*><\/div>/g));
-            if (mountMatches.length > 0) {
-                return `
-                    <div class="module-interactive-section">
-                        ${mountMatches.map(function (match) {
-                            return `<div id="${match[1]}" style="margin-bottom: 32px;"><div class="skeleton-visual" style="height: 400px; background: var(--bg-skeleton); border-radius: 20px;"></div></div>`;
-                        }).join('')}
-                    </div>
-                `;
-            }
+            // Enhance mounts with skeleton placeholder internally, but do not return early
+            contentHtml = contentHtml.replace(/<div id="([^"]+-mount)"[^>]*><\/div>/g, (match, id) => {
+                return `<div id="${id}" style="margin-bottom: 32px;"><div class="skeleton-visual" style="height: 400px; background: var(--bg-skeleton); border-radius: 20px;"></div></div>`;
+            });
 
             return `
                 <div class="module-intro-section">

@@ -95,6 +95,30 @@
         "resultTitle": "Your CKM Assessment",
         "stageLabel": "Stage",
         "resultBtn": "Back to Curriculum",
+        "passportBtn": "📋 View Doctor Passport",
+        "passport": {
+            "title": "EMPOWER-CKM PASSPORT",
+            "subtitle": "Patient Health Snapshot",
+            "stageStatus": "Stage Status",
+            "medications": "Medications",
+            "clinicalPriorities": "Clinical Priorities",
+            "footerText": "Show this screen to your doctor to start a conversation about your CKM health goals.",
+            "closeBtn": "Close",
+            "priorities": {
+                "stage0": [
+                    "Maintain excellent preventative habits",
+                    "Screen annually"
+                ],
+                "stage3plus": [
+                    "Strict BP & Lipid Control",
+                    "Organ Protection (SGLT2/MRA)"
+                ],
+                "default": [
+                    "Lifestyle Optimization",
+                    "Metabolic Screening"
+                ]
+            }
+        },
         "questions": [
             {
                 "id": "heart",

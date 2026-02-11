@@ -94,6 +94,30 @@
         "resultTitle": "Sua Avaliação CKM",
         "stageLabel": "Etapa",
         "resultBtn": "Voltar ao Currículo",
+        "passportBtn": "📋 Ver Passaporte Médico",
+        "passport": {
+            "title": "PASSAPORTE EMPOWER-CKM",
+            "subtitle": "Resumo de Saúde do Paciente",
+            "stageStatus": "Status da Etapa",
+            "medications": "Medicamentos",
+            "clinicalPriorities": "Prioridades Clínicas",
+            "footerText": "Mostre esta tela ao seu médico para iniciar uma conversa sobre seus objetivos de saúde CKM.",
+            "closeBtn": "Fechar",
+            "priorities": {
+                "stage0": [
+                    "Manter excelentes hábitos preventivos",
+                    "Avaliar anualmente"
+                ],
+                "stage3plus": [
+                    "Controle rigoroso de PA e lipídios",
+                    "Proteção de órgãos (SGLT2/MRA)"
+                ],
+                "default": [
+                    "Otimização do estilo de vida",
+                    "Avaliação metabólica"
+                ]
+            }
+        },
         "questions": [
             {
                 "id": "heart",
@@ -834,6 +858,12 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "id": "team",
+                    "name": "Parceria com sua Equipe",
+                    "desc": "Estratégias de comunicação, perguntas a fazer e recursos locais.",
+                    "contentHTML": "\n        <div style=\"padding: 0 8px;\">\n            <div class=\"soft-card\" style=\"margin-bottom: 32px; background: #e3f2fd; padding: 24px; border-radius: 12px;\">\n                <h3 style=\"margin-top: 0; color: #1565c0;\">🗣️ Perguntas que Deve Fazer</h3>\n                <ul style=\"padding-left: 20px; font-size: 16px; line-height: 1.6; margin-bottom: 0;\">\n                    <li style=\"margin-bottom: 12px;\">\"O que este medicamento faz por mim especificamente?\"</li>\n                    <li style=\"margin-bottom: 12px;\">\"Por que estou tomando isso em vez de outra opção?\"</li>\n                    <li style=\"margin-bottom: 12px;\">\"A que efeitos colaterais devo estar atento?\"</li>\n                    <li style=\"margin-bottom: 0;\">\"Posso pagar por isso? Existem alternativas mais baratas?\"</li>\n                </ul>\n            </div>\n\n            <div class=\"soft-card\" style=\"margin-bottom: 32px; border-left: 6px solid var(--accent-red); padding: 24px; background: #ffebee;\">\n                <h3 style=\"margin-top: 0; color: var(--accent-red);\">🚨 Quando Ligar para 911</h3>\n                <p style=\"margin-bottom: 16px;\">Vá ao pronto-socorro ou ligue para 911 se sentir:</p>\n                <ul style=\"padding-left: 20px; font-size: 16px; font-weight: 700; color: #c62828;\">\n                    <li style=\"margin-bottom: 12px;\">Reação alérgica grave (inchaço do rosto/lábios/língua)</li>\n                    <li style=\"margin-bottom: 12px;\">Dor ou pressão severa no peito</li>\n                    <li style=\"margin-bottom: 0;\">Urina escura combinada com dor muscular severa</li>\n                </ul>\n            </div>\n\n            <div class=\"soft-card\" style=\"padding: 24px; border: 1px solid var(--border-soft);\">\n                <h3 style=\"margin-top: 0; margin-bottom: 16px;\">Ajuda Local: MetroWest Meds</h3>\n                <p style=\"font-size: 16px; margin-bottom: 24px;\">Assistência gratuita para acessar programas de medicação e encontrar custos mais baixos (recurso de Massachusetts).</p>\n                <a href=\"https://www.kennedychc.org/metrowestmeds/\" target=\"_blank\" class=\"btn btn-primary\" style=\"display: inline-flex; align-items: center; justify-content: center; text-decoration: none;\">\n                    Visitar MetroWest Meds <span style=\"margin-left: 8px;\">↗</span>\n                </a>\n            </div>\n        </div>\n    "
                 }
             ]
         },

@@ -4,8 +4,9 @@
  *
  * SECURITY FIX: API calls now go through secure backend proxy
  */
-const CHAT_API_BASE = '/api'; // Relative base path for production
-// const CHAT_API_BASE = 'http://localhost:3001/api'; // Dev fallback
+const CHAT_API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    ? 'http://localhost:3001/api'
+    : '/api';
 
 class MedicalChatbot {
     constructor(searchEngine, config = {}) {
@@ -14,6 +15,7 @@ class MedicalChatbot {
         this.conversationHistory = [];
         this.currentLanguage = 'en';
         this.sessionInitialized = false;
+        this.offlineMode = false;
     }
 
     setLanguage(lang) {
@@ -24,7 +26,7 @@ class MedicalChatbot {
      * Initialize session with backend
      */
     async initSession() {
-        if (this.sessionInitialized) return;
+        if (this.sessionInitialized || this.offlineMode) return;
 
         try {
             const response = await fetch(`${this.backendUrl}/session/init`, {
@@ -37,10 +39,14 @@ class MedicalChatbot {
 
             if (response.ok) {
                 this.sessionInitialized = true;
+            } else {
+                // If 404 (endpoint missing) or 500+, switch to offline mode
+                console.warn(`Chat backend returned ${response.status}. Switching to offline mode.`);
+                this.offlineMode = true;
             }
         } catch (error) {
-            console.warn('Could not initialize session with backend:', error);
-            // Continue without backend - fallback mode
+            console.warn('Could not initialize session with backend (likely offline):', error);
+            this.offlineMode = true;
         }
     }
 
@@ -129,8 +135,12 @@ class MedicalChatbot {
      * SECURITY FIX: No API key in client code
      */
     async generateResponse(query, context) {
-        // Ensure session initialized
+        // Ensure session initialized (checks for offline status)
         await this.initSession();
+
+        if (this.offlineMode) {
+            return this.getOfflineMessage(context);
+        }
 
         try {
             const response = await fetch(`${this.backendUrl}/chat`, {
@@ -185,6 +195,16 @@ class MedicalChatbot {
             es: "He encontrado información relevante en nuestro currículo sobre esto, pero la conexión de IA se está configurando actualmente. Consulte a su médico en la clínica para obtener detalles específicos.\n\n" + this.getMedicalDisclaimer()
         };
         return messages[this.currentLanguage] || messages.en;
+    }
+
+    getOfflineMessage(context) {
+        const messages = {
+            en: "I am currently in offline mode, but I found these relevant sections in the curriculum:\n\n",
+            pt: "Estou atualmente em modo offline, mas encontrei estas seções relevantes no currículo:\n\n",
+            es: "Actualmente estoy en modo fuera de línea, pero encontré estas secciones relevantes en el currículo:\n\n"
+        };
+        const prefix = messages[this.currentLanguage] || messages.en;
+        return prefix + context + "\n\n" + this.getMedicalDisclaimer();
     }
 
     getSafetyMessage(query) {
