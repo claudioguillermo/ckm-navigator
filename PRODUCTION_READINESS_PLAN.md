@@ -96,3 +96,5 @@
 I will move onto Phase 2 fixes next.
 ## Phase 2 Completed Tasks
 - `FoodController` and `MovementController` had already been extracted previously, so this phase was already done.
+## Phase 3 Completed Tasks
+- Migrated `initChatInteraction` and `snapToCorner` from `main.js` to `js/features/chat-controller.js`. Added these methods so they delegate nicely.

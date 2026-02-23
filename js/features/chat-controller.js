@@ -358,4 +358,216 @@ class ChatController {
         `);
         this.app.modalOverlay.classList.remove('hidden');
     }
+
+    initChatInteraction() {
+        const sidebar = document.getElementById('chat-sidebar');
+        if (!sidebar) return;
+
+        const header = sidebar.querySelector('.chat-sidebar-header');
+        const resizer = sidebar.querySelector('.chat-resizer');
+        if (!header || !resizer) return;
+
+        // Clean up previous listeners
+        if (this._chatCleanup) {
+            this._chatCleanup();
+        }
+
+        let isDragging = false;
+        let isResizing = false;
+
+        let startX, startY;
+        let startLeft, startTop;
+        let startWidth, startHeight;
+        let rafId = null;
+
+        const getRect = () => sidebar.getBoundingClientRect();
+
+        const onMouseDown = (e, mode) => {
+            if (e.target.tagName === 'BUTTON') return;
+            e.preventDefault();
+
+            sidebar.classList.add('no-transition');
+
+            startX = e.clientX;
+            startY = e.clientY;
+
+            const rect = getRect();
+            startLeft = rect.left;
+            startTop = rect.top;
+            startWidth = rect.width;
+            startHeight = rect.height;
+
+            if (mode === 'drag') isDragging = true;
+            if (mode === 'resize') isResizing = true;
+        };
+
+        const onMouseMove = (e) => {
+            if (!isDragging && !isResizing) return;
+            if (rafId) return;
+
+            rafId = requestAnimationFrame(() => {
+                const deltaX = e.clientX - startX;
+                const deltaY = e.clientY - startY;
+
+                if (isDragging) {
+                    let newLeft = startLeft + deltaX;
+                    let newTop = startTop + deltaY;
+
+                    // Bounds Checking (Keep on screen)
+                    newLeft = Math.max(0, Math.min(window.innerWidth - startWidth, newLeft));
+                    newTop = Math.max(0, Math.min(window.innerHeight - startHeight, newTop));
+
+                    sidebar.style.left = `${newLeft}px`;
+                    sidebar.style.top = `${newTop}px`;
+                    sidebar.style.right = 'auto'; // Detach from right
+                    sidebar.style.bottom = 'auto';
+                }
+
+                if (isResizing) {
+                    // Resizer is at TOP-LEFT.
+                    // Dragging LEFT (negative delta) -> Width Increases.
+                    // Dragging UP (negative delta) -> Height Increases.
+
+                    // Check if floating (detached from right edge)
+                    // If style.right is 'auto', it's floating/dragged.
+                    // If style.right is not 'auto' (empty or set), it's likely docked (CSS default).
+                    const isFloating = sidebar.style.right === 'auto';
+
+                    // --- Width Logic ---
+                    // Calculate desired width based on drag
+                    let newWidth = startWidth - deltaX;
+                    // Constraints: Min 300px, Max 90vw or 850px
+                    const maxWidth = Math.min(window.innerWidth - 20, 850);
+                    newWidth = Math.max(300, Math.min(maxWidth, newWidth));
+
+                    sidebar.style.width = `${newWidth}px`;
+
+                    if (isFloating) {
+                        // If floating, increasing width must expand leftward by moving 'left' coordinate.
+                        // Calculate effective change to keep right edge stable relative to box?
+                        // No, handle is on LEFT. Mouse tracks Left Edge.
+                        // So Left Edge should follow mouse (clamped by width).
+                        // effectiveDeltaX = Change in width * -1.
+                        const effectiveDeltaX = startWidth - newWidth;
+                        sidebar.style.left = `${startLeft + effectiveDeltaX}px`;
+                    }
+
+                    // --- Height Logic ---
+                    let newHeight = startHeight - deltaY;
+                    // Constraints: Min 300px, Max Window Height
+                    const maxHeight = window.innerHeight - 20;
+                    newHeight = Math.max(300, Math.min(maxHeight, newHeight));
+
+                    sidebar.style.height = `${newHeight}px`;
+
+                    // Handle is at TOP. Mouse tracks Top Edge.
+                    // Top coordinate must move.
+                    const effectiveDeltaY = startHeight - newHeight;
+                    sidebar.style.top = `${startTop + effectiveDeltaY}px`;
+                }
+
+                rafId = null;
+            });
+        };
+
+        const onMouseUp = () => {
+            if (isDragging || isResizing) {
+                isDragging = false;
+                isResizing = false;
+                sidebar.classList.remove('no-transition');
+                if (rafId) {
+                    cancelAnimationFrame(rafId);
+                    rafId = null;
+                }
+            }
+        };
+
+        // Responsiveness: Ensure sidebar stays on screen if window resizes
+        const onWindowResize = () => {
+            const rect = getRect();
+            const winW = window.innerWidth;
+            const winH = window.innerHeight;
+
+            // Clamp Width/Height if window got smaller
+            if (rect.width > winW) {
+                sidebar.style.width = `${winW - 20}px`;
+            }
+            if (rect.height > winH) {
+                sidebar.style.height = `${winH - 20}px`;
+                sidebar.style.top = '10px';
+            }
+
+            // Clamp Position (Push back onto screen)
+            if (sidebar.style.right === 'auto') {
+                const currentRect = getRect(); // Re-measure
+                if (currentRect.right > winW) {
+                    sidebar.style.left = `${winW - currentRect.width - 10}px`;
+                }
+                if (currentRect.left < 0) {
+                    sidebar.style.left = '10px';
+                }
+            }
+
+            // Re-measure vertical
+            const currentRect = getRect();
+            if (currentRect.bottom > winH) {
+                // Push up
+                sidebar.style.top = `${Math.max(0, winH - currentRect.height)}px`;
+            }
+        };
+
+        const dragStart = (e) => onMouseDown(e, 'drag');
+        const resizeStart = (e) => onMouseDown(e, 'resize');
+
+        header.addEventListener('mousedown', dragStart);
+        resizer.addEventListener('mousedown', resizeStart);
+        document.addEventListener('mousemove', onMouseMove);
+        document.addEventListener('mouseup', onMouseUp);
+        window.addEventListener('resize', onWindowResize);
+
+        const onSidebarClick = (e) => {
+            if (sidebar.classList.contains('minimized')) {
+                // Prevent interfering with other interactions if any
+                this.minimizeChat();
+            }
+        };
+        sidebar.addEventListener('click', onSidebarClick);
+
+        this._chatCleanup = () => {
+            header.removeEventListener('mousedown', dragStart);
+            resizer.removeEventListener('mousedown', resizeStart);
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+            window.removeEventListener('resize', onWindowResize);
+            sidebar.removeEventListener('click', onSidebarClick);
+        };
+    }
+
+    snapToCorner(el) {
+        const threshold = 150;
+        const rect = el.getBoundingClientRect();
+        const winW = window.innerWidth;
+        const winH = window.innerHeight;
+
+        // Determine snap targets
+        const snapX = rect.left < (winW - rect.right) ? 'left' : 'right';
+        const snapY = rect.top < (winH - rect.bottom) ? 'top' : 'bottom';
+
+        el.style.transition = 'all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)';
+
+        if (snapX === 'left') {
+            el.style.left = '32px';
+            el.style.right = 'auto';
+        } else {
+            el.style.left = (winW - rect.width - 32) + 'px';
+        }
+
+        if (snapY === 'top') {
+            el.style.top = '100px'; // Avoid header
+        } else {
+            el.style.top = (winH - rect.height - 32) + 'px';
+        }
+
+        setTimeout(() => { el.style.transition = ''; }, 400);
+    }
 }
