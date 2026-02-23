@@ -94,3 +94,5 @@
 - Cleaned up redundant files from bug-hunting scripts.
 
 I will move onto Phase 2 fixes next.
+## Phase 2 Completed Tasks
+- `FoodController` and `MovementController` had already been extracted previously, so this phase was already done.
