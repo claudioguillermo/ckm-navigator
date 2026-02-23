@@ -594,7 +594,10 @@ animation: fadeIn 0.2s ease;
 
     renderMetricsDashboard(activeCatId = 'bp') {
         const mount = document.getElementById('metrics-dashboard-mount');
-        if (!mount) return;
+        if (!mount) {
+            console.warn('[MedicationController] renderMetricsDashboard mount point not found. Check if the element exists in the DOM.');
+            return;
+        }
 
         const lang = this.app.currentLanguage;
         const t = this.app.translations[lang].modules.metricsDashboard.categories;

@@ -1,28 +1,45 @@
 /**
- * Secure localStorage with Data Integrity
+ * Secure Storage with Data Integrity
  *
  * SECURITY FIX: Protects against data tampering with HMAC signatures
  */
 
 class SecureStorage {
-    constructor(secretKey) {
-        this.secretKey = secretKey || this.generateSecretKey();
+    constructor(secretKey = null) {
         this.encoder = new TextEncoder();
         this.decoder = new TextDecoder();
+        this._initPromise = this._initKey(secretKey);
     }
 
-    /**
-     * Generate a secret key (stored in sessionStorage, regenerated each session)
-     */
-    generateSecretKey() {
-        let key = sessionStorage.getItem('_ckm_session_key');
-        if (!key) {
-            key = Array.from(crypto.getRandomValues(new Uint8Array(32)))
-                .map(b => b.toString(16).padStart(2, '0'))
-                .join('');
-            sessionStorage.setItem('_ckm_session_key', key);
+    async _initKey(secretKey) {
+        if (secretKey) {
+            this.secretKey = secretKey;
+            return;
         }
-        return key;
+
+        try {
+            // Check indexedDB first for a persistent key
+            let key = await idbKeyval.get('_ckm_secure_key');
+            if (!key) {
+                // Generate and store new key in indexedDB
+                key = Array.from(crypto.getRandomValues(new Uint8Array(32)))
+                    .map(b => b.toString(16).padStart(2, '0'))
+                    .join('');
+                await idbKeyval.set('_ckm_secure_key', key);
+            }
+            this.secretKey = key;
+        } catch (error) {
+            console.error('Failed to access indexedDB for robust key storage. Falling back to sessionStorage. Key may be lost on tab close.', error);
+            // Fallback to sessionStorage if idb fails
+            let key = sessionStorage.getItem('_ckm_session_key');
+            if (!key) {
+                key = Array.from(crypto.getRandomValues(new Uint8Array(32)))
+                    .map(b => b.toString(16).padStart(2, '0'))
+                    .join('');
+                sessionStorage.setItem('_ckm_session_key', key);
+            }
+            this.secretKey = key;
+        }
     }
 
     /**
@@ -31,6 +48,7 @@ class SecureStorage {
      * @param {*} value - Value to store (will be JSON.stringify'd)
      */
     async setItem(key, value) {
+        await this._initPromise;
         try {
             const data = JSON.stringify(value);
             const signature = await this.sign(data);
@@ -56,6 +74,7 @@ class SecureStorage {
      * @returns {*} Stored value or fallback
      */
     async getItem(key, fallback = null) {
+        await this._initPromise;
         try {
             const raw = localStorage.getItem(key);
             if (!raw) return fallback;

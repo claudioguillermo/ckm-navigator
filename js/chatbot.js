@@ -69,26 +69,20 @@ class MedicalChatbot {
             3 // Top 3 chunks for context
         );
 
-        if (retrievedChunks.length === 0) {
-            return {
-                response: this.getNoResultsMessage(),
-                sources: [],
-                confidence: 0
-            };
-        }
-
         // Calculate confidence based on retrieval scores (simplified)
-        const avgScore = retrievedChunks.reduce((sum, r) => sum + r.score, 0) / retrievedChunks.length;
+        const avgScore = retrievedChunks.length > 0
+            ? retrievedChunks.reduce((sum, r) => sum + r.score, 0) / retrievedChunks.length
+            : 0;
         const confidence = Math.min(avgScore * 1000, 100);
 
-        // Refuse to answer if confidence too low
-        if (confidence < 40) {
-            return {
-                response: this.getLowConfidenceMessage(),
-                sources: retrievedChunks.map(r => r.chunk),
-                confidence: confidence
-            };
-        }
+        // Commented out the confidence check to always allow the API to try to respond
+        // if (confidence < 40) {
+        //     return {
+        //         response: this.getLowConfidenceMessage(),
+        //         sources: retrievedChunks.map(r => r.chunk),
+        //         confidence: confidence
+        //     };
+        // }
 
         try {
             // Context for RAG

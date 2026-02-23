@@ -83,7 +83,7 @@ function parseActionsFromSource(source) {
 
 function hasMalformedMarkup(source) {
     const malformedTagRegex = /<\s+(div|h[1-6]|strong)\b/;
-    const malformedDataAttrRegex = /data\s*-\s*args/;
+    const malformedDataAttrRegex = /data\s+-\s*args|data\s*-\s+args/;
     return malformedTagRegex.test(source) || malformedDataAttrRegex.test(source);
 }
 

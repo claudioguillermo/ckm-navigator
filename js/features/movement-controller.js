@@ -12,7 +12,10 @@ class MovementController {
 
     renderMovementExplorer(activeIdx = 0, level = null, barrier = null) {
         const mount = document.getElementById('zone2-guide-mount') || document.getElementById('movement-explorer-mount');
-        if (!mount) return;
+        if (!mount) {
+            console.warn('[MovementController] Mount point not found. Module may be rendering incorrectly.');
+            return;
+        }
 
         const direction = activeIdx > (this._prevMovementIdx || 0) ? 'next' : 'prev';
         const isInitial = this._prevMovementIdx === undefined;

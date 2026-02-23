@@ -99,6 +99,42 @@ class ChatController {
 
         if (this.app.chatHistory.length === 0) {
             this.appendChatMessage('assistant', this.app.translations[this.app.currentLanguage].chat.welcome, true);
+
+            // Add suggested questions
+            const suggestions = [
+                this.app.currentLanguage === 'es' ? '¿Qué es CKM?' : (this.app.currentLanguage === 'pt' ? 'O que é CKM?' : 'What is CKM?'),
+                this.app.currentLanguage === 'es' ? '¿Cómo afecta la comida a mis riñones?' : (this.app.currentLanguage === 'pt' ? 'Como a comida afeta meus rins?' : 'How does food affect my kidneys?'),
+                this.app.currentLanguage === 'es' ? '¿Con qué frecuencia debo revisar mi presión?' : (this.app.currentLanguage === 'pt' ? 'Com que frequência devo verificar minha pressão?' : 'How often should I check my blood pressure?')
+            ];
+
+            const suggestionsDiv = document.createElement('div');
+            suggestionsDiv.className = 'chat-suggestions';
+            suggestionsDiv.style.cssText = 'display: flex; flex-direction: column; gap: 8px; margin-top: 12px; max-width: 85%; align-self: flex-start;';
+
+            suggestions.forEach(text => {
+                const btn = document.createElement('button');
+                btn.className = 'suggestion-pill';
+                btn.textContent = text;
+                btn.style.cssText = 'text-align: left; background: var(--bg-card); border: 1px solid var(--accent-red); color: var(--accent-red); padding: 10px 16px; border-radius: 16px; font-size: 14px; cursor: pointer; transition: all 0.2s;';
+
+                // Add hover effect
+                btn.onmouseover = () => { btn.style.background = 'var(--accent-red-light)'; };
+                btn.onmouseout = () => { btn.style.background = 'var(--bg-card)'; };
+
+                // On click, formulate the question and send immediately
+                btn.onclick = () => {
+                    const input = document.getElementById('chat-input-sidebar');
+                    if (input) {
+                        input.value = text;
+                        this.sendSidebarChatMessage();
+                    }
+                };
+
+                suggestionsDiv.appendChild(btn);
+            });
+
+            container.appendChild(suggestionsDiv);
+
         } else {
             this.app.chatHistory.forEach(msg => {
                 this.appendChatMessage(msg.role, msg.content, false);
@@ -116,6 +152,25 @@ class ChatController {
             this.app.chatHistory.push({ role, content: text });
         }
         this.renderSidebarChatSnippet(role, text, result, false);
+    }
+
+    /**
+     * Clear Chat History
+     */
+    clearChat() {
+        this.app.haptic(30);
+        this.app.chatHistory = [];
+        this.renderChatHistory();
+
+        // Announce reset for screen readers
+        const container = document.getElementById('chat-messages-sidebar');
+        if (container) {
+            container.setAttribute('aria-live', 'polite');
+            const msg = document.createElement('div');
+            msg.className = 'sr-only';
+            msg.textContent = 'Chat history cleared. Starting a new conversation.';
+            container.appendChild(msg);
+        }
     }
 
     /**
@@ -200,31 +255,51 @@ class ChatController {
 
         const messageText = document.createElement('div');
         messageText.className = 'message-text';
-        messageText.textContent = text;
+
+        // Custom Markdown & Source Parsing Function
+        let formattedText = text;
+        if (role === 'assistant') {
+            // Escape HTML first to prevent XSS before parsing markdown
+            formattedText = formattedText.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+            // Bold: **text**
+            formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+            // Italic: *text*
+            formattedText = formattedText.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+            // Links: [text](url)
+            formattedText = formattedText.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
+
+            // Unordered Lists: - item or * item
+            formattedText = formattedText.replace(/^[\s]*[-*]\s+(.*)/gm, '<li>$1</li>');
+            formattedText = formattedText.replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+
+            // Line Breaks -> <br>
+            formattedText = formattedText.replace(/\n\n/g, '<br><br>').replace(/\n(?!(<\/li>|<\/ul>))/g, '<br>');
+
+            // Inline Citation Injection: [Source X]
+            if (result && result.sources) {
+                formattedText = formattedText.replace(/\[Source\s+(\d+)\]/g, (match, num) => {
+                    const sourceIndex = parseInt(num) - 1;
+                    if (result.sources[sourceIndex]) {
+                        const sourceId = result.sources[sourceIndex].id;
+                        return `<sup class="inline-citation" data-action="showSourcePreview" data-args="'${sourceId}'" style="color: var(--accent-red); cursor: pointer; font-weight: bold; background: var(--bg-card); padding: 1px 4px; border-radius: 4px; border: 1px solid var(--border-soft); margin: 0 2px;">${num}</sup>`;
+                    }
+                    return match;
+                });
+            }
+        } else {
+            // Basic HTML escaping for user messages
+            formattedText = formattedText.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, '<br>');
+        }
+
+        // Use safeSetHTML instead of textContent to allow our parsed HTML
+        DOMUtils.safeSetHTML(messageText, formattedText);
         messageDiv.appendChild(messageText);
 
         if (role === 'assistant' && result) {
-            // Confidence Bar
-            if (result.confidence > 0) {
-                const confidenceContainer = document.createElement('div');
-                confidenceContainer.className = 'confidence-indicator';
-                confidenceContainer.style.cssText = 'margin-top: 12px; font-size: 11px; opacity: 0.8;';
 
-                const barBg = document.createElement('div');
-                barBg.style.cssText = 'width: 100%; height: 4px; background: var(--bg-depth); border-radius: 2px; overflow: hidden; margin-bottom: 4px;';
-
-                const barFill = document.createElement('div');
-                barFill.style.cssText = `width: ${result.confidence}%; height: 100%; background: var(--accent-red); transition: width 1s ease-out;`;
-
-                barBg.appendChild(barFill);
-                confidenceContainer.appendChild(barBg);
-
-                const label = document.createElement('span');
-                label.textContent = `Confidence: ${Math.round(result.confidence)}%`;
-                confidenceContainer.appendChild(label);
-
-                messageDiv.appendChild(confidenceContainer);
-            }
 
             // Sources
             if (result.sources && result.sources.length > 0) {

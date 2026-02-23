@@ -162,7 +162,7 @@ app.get('/api/health', (req, res) => {
     res.json({
         status: 'ok',
         timestamp: new Date().toISOString(),
-        apiKeyConfigured: !!process.env.ANTHROPIC_API_KEY
+        apiKeyConfigured: !!process.env.QWEN_API_KEY
     });
 });
 
@@ -183,7 +183,7 @@ app.post('/api/session/init', (req, res) => {
 });
 
 /**
- * Chat endpoint - proxies to Claude API
+ * Chat endpoint - proxies to Qwen API
  */
 app.post('/api/chat', enforceChatRateLimit, validateChatRequest, async (req, res) => {
     try {
@@ -195,7 +195,7 @@ app.post('/api/chat', enforceChatRateLimit, validateChatRequest, async (req, res
         }
 
         // Check if API key configured
-        if (!process.env.ANTHROPIC_API_KEY) {
+        if (!process.env.QWEN_API_KEY) {
             return res.status(503).json({
                 error: 'API key not configured',
                 fallback: true
@@ -229,25 +229,26 @@ Target audience: Portuguese/Spanish-speaking immigrant populations in Massachuse
             ? `Context:\n${context}\n\nUser Question: ${query}\n\nPlease provide a helpful answer based on the context above.`
             : `User Question: ${query}\n\nPlease provide a helpful answer based on the EMPOWER-CKM curriculum.`;
 
-        // Call Claude API
-        const response = await fetch('https://api.anthropic.com/v1/messages', {
+        // Call Qwen API
+        const response = await fetch('https://dashscope-us.aliyuncs.com/compatible-mode/v1/chat/completions', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'anthropic-version': '2023-06-01',
-                'x-api-key': process.env.ANTHROPIC_API_KEY
+                'Authorization': `Bearer ${process.env.QWEN_API_KEY}`
             },
             body: JSON.stringify({
-                model: 'claude-3-5-sonnet-20240620',
+                model: 'qwen-flash-2025-07-28-us',
                 max_tokens: 1000,
-                system: systemPrompt,
-                messages: [{ role: 'user', content: userPrompt }]
+                messages: [
+                    { role: 'system', content: systemPrompt },
+                    { role: 'user', content: userPrompt }
+                ]
             })
         });
 
         if (!response.ok) {
             const errorText = await response.text();
-            console.error('Claude API error:', response.status, errorText);
+            console.error('Qwen API error:', response.status, errorText);
             return res.status(response.status).json({
                 error: 'Failed to get response from AI service',
                 details: process.env.NODE_ENV === 'development' ? errorText : undefined
@@ -257,7 +258,7 @@ Target audience: Portuguese/Spanish-speaking immigrant populations in Massachuse
         const data = await response.json();
 
         // Validate response structure
-        if (!data?.content?.[0]?.text) {
+        if (!data?.choices?.[0]?.message?.content) {
             console.error('Invalid API response structure:', data);
             return res.status(500).json({ error: 'Invalid response from AI service' });
         }
@@ -269,7 +270,7 @@ Target audience: Portuguese/Spanish-speaking immigrant populations in Massachuse
             es: "⚕️ Esta información es solo con fines educativos. Siempre consulte a su proveedor de atención médica para obtener asesoramiento médico."
         };
 
-        const responseText = data.content[0].text + '\n\n' + (medicalDisclaimers[language] || medicalDisclaimers.en);
+        const responseText = data.choices[0].message.content + '\n\n' + (medicalDisclaimers[language] || medicalDisclaimers.en);
 
         // Log usage (optional - for monitoring)
         console.log(`Chat request from user ${req.session.userId}: ${query.substring(0, 50)}...`);
@@ -307,7 +308,7 @@ app.get('/api/rate-limit', (req, res) => {
 
 function generateUserId() {
     return 'user_' + Math.random().toString(36).substring(2, 15) +
-           Math.random().toString(36).substring(2, 15);
+        Math.random().toString(36).substring(2, 15);
 }
 
 // ============================================================================
@@ -340,12 +341,12 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
     console.log(`🚀 EMPOWER-CKM Backend API running on port ${PORT}`);
     console.log(`📊 Environment: ${process.env.NODE_ENV || 'development'}`);
-    console.log(`🔑 API Key configured: ${!!process.env.ANTHROPIC_API_KEY}`);
+    console.log(`🔑 API Key configured: ${!!process.env.QWEN_API_KEY}`);
     console.log(`🔒 CORS enabled for:`, allowedOrigins.length > 0 ? allowedOrigins : '(same-origin only)');
     console.log(`🍪 Session cookie sameSite: ${normalizedSameSite}`);
 
-    if (!process.env.ANTHROPIC_API_KEY) {
-        console.warn('⚠️  WARNING: ANTHROPIC_API_KEY not set. Chat functionality will not work.');
+    if (!process.env.QWEN_API_KEY) {
+        console.warn('⚠️  WARNING: QWEN_API_KEY not set. Chat functionality will not work.');
     }
 
     if (process.env.SESSION_SECRET === 'change-this-in-production') {
