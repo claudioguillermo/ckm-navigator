@@ -1,0 +1,72 @@
+{
+    "id": "empower-ckm-navigator-v1",
+    "name": "EMPOWER-CKM Navigator",
+    "short_name": "CKM Navigator",
+    "description": "Empowering patients on heart, kidney, and metabolic health.",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000",
+    "categories": [
+        "medical",
+        "health",
+        "education"
+    ],
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "assets/icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Chat Assistant",
+            "short_name": "Chat",
+            "description": "Ask the AI Health Assistant",
+            "url": "./index.html?page=chat",
+            "icons": [
+                {
+                    "src": "assets/icons/icon-192.png",
+                    "sizes": "192x192"
+                }
+            ]
+        },
+        {
+            "name": "My Dashboard",
+            "short_name": "Dashboard",
+            "description": "View your health metrics",
+            "url": "./index.html?page=home",
+            "icons": [
+                {
+                    "src": "assets/icons/icon-192.png",
+                    "sizes": "192x192"
+                }
+            ]
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "assets/screenshots/mobile-home.png",
+            "sizes": "1170x2532",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Home Dashboard"
+        },
+        {
+            "src": "assets/screenshots/desktop-dashboard.png",
+            "sizes": "2880x1800",
+            "type": "image/png",
+            "form_factor": "wide",
+            "label": "Education Modules"
+        }
+    ]
+}
