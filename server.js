@@ -1,7 +1,7 @@
 /**
  * Secure Backend API for EMPOWER-CKM Navigator
  *
- * This server acts as a proxy between the frontend and Claude API,
+ * This server acts as a proxy between the frontend and Qwen API,
  * protecting the API key and implementing rate limiting.
  */
 
@@ -9,6 +9,7 @@ const express = require('express');
 const cors = require('cors');
 const session = require('express-session');
 const MemoryStore = require('memorystore')(session);
+const crypto = require('crypto');
 const path = require('path');
 require('dotenv').config();
 
@@ -50,11 +51,31 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
+// Security Headers
+app.use((req, res, next) => {
+    res.setHeader('X-Content-Type-Options', 'nosniff');
+    res.setHeader('X-Frame-Options', 'DENY');
+    res.setHeader('X-XSS-Protection', '1; mode=block');
+    res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+    res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=(), interest-cohort=()');
+    res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
+    res.setHeader('Content-Security-Policy', "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://dashscope-us.aliyuncs.com; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self';");
+    next();
+});
+
 // Body parsing
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
 const isProd = process.env.NODE_ENV === 'production';
+
+// Security check for session secret
+const sessionSecret = process.env.SESSION_SECRET || 'change-this-in-production';
+if (isProd && sessionSecret === 'change-this-in-production') {
+    console.error('❌ SESSION_SECRET must be configured with a unique, strong value in production.');
+    process.exit(1);
+}
+
 const sessionCookieSameSite = (process.env.SESSION_COOKIE_SAMESITE || (isProd ? 'none' : 'lax')).toLowerCase();
 const validSameSite = new Set(['lax', 'strict', 'none']);
 const normalizedSameSite = validSameSite.has(sessionCookieSameSite) ? sessionCookieSameSite : (isProd ? 'none' : 'lax');
@@ -65,7 +86,7 @@ const sessionStore = new MemoryStore({
 // Session management
 app.use(session({
     store: sessionStore,
-    secret: process.env.SESSION_SECRET || 'change-this-in-production',
+    secret: sessionSecret,
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -77,7 +98,7 @@ app.use(session({
 }));
 
 // Static frontend hosting for single-deploy environments
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, 'public')));
 
 function getRateLimitKey(req) {
     return req.session?.userId || req.ip || req.headers['x-forwarded-for'] || 'anonymous';
@@ -229,22 +250,31 @@ Target audience: Portuguese/Spanish-speaking immigrant populations in Massachuse
             ? `Context:\n${context}\n\nUser Question: ${query}\n\nPlease provide a helpful answer based on the context above.`
             : `User Question: ${query}\n\nPlease provide a helpful answer based on the EMPOWER-CKM curriculum.`;
 
-        // Call Qwen API
-        const response = await fetch('https://dashscope-us.aliyuncs.com/compatible-mode/v1/chat/completions', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${process.env.QWEN_API_KEY}`
-            },
-            body: JSON.stringify({
-                model: 'qwen-flash-2025-07-28-us',
-                max_tokens: 1000,
-                messages: [
-                    { role: 'system', content: systemPrompt },
-                    { role: 'user', content: userPrompt }
-                ]
-            })
-        });
+        // Call Qwen API with timeout
+        const controller = new AbortController();
+        const fetchTimeout = setTimeout(() => controller.abort(), 30000);
+
+        let response;
+        try {
+            response = await fetch('https://dashscope-us.aliyuncs.com/compatible-mode/v1/chat/completions', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${process.env.QWEN_API_KEY}`
+                },
+                body: JSON.stringify({
+                    model: 'qwen-flash-2025-07-28-us',
+                    max_tokens: 1000,
+                    messages: [
+                        { role: 'system', content: systemPrompt },
+                        { role: 'user', content: userPrompt }
+                    ]
+                }),
+                signal: controller.signal
+            });
+        } finally {
+            clearTimeout(fetchTimeout);
+        }
 
         if (!response.ok) {
             const errorText = await response.text();
@@ -272,8 +302,12 @@ Target audience: Portuguese/Spanish-speaking immigrant populations in Massachuse
 
         const responseText = data.choices[0].message.content + '\n\n' + (medicalDisclaimers[language] || medicalDisclaimers.en);
 
-        // Log usage (optional - for monitoring)
-        console.log(`Chat request from user ${req.session.userId}: ${query.substring(0, 50)}...`);
+        // Log usage (minimal — avoid logging PII/health queries in production)
+        if (process.env.NODE_ENV === 'development') {
+            console.log(`Chat request from user ${req.session.userId}: ${query.substring(0, 50)}...`);
+        } else {
+            console.log(`Chat request from user ${req.session.userId} at ${new Date().toISOString()}`);
+        }
 
         res.json({
             response: responseText,
@@ -307,8 +341,7 @@ app.get('/api/rate-limit', (req, res) => {
 // ============================================================================
 
 function generateUserId() {
-    return 'user_' + Math.random().toString(36).substring(2, 15) +
-        Math.random().toString(36).substring(2, 15);
+    return 'user_' + crypto.randomUUID();
 }
 
 // ============================================================================
@@ -322,7 +355,7 @@ app.use('/api', (req, res) => {
 
 // SPA fallback for non-API routes
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Global error handler

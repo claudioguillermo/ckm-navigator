@@ -33,3 +33,6 @@ logs/
 tmp/
 temp/
 *.tmp
+.env
+cookies.txt
+security-validation-report.json
