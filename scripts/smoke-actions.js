@@ -4,7 +4,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const ROOT = path.resolve(__dirname, '..');
-const MAIN_JS_PATH = path.join(ROOT, 'main.js');
+const PUBLIC_ROOT = path.join(ROOT, 'public');
+const MAIN_JS_PATH = path.join(PUBLIC_ROOT, 'main.js');
 
 function readFile(filePath) {
     return fs.readFileSync(filePath, 'utf8');
@@ -99,10 +100,10 @@ function setDifference(a, b) {
 
 function collectActionFiles() {
     const files = [];
-    files.push(path.join(ROOT, 'index.html'));
-    files.push(path.join(ROOT, 'main.js'));
+    files.push(path.join(PUBLIC_ROOT, 'index.html'));
+    files.push(path.join(PUBLIC_ROOT, 'main.js'));
 
-    const jsRoot = path.join(ROOT, 'js');
+    const jsRoot = path.join(PUBLIC_ROOT, 'js');
     for (const filePath of walkFiles(jsRoot)) {
         if (filePath.endsWith('.js')) {
             files.push(filePath);

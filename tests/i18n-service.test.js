@@ -1,7 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
-const { I18nService } = require('../js/core/i18n-service.js');
+const { I18nService } = require('../public/js/core/i18n-service.js');
 
 function createFetchMock(map) {
     return async function fetchMock(url) {

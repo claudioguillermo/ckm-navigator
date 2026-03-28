@@ -1,7 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
-const Renderers = require('../js/features/curriculum-renderers.js');
+const Renderers = require('../public/js/features/curriculum-renderers.js');
 
 function mockTranslations() {
     return {

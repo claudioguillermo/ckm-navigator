@@ -376,6 +376,7 @@ class ChatController {
 
         let isDragging = false;
         let isResizing = false;
+        let activePointerId = null;
 
         let startX, startY;
         let startLeft, startTop;
@@ -384,14 +385,23 @@ class ChatController {
 
         const getRect = () => sidebar.getBoundingClientRect();
 
-        const onMouseDown = (e, mode) => {
+        const getPoint = (e) => {
+            if (e.touches && e.touches[0]) return e.touches[0];
+            if (e.changedTouches && e.changedTouches[0]) return e.changedTouches[0];
+            return e;
+        };
+
+        const onInputStart = (e, mode) => {
+            if (typeof e.button === 'number' && e.button !== 0) return;
             if (e.target.tagName === 'BUTTON') return;
-            e.preventDefault();
+            if (typeof e.preventDefault === 'function') e.preventDefault();
 
             sidebar.classList.add('no-transition');
 
-            startX = e.clientX;
-            startY = e.clientY;
+            const point = getPoint(e);
+            if (!point) return;
+            startX = point.clientX;
+            startY = point.clientY;
 
             const rect = getRect();
             startLeft = rect.left;
@@ -399,17 +409,35 @@ class ChatController {
             startWidth = rect.width;
             startHeight = rect.height;
 
+            activePointerId = typeof e.pointerId === 'number' ? e.pointerId : null;
+            if (activePointerId !== null) {
+                const captureTarget = e.currentTarget || e.target;
+                if (captureTarget && typeof captureTarget.setPointerCapture === 'function') {
+                    try {
+                        captureTarget.setPointerCapture(activePointerId);
+                    } catch (_) {
+                        // Some browsers throw if the pointer is already captured elsewhere.
+                    }
+                }
+            }
+
             if (mode === 'drag') isDragging = true;
             if (mode === 'resize') isResizing = true;
         };
 
-        const onMouseMove = (e) => {
+        const onInputMove = (e) => {
             if (!isDragging && !isResizing) return;
             if (rafId) return;
+            if (activePointerId !== null && typeof e.pointerId === 'number' && e.pointerId !== activePointerId) return;
+
+            const point = getPoint(e);
+            if (!point) return;
+            const clientX = point.clientX;
+            const clientY = point.clientY;
 
             rafId = requestAnimationFrame(() => {
-                const deltaX = e.clientX - startX;
-                const deltaY = e.clientY - startY;
+                const deltaX = clientX - startX;
+                const deltaY = clientY - startY;
 
                 if (isDragging) {
                     let newLeft = startLeft + deltaX;
@@ -472,7 +500,9 @@ class ChatController {
             });
         };
 
-        const onMouseUp = () => {
+        const onInputEnd = (e) => {
+            if (activePointerId !== null && typeof e.pointerId === 'number' && e.pointerId !== activePointerId) return;
+            activePointerId = null;
             if (isDragging || isResizing) {
                 isDragging = false;
                 isResizing = false;
@@ -518,13 +548,28 @@ class ChatController {
             }
         };
 
-        const dragStart = (e) => onMouseDown(e, 'drag');
-        const resizeStart = (e) => onMouseDown(e, 'resize');
+        const dragStart = (e) => onInputStart(e, 'drag');
+        const resizeStart = (e) => onInputStart(e, 'resize');
 
-        header.addEventListener('mousedown', dragStart);
-        resizer.addEventListener('mousedown', resizeStart);
-        document.addEventListener('mousemove', onMouseMove);
-        document.addEventListener('mouseup', onMouseUp);
+        const supportsPointerEvents = typeof window !== 'undefined' && 'PointerEvent' in window;
+
+        if (supportsPointerEvents) {
+            header.addEventListener('pointerdown', dragStart);
+            resizer.addEventListener('pointerdown', resizeStart);
+            document.addEventListener('pointermove', onInputMove);
+            document.addEventListener('pointerup', onInputEnd);
+            document.addEventListener('pointercancel', onInputEnd);
+        } else {
+            header.addEventListener('mousedown', dragStart);
+            resizer.addEventListener('mousedown', resizeStart);
+            header.addEventListener('touchstart', dragStart, { passive: false });
+            resizer.addEventListener('touchstart', resizeStart, { passive: false });
+            document.addEventListener('mousemove', onInputMove);
+            document.addEventListener('mouseup', onInputEnd);
+            document.addEventListener('touchmove', onInputMove, { passive: false });
+            document.addEventListener('touchend', onInputEnd);
+            document.addEventListener('touchcancel', onInputEnd);
+        }
         window.addEventListener('resize', onWindowResize);
 
         const onSidebarClick = (e) => {
@@ -536,10 +581,23 @@ class ChatController {
         sidebar.addEventListener('click', onSidebarClick);
 
         this._chatCleanup = () => {
-            header.removeEventListener('mousedown', dragStart);
-            resizer.removeEventListener('mousedown', resizeStart);
-            document.removeEventListener('mousemove', onMouseMove);
-            document.removeEventListener('mouseup', onMouseUp);
+            if (supportsPointerEvents) {
+                header.removeEventListener('pointerdown', dragStart);
+                resizer.removeEventListener('pointerdown', resizeStart);
+                document.removeEventListener('pointermove', onInputMove);
+                document.removeEventListener('pointerup', onInputEnd);
+                document.removeEventListener('pointercancel', onInputEnd);
+            } else {
+                header.removeEventListener('mousedown', dragStart);
+                resizer.removeEventListener('mousedown', resizeStart);
+                header.removeEventListener('touchstart', dragStart);
+                resizer.removeEventListener('touchstart', resizeStart);
+                document.removeEventListener('mousemove', onInputMove);
+                document.removeEventListener('mouseup', onInputEnd);
+                document.removeEventListener('touchmove', onInputMove);
+                document.removeEventListener('touchend', onInputEnd);
+                document.removeEventListener('touchcancel', onInputEnd);
+            }
             window.removeEventListener('resize', onWindowResize);
             sidebar.removeEventListener('click', onSidebarClick);
         };

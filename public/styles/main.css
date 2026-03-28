@@ -157,6 +157,7 @@ body {
     color: var(--text-primary);
     overflow-x: hidden;
     height: 100vh;
+    height: 100dvh;
     width: 100vw;
     -webkit-font-smoothing: antialiased;
 }
@@ -230,6 +231,7 @@ h3 {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    height: 100dvh;
     /* Changed from min-height to height to constrain growth */
     position: relative;
     overflow: hidden;
@@ -1282,6 +1284,7 @@ h3 {
     right: 0;
     width: min(420px, 90vw);
     height: calc(100vh - 110px);
+    height: calc(100dvh - 110px);
     background: var(--bg-sidebar);
     box-shadow: -4px 0 24px rgba(0, 0, 0, 0.1);
     transform: translateX(110%);
@@ -1315,10 +1318,12 @@ h3 {
     height: 100%;
     cursor: ew-resize;
     z-index: calc(var(--z-modal) + 1);
+    touch-action: none;
 }
 
 .chat-sidebar-header {
     cursor: grab;
+    touch-action: none;
 }
 
 .chat-sidebar-header:active {
@@ -2680,6 +2685,7 @@ body.loading::before {
 /* Chat Window Fix */
 .chat-window {
     height: calc(100vh - 140px) !important;
+    height: calc(100dvh - 140px) !important;
     top: 110px !important;
     bottom: auto !important;
     z-index: var(--z-modal);

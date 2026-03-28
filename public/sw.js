@@ -1,10 +1,10 @@
-const CACHE_NAME = 'ckm-navigator-v13';
+const CACHE_NAME = 'ckm-navigator-v14';
 const ASSETS = [
     './',
     './index.html',
     './manifest.json',
     './main.js?v=10',
-    './styles/main.css?v=10',
+    './styles/main.css?v=13',
     './js/config/inline-fallback-en.js?v=10',
     './js/dom-utils.js?v=10',
     './js/core/i18n-service.js?v=10',
@@ -23,7 +23,13 @@ const ASSETS = [
     './js/features/food-controller.js?v=10',
     './locales/en.json?v=10',
     './locales/pt.json?v=10',
-    './locales/es.json?v=10'
+    './locales/es.json?v=10',
+    './favicon.ico',
+    './assets/icons/icon-192.png',
+    './assets/icons/icon-512.png',
+    './assets/images/og-preview.png',
+    './assets/screenshots/mobile-home.png',
+    './assets/screenshots/desktop-dashboard.png'
 ];
 
 async function updateCache(request, response) {

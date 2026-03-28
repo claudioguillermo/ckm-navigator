@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "frontend": "npx serve -l 5173",
+    "frontend": "node server.js",
+    "preview": "node server.js",
     "backend": "node server.js",
     "smoke:actions": "node scripts/smoke-actions.js",
     "test": "node --test"

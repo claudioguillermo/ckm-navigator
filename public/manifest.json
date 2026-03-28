@@ -4,6 +4,7 @@
     "short_name": "CKM Navigator",
     "description": "Empowering patients on heart, kidney, and metabolic health.",
     "start_url": "./index.html",
+    "scope": "./",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",

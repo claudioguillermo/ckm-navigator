@@ -1,7 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
-const ActionDispatcher = require('../js/core/action-dispatcher.js');
+const ActionDispatcher = require('../public/js/core/action-dispatcher.js');
 
 test('splitArgs parses strings, numbers, booleans and quoted values', () => {
     const args = ActionDispatcher.splitArgs("'education', 3, true, false, \"hello world\"");
