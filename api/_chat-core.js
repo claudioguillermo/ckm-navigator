@@ -25,7 +25,46 @@ function buildFallbackMessage(language) {
   return message + getMedicalDisclaimer(language);
 }
 
-function buildSystemPrompt(language) {
+function inferResponseStyle(query) {
+  const normalized = String(query || '').toLowerCase();
+
+  if (
+    /\b(more detail|more details|go deeper|expand|elaborate|in detail|explain further|break it down|step by step|walk me through)\b/i.test(normalized)
+  ) {
+    return 'expanded';
+  }
+
+  if (
+    /\b(brief|short|summary|tl;dr|quick answer|one sentence|just the basics)\b/i.test(normalized)
+  ) {
+    return 'concise';
+  }
+
+  return 'concise';
+}
+
+function buildResponseStyleInstructions(responseStyle) {
+  if (responseStyle === 'expanded') {
+    return `OUTPUT STYLE:
+- Start with a one-sentence bottom line
+- Then add 3-5 short bullets or short sections
+- Keep the language simple and define any medical terms in plain words
+- Give one brief example if it helps understanding
+- Keep it calm, clear, and non-alarmist
+- End with a brief invite to ask for even more detail if needed`;
+  }
+
+  return `OUTPUT STYLE:
+- Start with a one-sentence bottom line
+- Then add 2-4 short bullets or short sections
+- Use short headings only if they help: Bottom line, Why it matters, What to do next
+- Keep sentences short and avoid jargon
+- Define any medical term in plain words the first time you use it
+- Keep the answer concise unless the user explicitly asks for more detail
+- End with a brief invite to ask for more detail if helpful`;
+}
+
+function buildSystemPrompt(language, responseStyle = 'concise') {
   return `You are a medical education assistant for the EMPOWER-CKM program.
 You help patients understand cardio-kidney-metabolic health in simple terms.
 
@@ -36,18 +75,22 @@ GUIDANCE:
 - If PubMed context is used, explicitly tell the user that you used PubMed web sources
 - Prefer PubMed clinical guidelines, systematic reviews, meta-analyses, and recent clinical trials over lower-evidence article types
 - Do not limit yourself to the curriculum when the question needs broader explanation, examples, or current background
+- Assume the reader is a general non-medical audience member with a pre-college education
 - Keep language simple and accessible, at a pre-high-school reading level
+- Avoid jargon and explain acronyms the first time you use them
 - Respect cultural food preferences (e.g., Brazilian/Portuguese, Latin/Spanish)
 - Always include the medical disclaimer
 - Cite curriculum sources with [Source N] notation when you use them
 - If the evidence is weak or conflicting, say so clearly instead of guessing
 - If the question is outside the curriculum and you need to generalize, answer carefully and note that it is general guidance
 
+${buildResponseStyleInstructions(responseStyle)}
+
 Language: ${language}
 Target audience: Portuguese/Spanish-speaking immigrant populations in Massachusetts`;
 }
 
-function buildUserPrompt(query, curriculumContext, webContext, language) {
+function buildUserPrompt(query, curriculumContext, webContext, language, responseStyle = 'concise') {
   const parts = [];
 
   if (curriculumContext) {
@@ -60,7 +103,7 @@ function buildUserPrompt(query, curriculumContext, webContext, language) {
 
   parts.push(`User Question: ${query}`);
   parts.push(
-    `Respond in ${language}. Use the curriculum as the starting point, but feel free to synthesize with the PubMed context and your general knowledge to give a fuller, more balanced answer. If PubMed context is present, mention that PubMed web sources were used.`
+    `Respond in ${language}. Use the curriculum as the starting point, but feel free to synthesize with the PubMed context and your general knowledge to give a fuller, more balanced answer. If PubMed context is present, mention that PubMed web sources were used. Keep the answer ${responseStyle === 'expanded' ? 'slightly more detailed' : 'brief and highly structured'}.`
   );
 
   return parts.join('\n\n');
@@ -419,5 +462,6 @@ module.exports = {
   getMedicalDisclaimer,
   getWebContextWarning,
   getPubMedEvidenceKind,
+  inferResponseStyle,
   shouldUseWebSearch,
 };

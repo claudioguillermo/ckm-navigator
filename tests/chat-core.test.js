@@ -9,6 +9,7 @@ test('system prompt allows broader reasoning beyond curriculum', () => {
   assert.match(prompt, /general medical knowledge/i);
   assert.match(prompt, /PubMed/i);
   assert.match(prompt, /explicitly tell the user/i);
+  assert.match(prompt, /OUTPUT STYLE/i);
   assert.doesNotMatch(prompt, /Base answers ONLY/i);
 });
 
@@ -25,6 +26,7 @@ test('user prompt includes both curriculum and web context when present', () => 
   assert.match(prompt, /Curriculum context:/i);
   assert.match(prompt, /PubMed context:/i);
   assert.match(prompt, /Respond in en\./i);
+  assert.match(prompt, /brief and highly structured/i);
 });
 
 test('web search mode can be disabled and enabled explicitly', () => {
@@ -98,4 +100,10 @@ test('PubMed evidence classification only keeps preferred article types', () => 
     }),
     ''
   );
+});
+
+test('response style inference switches to expanded when asked', () => {
+  assert.equal(chatCore.inferResponseStyle('Can you give me more detail?'), 'expanded');
+  assert.equal(chatCore.inferResponseStyle('Just the basics, please.'), 'concise');
+  assert.equal(chatCore.inferResponseStyle('What is CKM?'), 'concise');
 });

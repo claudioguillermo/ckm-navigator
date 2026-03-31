@@ -16,7 +16,8 @@ const {
     buildSystemPrompt,
     buildUserPrompt,
     fetchWebContext,
-    getMedicalDisclaimer
+    getMedicalDisclaimer,
+    inferResponseStyle
 } = require('./api/_chat-core');
 
 const app = express();
@@ -237,12 +238,13 @@ app.post('/api/chat', enforceChatRateLimit, validateChatRequest, async (req, res
 
         const { query, context, language = 'en' } = req.body;
 
-        const systemPrompt = buildSystemPrompt(language);
+        const responseStyle = inferResponseStyle(query);
+        const systemPrompt = buildSystemPrompt(language, responseStyle);
         const webContext = await fetchWebContext(query, {
             curriculumChunks: context ? [context] : [],
             language
         });
-        const userPrompt = buildUserPrompt(query, context, webContext, language);
+        const userPrompt = buildUserPrompt(query, context, webContext, language, responseStyle);
 
         // Call Qwen API with timeout
         const controller = new AbortController();

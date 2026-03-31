@@ -12,6 +12,7 @@ const {
   buildUserPrompt,
   fetchWebContext,
   getMedicalDisclaimer,
+  inferResponseStyle,
 } = require('./_chat-core');
 
 const CHAT_TIMEOUT_MS = 30000;
@@ -58,12 +59,13 @@ module.exports = async function chat(req, res) {
     return;
   }
 
-  const systemPrompt = buildSystemPrompt(language);
+  const responseStyle = inferResponseStyle(query);
+  const systemPrompt = buildSystemPrompt(language, responseStyle);
   const webContext = await fetchWebContext(query, {
     curriculumChunks: context ? [context] : [],
     language,
   });
-  const userPrompt = buildUserPrompt(query, context, webContext, language);
+  const userPrompt = buildUserPrompt(query, context, webContext, language, responseStyle);
 
   const controller = new AbortController();
   const fetchTimeout = setTimeout(() => controller.abort(), CHAT_TIMEOUT_MS);
