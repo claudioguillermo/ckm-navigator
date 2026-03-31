@@ -20,3 +20,9 @@ services:
         sync: false
       - key: QWEN_API_KEY
         sync: false
+      - key: WEB_SEARCH_MODE
+        value: adaptive
+      - key: WEB_SEARCH_TIMEOUT_MS
+        value: 6000
+      - key: WEB_SEARCH_MAX_RESULTS
+        value: 4

@@ -330,6 +330,50 @@ class ChatController {
                 sourcesContainer.appendChild(pillsContainer);
                 messageDiv.appendChild(sourcesContainer);
             }
+
+            if (result.webSources && result.webSources.length > 0) {
+                const webSourcesContainer = document.createElement('div');
+                webSourcesContainer.className = 'message-sources';
+                webSourcesContainer.style.cssText = 'margin-top: 12px; border-top: 1px solid var(--border-soft); padding-top: 8px;';
+
+                if (result.webContextUsed) {
+                    const warning = document.createElement('div');
+                    warning.style.cssText = 'font-size: 12px; line-height: 1.4; margin-bottom: 8px; padding: 8px 10px; border-radius: 12px; background: rgba(255, 193, 7, 0.12); color: var(--text-primary); border: 1px solid rgba(255, 193, 7, 0.3);';
+                    warning.textContent = this.app.currentLanguage === 'es'
+                        ? 'Nota: esta respuesta también usó contexto web de PubMed.'
+                        : (this.app.currentLanguage === 'pt'
+                            ? 'Nota: esta resposta também usou contexto da web do PubMed.'
+                            : 'Note: this answer also used PubMed web context.');
+                    webSourcesContainer.appendChild(warning);
+                }
+
+                const title = document.createElement('div');
+                title.style.cssText = 'font-size: 10px; font-weight: 800; text-transform: uppercase; opacity: 0.5; margin-bottom: 6px;';
+                title.textContent = 'PubMed sources:';
+                webSourcesContainer.appendChild(title);
+
+                const pillsContainer = document.createElement('div');
+                pillsContainer.style.cssText = 'display: flex; flex-wrap: wrap; gap: 6px;';
+
+                result.webSources.forEach((source) => {
+                    const link = document.createElement('a');
+                    link.className = 'source-pill';
+                    if (source.url) {
+                        link.href = source.url;
+                    }
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.style.cssText = 'font-size: 11px; padding: 4px 10px; border-radius: 12px; border: 1px solid var(--border-soft); background: var(--bg-card); cursor: pointer; text-decoration: none; color: inherit;';
+                    if (!source.url) {
+                        link.style.cursor = 'default';
+                    }
+                    link.textContent = source.provider ? `${source.provider}: ${source.title}` : source.title;
+                    pillsContainer.appendChild(link);
+                });
+
+                webSourcesContainer.appendChild(pillsContainer);
+                messageDiv.appendChild(webSourcesContainer);
+            }
         }
 
         container.appendChild(messageDiv);

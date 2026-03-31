@@ -66,7 +66,7 @@ class MedicalChatbot {
         const retrievedChunks = this.searchEngine.searchWithLanguage(
             userQuery,
             this.currentLanguage,
-            3 // Top 3 chunks for context
+            6 // Give the model a wider curriculum window
         );
 
         // Calculate confidence based on retrieval scores (simplified)
@@ -89,12 +89,15 @@ class MedicalChatbot {
             const context = this.buildContext(retrievedChunks);
 
             // Call secure backend API
-            const response = await this.generateResponse(userQuery, context);
+            const backendResult = await this.generateResponse(userQuery, context);
+            const responseText = backendResult?.response || this.getErrorMessage();
 
             const result = {
-                response: response,
+                response: responseText,
                 sources: retrievedChunks.map(r => r.chunk),
-                confidence: confidence
+                confidence: confidence,
+                webSources: backendResult?.webSources || [],
+                webContextUsed: backendResult?.webContextUsed || false
             };
 
             this.conversationHistory.push({
@@ -116,6 +119,11 @@ class MedicalChatbot {
 
     buildContext(chunks) {
         let context = 'Relevant educational content:\n\n';
+
+        if (!chunks || chunks.length === 0) {
+            return context + 'No direct curriculum matches were found for this question.\n';
+        }
+
         chunks.forEach((result, idx) => {
             const chunk = result.chunk;
             context += `[Source ${idx + 1}: ${chunk.metadata.moduleName}]\n`;
@@ -133,7 +141,11 @@ class MedicalChatbot {
         await this.initSession();
 
         if (this.offlineMode) {
-            return this.getOfflineMessage(context);
+            return {
+                response: this.getOfflineMessage(context),
+                webSources: [],
+                webContextUsed: false
+            };
         }
 
         try {
@@ -156,7 +168,11 @@ class MedicalChatbot {
 
                 // If backend not available or API key not configured, use fallback
                 if (response.status === 503 || errorData.fallback) {
-                    return this.getFallbackMessage();
+                    return {
+                        response: this.getFallbackMessage(),
+                        webSources: [],
+                        webContextUsed: false
+                    };
                 }
 
                 throw new Error(`Backend error: ${response.status}`);
@@ -169,13 +185,21 @@ class MedicalChatbot {
                 throw new Error('Invalid response from backend');
             }
 
-            return data.response;
+            return {
+                response: data.response,
+                webSources: data.webSources || [],
+                webContextUsed: data.webContextUsed || false
+            };
 
         } catch (error) {
             console.error('Backend API Error:', error);
 
             // Graceful fallback if backend unavailable
-            return this.getFallbackMessage();
+            return {
+                response: this.getFallbackMessage(),
+                webSources: [],
+                webContextUsed: false
+            };
         }
     }
 

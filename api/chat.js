@@ -2,48 +2,19 @@ const {
   applyCorsHeaders,
   enforceChatRateLimit,
   ensureSession,
-  getMedicalDisclaimer,
   handleOptions,
   json,
   validateChatRequest,
 } = require('./_shared');
+const {
+  buildFallbackMessage,
+  buildSystemPrompt,
+  buildUserPrompt,
+  fetchWebContext,
+  getMedicalDisclaimer,
+} = require('./_chat-core');
 
 const CHAT_TIMEOUT_MS = 30000;
-
-function buildSystemPrompt(language) {
-  return `You are a medical education assistant for the EMPOWER-CKM program.
-You help patients understand cardio-kidney-metabolic health in simple terms.
-
-CRITICAL RULES:
-- Base answers ONLY on the provided context
-- Use simple, clear language (pre-high school reading level)
-- Respect cultural food preferences (e.g., Brazilian/Portuguese, Latin/Spanish)
-- Always include medical disclaimer
-- Cite sources with [Source N] notation
-- If context doesn't answer the question, say so clearly
-
-Language: ${language}
-Target audience: Portuguese/Spanish-speaking immigrant populations in Massachusetts`;
-}
-
-function buildUserPrompt(query, context) {
-  if (context) {
-    return `Context:\n${context}\n\nUser Question: ${query}\n\nPlease provide a helpful answer based on the context above.`;
-  }
-
-  return `User Question: ${query}\n\nPlease provide a helpful answer based on the EMPOWER-CKM curriculum.`;
-}
-
-function buildFallbackMessage(language) {
-  const messages = {
-    en: "I have found relevant information in our curriculum about this, but the AI connection is currently being configured. Please consult your physician at the clinic for specific details.\n\n",
-    pt: "Encontrei informações relevantes em nosso currículo sobre isso, mas a conexão com a IA está sendo configurada. Por favor, consulte seu médico na clínica para detalhes específicos.\n\n",
-    es: "He encontrado información relevante en nuestro currículo sobre esto, pero la conexión de IA se está configurando actualmente. Consulte a su médico en la clínica para obtener detalles específicos.\n\n",
-  };
-
-  const message = messages[language] || messages.en;
-  return message + getMedicalDisclaimer(language);
-}
 
 module.exports = async function chat(req, res) {
   applyCorsHeaders(req, res);
@@ -88,7 +59,11 @@ module.exports = async function chat(req, res) {
   }
 
   const systemPrompt = buildSystemPrompt(language);
-  const userPrompt = buildUserPrompt(query, context);
+  const webContext = await fetchWebContext(query, {
+    curriculumChunks: context ? [context] : [],
+    language,
+  });
+  const userPrompt = buildUserPrompt(query, context, webContext, language);
 
   const controller = new AbortController();
   const fetchTimeout = setTimeout(() => controller.abort(), CHAT_TIMEOUT_MS);
@@ -145,7 +120,8 @@ module.exports = async function chat(req, res) {
   }
 
   const medicalDisclaimer = getMedicalDisclaimer(language);
-  const responseText = `${data.choices[0].message.content}\n\n${medicalDisclaimer}`;
+  const webContextWarning = webContext.warning ? `${webContext.warning}\n\n` : '';
+  const responseText = `${webContextWarning}${data.choices[0].message.content}\n\n${medicalDisclaimer}`;
 
   if (process.env.NODE_ENV === 'development') {
     console.log(`Chat request from user ${session.userId}: ${query.substring(0, 50)}...`);
@@ -156,5 +132,7 @@ module.exports = async function chat(req, res) {
   json(res, 200, {
     response: responseText,
     usage: data.usage,
+    webSources: webContext.sources,
+    webContextUsed: webContext.sources.length > 0,
   });
 };

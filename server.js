@@ -12,6 +12,12 @@ const MemoryStore = require('memorystore')(session);
 const crypto = require('crypto');
 const path = require('path');
 require('dotenv').config();
+const {
+    buildSystemPrompt,
+    buildUserPrompt,
+    fetchWebContext,
+    getMedicalDisclaimer
+} = require('./api/_chat-core');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -231,24 +237,12 @@ app.post('/api/chat', enforceChatRateLimit, validateChatRequest, async (req, res
 
         const { query, context, language = 'en' } = req.body;
 
-        // Build system prompt
-        const systemPrompt = `You are a medical education assistant for the EMPOWER-CKM program.
-You help patients understand cardio-kidney-metabolic health in simple terms.
-
-CRITICAL RULES:
-- Base answers ONLY on the provided context
-- Use simple, clear language (pre-high school reading level)
-- Respect cultural food preferences (e.g., Brazilian/Portuguese, Latin/Spanish)
-- Always include medical disclaimer
-- Cite sources with [Source N] notation
-- If context doesn't answer the question, say so clearly
-
-Language: ${language}
-Target audience: Portuguese/Spanish-speaking immigrant populations in Massachusetts`;
-
-        const userPrompt = context
-            ? `Context:\n${context}\n\nUser Question: ${query}\n\nPlease provide a helpful answer based on the context above.`
-            : `User Question: ${query}\n\nPlease provide a helpful answer based on the EMPOWER-CKM curriculum.`;
+        const systemPrompt = buildSystemPrompt(language);
+        const webContext = await fetchWebContext(query, {
+            curriculumChunks: context ? [context] : [],
+            language
+        });
+        const userPrompt = buildUserPrompt(query, context, webContext, language);
 
         // Call Qwen API with timeout
         const controller = new AbortController();
@@ -293,14 +287,8 @@ Target audience: Portuguese/Spanish-speaking immigrant populations in Massachuse
             return res.status(500).json({ error: 'Invalid response from AI service' });
         }
 
-        // Add medical disclaimer
-        const medicalDisclaimers = {
-            en: "⚕️ This information is for educational purposes only. Always consult your healthcare provider for medical advice.",
-            pt: "⚕️ Esta informação é apenas para fins educacionais. Sempre consulte seu médico para aconselhamento médico.",
-            es: "⚕️ Esta información es solo con fines educativos. Siempre consulte a su proveedor de atención médica para obtener asesoramiento médico."
-        };
-
-        const responseText = data.choices[0].message.content + '\n\n' + (medicalDisclaimers[language] || medicalDisclaimers.en);
+        const webContextWarning = webContext.warning ? webContext.warning + '\n\n' : '';
+        const responseText = webContextWarning + data.choices[0].message.content + '\n\n' + getMedicalDisclaimer(language);
 
         // Log usage (minimal — avoid logging PII/health queries in production)
         if (process.env.NODE_ENV === 'development') {
@@ -311,7 +299,9 @@ Target audience: Portuguese/Spanish-speaking immigrant populations in Massachuse
 
         res.json({
             response: responseText,
-            usage: data.usage // Token usage for monitoring
+            usage: data.usage, // Token usage for monitoring
+            webSources: webContext.sources,
+            webContextUsed: webContext.sources.length > 0
         });
 
     } catch (error) {
