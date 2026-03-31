@@ -1,5 +1,3 @@
-const crypto = require('crypto');
-
 const {
   applyCorsHeaders,
   enforceChatRateLimit,
@@ -54,6 +52,7 @@ module.exports = async function chat(req, res) {
     return;
   }
 
+  const { query, context, language = 'en' } = req.body || {};
   const validationError = validateChatRequest(req.body);
   if (validationError) {
     json(res, 400, { error: validationError });
@@ -88,7 +87,6 @@ module.exports = async function chat(req, res) {
     return;
   }
 
-  const { query, context, language = 'en' } = req.body;
   const systemPrompt = buildSystemPrompt(language);
   const userPrompt = buildUserPrompt(query, context);
 
@@ -159,13 +157,4 @@ module.exports = async function chat(req, res) {
     response: responseText,
     usage: data.usage,
   });
-};
-
-module.exports.config = {
-  api: {
-    bodyParser: {
-      sizeLimit: '10mb',
-    },
-    maxDuration: 60,
-  },
 };
