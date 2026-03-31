@@ -35,10 +35,10 @@ This report presents a complete security, performance, and structural analysis o
 this.apiKey = config.apiKey || null;
 
 // chatbot.js:122-127
-const response = await fetch('https://api.anthropic.com/v1/messages', {
+const response = await fetch('https://dashscope-us.aliyuncs.com/compatible-mode/v1/chat/completions', {
     method: 'POST',
     headers: {
-        'x-api-key': this.apiKey  // ❌ API key transmitted from client
+        'Authorization': `Bearer ${this.apiKey}`  // ❌ API key transmitted from client
     },
     body: JSON.stringify({...})
 });
@@ -335,7 +335,7 @@ async loadLanguage(lang) {
 }
 
 // chatbot.js:122-142
-const response = await fetch('https://api.anthropic.com/v1/messages', {...});
+const response = await fetch('https://dashscope-us.aliyuncs.com/compatible-mode/v1/chat/completions', {...});
 const data = await response.json();  // ❌ What if response.ok === false?
 return data.content[0].text;  // ❌ Assumes structure exists
 ```
@@ -1077,7 +1077,7 @@ function initOfflineDetection() {
     style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
     font-src 'self' https://fonts.gstatic.com;
     img-src 'self' data: https:;
-    connect-src 'self' https://api.anthropic.com;
+    connect-src 'self' https://dashscope-us.aliyuncs.com;
     frame-ancestors 'none';
     base-uri 'self';
     form-action 'self';
@@ -1501,7 +1501,7 @@ state.setState({ currentView: 'education' });
 class MedicalChatbot {
     async generateResponse(query, context) {
         // Directly uses fetch() - can't mock in tests
-        const response = await fetch('https://api.anthropic.com/v1/messages', {...});
+        const response = await fetch('https://dashscope-us.aliyuncs.com/compatible-mode/v1/chat/completions', {...});
     }
 }
 
@@ -1526,11 +1526,11 @@ class APIClient {
     async post(url, data) { throw new Error('Not implemented'); }
 }
 
-class AnthropicAPI extends APIClient {
+class QwenAPI extends APIClient {
     async post(url, data) {
         return fetch(url, {
             method: 'POST',
-            headers: { 'x-api-key': this.apiKey },
+            headers: { 'Authorization': `Bearer ${this.apiKey}` },
             body: JSON.stringify(data)
         });
     }
@@ -1545,7 +1545,7 @@ class MedicalChatbot {
 
     async generateResponse(query, context) {
         const response = await this.apiClient.post(
-            'https://api.anthropic.com/v1/messages',
+            'https://dashscope-us.aliyuncs.com/compatible-mode/v1/chat/completions',
             { ... }
         );
     }
@@ -2148,11 +2148,11 @@ async search(query) {
        const rateLimitKey = `rate_limit:${req.session.userId}`;
        // ... implement rate limiting ...
 
-       // Call Claude API with server-side key
-       const response = await fetch('https://api.anthropic.com/v1/messages', {
+       // Call Qwen API with server-side key
+       const response = await fetch('https://dashscope-us.aliyuncs.com/compatible-mode/v1/chat/completions', {
            method: 'POST',
            headers: {
-               'x-api-key': process.env.ANTHROPIC_API_KEY,
+               'Authorization': `Bearer ${process.env.QWEN_API_KEY}`,
                'Content-Type': 'application/json'
            },
            body: JSON.stringify(req.body)
@@ -2595,6 +2595,6 @@ The EMPOWER-CKM Navigator is a well-designed educational application with solid 
 
 ---
 
-**Report Compiled By:** Claude (Anthropic)
-**Analysis Model:** Claude Sonnet 4.5
+**Report Compiled By:** AI assistant
+**Analysis Model:** Internal analysis model
 **Date:** January 14, 2026

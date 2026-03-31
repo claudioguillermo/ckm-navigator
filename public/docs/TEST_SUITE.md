@@ -29,11 +29,11 @@ Before starting tests, ensure:
 2. Click "AI Assistant"
 3. Type: "What is CKM health?"
 4. Click Send
-5. Find the request to `/api/chat` or `anthropic.com`
+5. Find the request to `/api/chat`
 
 **Expected:**
-- ✅ Request goes to `localhost:3001/api/chat` (not directly to Anthropic)
-- ✅ No `x-api-key` header visible in browser
+- ✅ Request goes to `localhost:3001/api/chat` (not directly to DashScope/Qwen)
+- ✅ No provider API key or `Authorization` header visible in browser
 - ✅ `credentials: include` present (session cookie)
 
 **If Failed:**

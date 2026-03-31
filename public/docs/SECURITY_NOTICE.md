@@ -3,7 +3,7 @@
 ## API Key Exposure Issue (FIXED)
 
 ### The Problem
-The original implementation stored the Anthropic Claude API key in client-side JavaScript, which meant:
+The original implementation stored the model provider API key in client-side JavaScript, which meant:
 - Anyone could view the API key in browser DevTools
 - Unauthorized users could extract and abuse the key
 - Potential for thousands of dollars in fraudulent API charges
@@ -13,7 +13,7 @@ The original implementation stored the Anthropic Claude API key in client-side J
 We've implemented a secure server-side proxy architecture:
 
 ```
-Browser → Backend API (Node.js) → Claude API
+Browser → Backend API (Node.js) → Qwen API
          (session auth)         (API key secure)
 ```
 
@@ -25,12 +25,12 @@ Browser → Backend API (Node.js) → Claude API
 
 1. Install dependencies:
 ```bash
-npm install express cors express-session express-rate-limit dotenv
+npm install express cors express-session dotenv
 ```
 
 2. Create `.env` file (NEVER commit this):
 ```env
-ANTHROPIC_API_KEY=your_api_key_here
+QWEN_API_KEY=your_api_key_here
 SESSION_SECRET=generate_random_secret_here
 PORT=3001
 ```
@@ -68,7 +68,7 @@ See `server.js` for implementation details.
 If you're setting up a new environment:
 
 1. Copy `.env.example` to `.env`
-2. Add your Anthropic API key
+2. Add your Qwen/DashScope API key
 3. Generate a secure session secret: `openssl rand -base64 32`
 4. Start both frontend and backend servers
 

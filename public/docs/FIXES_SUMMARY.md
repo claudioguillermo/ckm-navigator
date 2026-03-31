@@ -227,7 +227,7 @@ npm install
 
 # Configure environment
 cp .env.example .env
-# Edit .env and add your ANTHROPIC_API_KEY
+# Edit .env and add your QWEN_API_KEY
 
 # Generate secure session secret
 openssl rand -base64 32
@@ -293,7 +293,7 @@ npx serve -l 5173
 
 **Environment Variables (Production):**
 ```env
-ANTHROPIC_API_KEY=your_production_key
+QWEN_API_KEY=your_production_key
 SESSION_SECRET=strong_random_secret_here
 NODE_ENV=production
 FRONTEND_URL=https://yourdomain.com

@@ -22,13 +22,13 @@ npm install
 cp .env.example .env
 
 # Edit .env and add your API key
-# Get key from: https://console.anthropic.com/
+# Get key from the Alibaba Cloud DashScope console
 nano .env  # or use any text editor
 ```
 
 Your `.env` should look like:
 ```env
-ANTHROPIC_API_KEY=sk-ant-api03-your-actual-key-here
+QWEN_API_KEY=your-dashscope-api-key-here
 SESSION_SECRET=generate-random-secret-here
 PORT=3001
 NODE_ENV=development
@@ -58,7 +58,7 @@ Visit: `http://localhost:5173`
 1. **Open the app** at http://localhost:5173
 2. **Click "AI Assistant"** in the navigation
 3. **Type a question:** "What is CKM health?"
-4. **Verify response** from Claude API appears
+4. **Verify response** from the secure chat API appears
 
 ✅ If you see a response → SUCCESS!
 ❌ If you see "AI connection being configured" → Backend not running
@@ -156,7 +156,7 @@ Visit: `http://localhost:5173`
 ### "API key not configured" error
 **Solution:**
 1. Check `.env` file exists
-2. Verify `ANTHROPIC_API_KEY=sk-ant-...` line exists
+2. Verify `QWEN_API_KEY=...` line exists
 3. Restart backend server
 
 ### App looks broken after changes

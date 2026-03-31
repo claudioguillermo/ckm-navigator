@@ -142,7 +142,7 @@ python3 verify-security-fixes.py
 
 ### Search for API Keys (should find none)
 ```bash
-grep -r "sk-ant-api" . --exclude-dir=node_modules
+rg -n "sk-[A-Za-z0-9]" api public/js public/index.html public/main.js server.js
 ```
 
 ### Count Security Issues (should be 0)

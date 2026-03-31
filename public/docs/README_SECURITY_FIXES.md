@@ -161,7 +161,7 @@ node server.js
 
 ### Check for API Keys in Code
 ```bash
-grep -r "sk-ant-api" . --exclude-dir=node_modules
+rg -n "sk-[A-Za-z0-9]" api public/js public/index.html public/main.js server.js
 # Should return: no matches
 ```
 

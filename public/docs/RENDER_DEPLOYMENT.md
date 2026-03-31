@@ -28,7 +28,7 @@ Set these in Render service settings:
 - `NODE_ENV=production`
 - `SESSION_COOKIE_SAMESITE=lax`
 - `SESSION_SECRET=<strong random secret (32+ bytes)>`
-- `ANTHROPIC_API_KEY=<real key>`
+- `QWEN_API_KEY=<real key>`
 - `ALLOWED_ORIGINS=https://<your-service>.onrender.com`
 
 Notes:
@@ -69,7 +69,7 @@ Expected:
 
 ### Chat fallback behavior when key missing
 
-If `ANTHROPIC_API_KEY` is not set, chat endpoint should return fallback-compatible response instead of crashing UI.
+If `QWEN_API_KEY` is not set, chat endpoint should return fallback-compatible response instead of crashing UI.
 
 ```bash
 curl -i -X POST <base_url>/api/chat \

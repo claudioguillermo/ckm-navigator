@@ -53,7 +53,7 @@ This guide covers deploying the EMPOWER-CKM Navigator application to production 
 2. **Configure environment variables**
    ```bash
    # Edit .env with your production values
-   ANTHROPIC_API_KEY=sk-ant-api03-your-actual-production-key
+   QWEN_API_KEY=your-dashscope-api-key
    SESSION_SECRET=$(openssl rand -base64 32)
    PORT=3001
    NODE_ENV=production

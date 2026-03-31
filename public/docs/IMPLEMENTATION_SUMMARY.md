@@ -32,7 +32,7 @@ This document summarizes the comprehensive security audit, bug fixing, and harde
 ### CRITICAL-01: API Key Exposure ❌→✅
 
 **Original Issue:**
-Anthropic API key exposed in client-side JavaScript (chatbot.js), allowing unauthorized access and potential abuse.
+LLM API key exposed in client-side JavaScript (chatbot.js), allowing unauthorized access and potential abuse.
 
 **Impact:** CRITICAL - Direct financial and security risk
 
@@ -353,7 +353,7 @@ async loadLanguage(lang) {
 
 1. **server.js** (521 lines)
    - Express backend server
-   - API proxy for Anthropic Claude
+   - API proxy for Qwen via DashScope
    - Session management
    - Rate limiting
    - CORS protection
@@ -514,9 +514,9 @@ Created multiple automated scripts to handle large-scale code modifications:
 
 2. **API Key Protection**
    ```bash
-   grep -r "sk-ant-api" .
+   rg -n "sk-[A-Za-z0-9]" api public/js public/index.html public/main.js server.js
    ```
-   **Expected:** No matches in public files
+   **Expected:** No matches
 
 3. **Data Integrity**
    ```javascript

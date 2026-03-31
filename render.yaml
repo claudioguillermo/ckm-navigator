@@ -18,5 +18,5 @@ services:
         generateValue: true
       - key: ALLOWED_ORIGINS
         sync: false
-      - key: ANTHROPIC_API_KEY
+      - key: QWEN_API_KEY
         sync: false

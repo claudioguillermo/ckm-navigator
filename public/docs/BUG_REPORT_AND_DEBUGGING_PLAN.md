@@ -843,10 +843,10 @@ This is a **pure frontend PWA** with:
 
 ```javascript
 // Currently makes external API call:
-const response = await fetch('https://api.anthropic.com/v1/messages', {
+const response = await fetch('https://dashscope-us.aliyuncs.com/compatible-mode/v1/chat/completions', {
     method: 'POST',
     headers: {
-        'x-api-key': this.apiKey  // ❌ API key exposed in frontend
+        'Authorization': `Bearer ${this.apiKey}`  // ❌ API key exposed in frontend
     }
 });
 ```
@@ -854,7 +854,7 @@ const response = await fetch('https://api.anthropic.com/v1/messages', {
 **Problems:**
 1. **API Key Exposure:** API key in frontend code is a security risk
 2. **CORS Issues:** API calls might fail due to CORS
-3. **Cost:** Every user directly hits Claude API (expensive)
+3. **Cost:** Every user directly hits the model provider API (expensive)
 
 **Solutions:**
 1. **Recommended:** Create a simple backend proxy
@@ -863,10 +863,10 @@ const response = await fetch('https://api.anthropic.com/v1/messages', {
    export default async function handler(req, res) {
        const { query, context } = req.body;
 
-       const response = await fetch('https://api.anthropic.com/v1/messages', {
+       const response = await fetch('https://dashscope-us.aliyuncs.com/compatible-mode/v1/chat/completions', {
            method: 'POST',
            headers: {
-               'x-api-key': process.env.ANTHROPIC_API_KEY  // ✅ Server-side
+               'Authorization': `Bearer ${process.env.QWEN_API_KEY}`  // ✅ Server-side
            },
            body: JSON.stringify({ query, context })
        });
